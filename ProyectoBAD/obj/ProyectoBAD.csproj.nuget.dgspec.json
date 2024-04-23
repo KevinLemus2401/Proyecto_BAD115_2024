@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\alexi\\source\\repos\\ProyectoBAD\\ProyectoBAD\\ProyectoBAD.csproj": {}
+    "E:\\Estudio\\2024\\Ciclo I\\BAD-115\\Repo_Proyecto\\Proyecto_BAD115_2024\\ProyectoBAD\\ProyectoBAD.csproj": {}
   },
   "projects": {
-    "C:\\Users\\alexi\\source\\repos\\ProyectoBAD\\ProyectoBAD\\ProyectoBAD.csproj": {
+    "E:\\Estudio\\2024\\Ciclo I\\BAD-115\\Repo_Proyecto\\Proyecto_BAD115_2024\\ProyectoBAD\\ProyectoBAD.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\alexi\\source\\repos\\ProyectoBAD\\ProyectoBAD\\ProyectoBAD.csproj",
+        "projectUniqueName": "E:\\Estudio\\2024\\Ciclo I\\BAD-115\\Repo_Proyecto\\Proyecto_BAD115_2024\\ProyectoBAD\\ProyectoBAD.csproj",
         "projectName": "ProyectoBAD",
-        "projectPath": "C:\\Users\\alexi\\source\\repos\\ProyectoBAD\\ProyectoBAD\\ProyectoBAD.csproj",
-        "packagesPath": "C:\\Users\\alexi\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\alexi\\source\\repos\\ProyectoBAD\\ProyectoBAD\\obj\\",
+        "projectPath": "E:\\Estudio\\2024\\Ciclo I\\BAD-115\\Repo_Proyecto\\Proyecto_BAD115_2024\\ProyectoBAD\\ProyectoBAD.csproj",
+        "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
+        "outputPath": "E:\\Estudio\\2024\\Ciclo I\\BAD-115\\Repo_Proyecto\\Proyecto_BAD115_2024\\ProyectoBAD\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\alexi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -34,11 +34,28 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[6.0.1, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.1, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -58,7 +75,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204\\RuntimeIdentifierGraph.json"
         }
       }
     }
