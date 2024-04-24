@@ -1,0 +1,49 @@
+﻿@model ProyectoBAD.Models.Preguntum
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Preguntum</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.IdEncuesta)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.IdEncuesta)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.TipoPreguntaId)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.TipoPreguntaId)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DescripcionPregunta)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DescripcionPregunta)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.RequeridaPregunta)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.RequeridaPregunta)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.OrdenPregunta)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.OrdenPregunta)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.IdPregunta">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

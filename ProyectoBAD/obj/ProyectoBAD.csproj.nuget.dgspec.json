@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\alexi\\source\\repos\\ProyectoBAD\\ProyectoBAD\\ProyectoBAD.csproj": {}
+    "C:\\Users\\alexi\\Documents\\Proyecto_BAD115_2024\\Proyecto_BAD115_2024\\ProyectoBAD\\ProyectoBAD.csproj": {}
   },
   "projects": {
-    "C:\\Users\\alexi\\source\\repos\\ProyectoBAD\\ProyectoBAD\\ProyectoBAD.csproj": {
+    "C:\\Users\\alexi\\Documents\\Proyecto_BAD115_2024\\Proyecto_BAD115_2024\\ProyectoBAD\\ProyectoBAD.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\alexi\\source\\repos\\ProyectoBAD\\ProyectoBAD\\ProyectoBAD.csproj",
+        "projectUniqueName": "C:\\Users\\alexi\\Documents\\Proyecto_BAD115_2024\\Proyecto_BAD115_2024\\ProyectoBAD\\ProyectoBAD.csproj",
         "projectName": "ProyectoBAD",
-        "projectPath": "C:\\Users\\alexi\\source\\repos\\ProyectoBAD\\ProyectoBAD\\ProyectoBAD.csproj",
+        "projectPath": "C:\\Users\\alexi\\Documents\\Proyecto_BAD115_2024\\Proyecto_BAD115_2024\\ProyectoBAD\\ProyectoBAD.csproj",
         "packagesPath": "C:\\Users\\alexi\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\alexi\\source\\repos\\ProyectoBAD\\ProyectoBAD\\obj\\",
+        "outputPath": "C:\\Users\\alexi\\Documents\\Proyecto_BAD115_2024\\Proyecto_BAD115_2024\\ProyectoBAD\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\alexi\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -39,6 +39,22 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[6.0.29, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.29, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[6.0.16, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

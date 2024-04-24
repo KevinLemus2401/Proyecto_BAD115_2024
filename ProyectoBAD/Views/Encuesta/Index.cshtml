@@ -1,0 +1,72 @@
+﻿@model IEnumerable<ProyectoBAD.Models.Encuestum>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.IdUsuario)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TituloEncuesta)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ObjetivoEncuesta)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GrupometaEncuesta)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IndicacionesEncuesta)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FechaEncuesta)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EstadoEncuesta)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdUsuario)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TituloEncuesta)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ObjetivoEncuesta)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GrupometaEncuesta)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IndicacionesEncuesta)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaEncuesta)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EstadoEncuesta)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.IdEncuesta">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.IdEncuesta">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.IdEncuesta">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,7 +1,14 @@
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using ProyectoBAD.Models;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddDbContext<sisencuestasContext>(options =>
+        options.UseSqlServer(builder.Configuration.GetConnectionString("PubContext")));
 
 var app = builder.Build();
 
