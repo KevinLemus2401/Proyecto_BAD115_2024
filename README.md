@@ -1,7 +1,7 @@
 # Proyecto_BAD115_2024
 
-#******** PARA CONFIGURAR BASE DE DATOS EN EL PROYECTO *************
-#---------- Descargas necesarias para visualizar tablas en un SGBD (usaremos SSMS) -----------------
+* ******** PARA CONFIGURAR BASE DE DATOS EN EL PROYECTO *************
+* ---------- Descargas necesarias para visualizar tablas en un SGBD (usaremos SSMS) -----------------
 
 - SQL Server 2022 Express: https://go.microsoft.com/fwlink/p/?linkid=2216019&clcid=0x40A&culture=es-es&country=es
 - SQL Server Management Studio (SSMS): https://aka.ms/ssmsfullsetup
