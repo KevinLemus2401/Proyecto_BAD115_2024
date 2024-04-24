@@ -1,0 +1,60 @@
+﻿@model ProyectoBAD.Models.Encuestum
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Encuestum</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.IdUsuario)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.IdUsuario)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.TituloEncuesta)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.TituloEncuesta)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ObjetivoEncuesta)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ObjetivoEncuesta)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.GrupometaEncuesta)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.GrupometaEncuesta)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.IndicacionesEncuesta)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.IndicacionesEncuesta)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.FechaEncuesta)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.FechaEncuesta)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.EstadoEncuesta)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.EstadoEncuesta)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.IdEncuesta">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
