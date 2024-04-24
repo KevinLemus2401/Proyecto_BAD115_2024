@@ -11,7 +11,8 @@
 #---------- Conf. SQL Server Management Studio -----------------
 1. Crear conexion con Nuevo Servidor
 2. Asignar configuraciones:
-   ![image](https://github.com/Orellanna/Proyecto_BAD115_2024/assets/90300477/b8749cb6-30c7-4082-9e8a-a4e63f0bd3b1)
+
+![image](https://github.com/Orellanna/Proyecto_BAD115_2024/assets/90300477/b8749cb6-30c7-4082-9e8a-a4e63f0bd3b1)
 
 
 ---------- Instalacion de Entity Framework en Visual Studio -----------------
