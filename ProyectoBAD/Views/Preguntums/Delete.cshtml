@@ -1,52 +1,49 @@
 ﻿@model ProyectoBAD.Models.Preguntum
 
 @{
-    ViewData["Title"] = "Delete";
+    ViewData["Title"] = "Eliminar Pregunta";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Delete</h1>
+<h1 class="display-4 text-center">@ViewData["Title"]</h1>
 
-<h3>Are you sure you want to delete this?</h3>
-<div>
-    <h4>Preguntum</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.IdEncuesta)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.IdEncuesta)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.TipoPreguntaId)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.TipoPreguntaId)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.DescripcionPregunta)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.DescripcionPregunta)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.RequeridaPregunta)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.RequeridaPregunta)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.OrdenPregunta)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.OrdenPregunta)
-        </dd>
-    </dl>
-    
-    <form asp-action="Delete">
-        <input type="hidden" asp-for="IdPregunta" />
-        <input type="submit" value="Delete" class="btn btn-danger" /> |
-        <a asp-action="Index">Back to List</a>
-    </form>
+<div class="container">
+    <div class="card mt-4">
+        <h3 class="card-title text-center mb-4 mt-4">¿Estás seguro de que deseas eliminar esta pregunta?</h3>
+        <div class="card-body">
+            
+            <div class="row justify-content-center">
+                <div class="col-md-12">
+                    <h4 class="card-subtitle mb-3">Detalles de la Pregunta</h4>
+                    <dl class="row">
+                        <dt class="col-sm-3 text-muted">ID de la Encuesta</dt>
+                        <dd class="col-sm-9">@Html.DisplayFor(model => model.IdEncuesta)</dd>
+                        <dt class="col-sm-3 text-muted">Tipo de Pregunta</dt>
+                        <dd class="col-sm-9">@Html.DisplayFor(model => model.TipoPreguntaId)</dd>
+                        <dt class="col-sm-3 text-muted">Descripción de la Pregunta</dt>
+                        <dd class="col-sm-9">@Html.DisplayFor(model => model.DescripcionPregunta)</dd>
+                        <dt class="col-sm-3 text-muted">Requerida</dt>
+                        <dd class="col-sm-9">@Html.DisplayFor(model => model.RequeridaPregunta)</dd>
+                        <dt class="col-sm-3 text-muted">Orden de la Pregunta</dt>
+                        <dd class="col-sm-9">@Html.DisplayFor(model => model.OrdenPregunta)</dd>
+                    </dl>
+                </div>
+            </div>
+            <div class="row justify-content-center mt-4">
+                <div class="col-md-6">
+                    <form asp-action="Delete" class="text-center">
+                        <input type="hidden" asp-for="IdPregunta" />
+                        <button type="submit" class="btn btn-danger btn-block">
+                            <i class="fas fa-trash-alt mr-2"></i> Eliminar
+                        </button>
+                    </form>
+                </div>
+                <div class="col-md-6">
+                    <a asp-action="Index" class="btn btn-secondary btn-block">
+                        <i class="fas fa-arrow-left mr-2"></i> Volver a la Lista
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
