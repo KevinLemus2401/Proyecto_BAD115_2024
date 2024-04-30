@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "hNahJCIGhKF+Q2oEGW89iD/LE+8aIcguGSXyU6ECr4w=",
+  "Hash": "2chGw67f/Hce1WRqJnmlYBCRVgsrABaWCi097ZhxyRM=",
   "Source": "ProyectoBAD",
   "BasePath": "_content/ProyectoBAD",
   "Mode": "Default",
@@ -3041,6 +3041,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\dist\\img\\user8-128x128.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\alexi\\Documents\\Proyecto_BAD115_2024\\Proyecto_BAD115_2024\\ProyectoBAD\\wwwroot\\dist\\img\\usuario.png",
+      "SourceId": "ProyectoBAD",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\alexi\\Documents\\Proyecto_BAD115_2024\\Proyecto_BAD115_2024\\ProyectoBAD\\wwwroot\\",
+      "BasePath": "_content/ProyectoBAD",
+      "RelativePath": "dist/img/usuario.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\dist\\img\\usuario.png"
     },
     {
       "Identity": "C:\\Users\\alexi\\Documents\\Proyecto_BAD115_2024\\Proyecto_BAD115_2024\\ProyectoBAD\\wwwroot\\dist\\js\\.eslintrc.json",
