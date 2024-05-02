@@ -1,72 +1,67 @@
 ﻿@model IEnumerable<ProyectoBAD.Models.Usuario>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Gestión de Usuarios";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Index</h1>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table table-striped" id="tabla1">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.EmailUsuario)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.TelefonoUsuario)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.PrimerNombreUsuario)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.SegundoNombreUsuario)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.PrimerApellidoUsuario)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.SegundoApellidoUsuario)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.GenUsuario)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.EmailUsuario)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TelefonoUsuario)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PrimerNombreUsuario)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.SegundoNombreUsuario)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PrimerApellidoUsuario)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.SegundoApellidoUsuario)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.GenUsuario)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.IdUsuario">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.IdUsuario">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.IdUsuario">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+<div class="container-fluid p-4">
+    <div class="row py-4">
+        <div class="col-6">
+            <h1 class="text-bold">@ViewData["Title"]</h1>
+        </div>
+        <div class="col-6 text-right">
+            <a asp-action="Create" class="btn btn-success">
+                <i class="fas fa-plus-circle mr-2"></i>Crear Usuario
+            </a>
+        </div>
+    </div>
+    <div class="card p-4">
+        <div class="table-responsive">
+            <table class="table table-striped" id="tabla1">
+                <thead>
+                    <tr>
+                        <th>@Html.DisplayNameFor(model => model.EmailUsuario)</th>
+                        <th>@Html.DisplayNameFor(model => model.TelefonoUsuario)</th>
+                        <th>@Html.DisplayNameFor(model => model.PrimerNombreUsuario)</th>
+                        <th>@Html.DisplayNameFor(model => model.SegundoNombreUsuario)</th>
+                        <th>@Html.DisplayNameFor(model => model.PrimerApellidoUsuario)</th>
+                        <th>@Html.DisplayNameFor(model => model.SegundoApellidoUsuario)</th>
+                        <th>@Html.DisplayNameFor(model => model.GenUsuario)</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@Html.DisplayFor(modelItem => item.EmailUsuario)</td>
+                            <td>@Html.DisplayFor(modelItem => item.TelefonoUsuario)</td>
+                            <td>@Html.DisplayFor(modelItem => item.PrimerNombreUsuario)</td>
+                            <td>@Html.DisplayFor(modelItem => item.SegundoNombreUsuario)</td>
+                            <td>@Html.DisplayFor(modelItem => item.PrimerApellidoUsuario)</td>
+                            <td>@Html.DisplayFor(modelItem => item.SegundoApellidoUsuario)</td>
+                            <td>@Html.DisplayFor(modelItem => item.GenUsuario)</td>
+                            <td>
+                                <a asp-action="Edit" asp-route-id="@item.IdUsuario" class="btn btn-primary btn-sm">
+                                    <i class="fas fa-edit"></i> Editar
+                                </a>
+                                <a asp-action="Details" asp-route-id="@item.IdUsuario" class="btn btn-info btn-sm">
+                                    <i class="fas fa-info-circle"></i> Detalles
+                                </a>
+                                <a asp-action="Delete" asp-route-id="@item.IdUsuario" class="btn btn-danger btn-sm">
+                                    <i class="fas fa-trash-alt"></i> Eliminar
+                                </a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+
+        
+
+    </div>
+
+</div>

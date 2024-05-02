@@ -21,9 +21,9 @@ namespace ProyectoBAD.Controllers
         // GET: Usuarios
         public async Task<IActionResult> Index()
         {
-              return _context.Usuarios != null ? 
-                          View(await _context.Usuarios.ToListAsync()) :
-                          Problem("Entity set 'sisencuestasContext.Usuarios'  is null.");
+            return _context.Usuarios != null ? 
+                       View(await _context.Usuarios.ToListAsync()) :
+                       Problem("Entity set 'sisencuestasContext.Usuarios'  is null."); 
         }
 
         // GET: Usuarios/Details/5
@@ -47,7 +47,9 @@ namespace ProyectoBAD.Controllers
         // GET: Usuarios/Create
         public IActionResult Create()
         {
-            return View();
+            int count = _context.Usuarios.Count();
+            ViewData["cantUsuarios"] = count;
+            return View(); 
         }
 
         // POST: Usuarios/Create
@@ -65,7 +67,7 @@ namespace ProyectoBAD.Controllers
             }
             return View(usuario);
         }
-
+    
         // GET: Usuarios/Edit/5
         public async Task<IActionResult> Edit(decimal? id)
         {
