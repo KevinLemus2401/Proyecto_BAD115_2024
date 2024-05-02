@@ -5,7 +5,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1 class="display-4 text-center my-4">@ViewData["Title"]</h1>
+<h1 class="display-4 text-center my-4">@ViewBag.PreguntaTitulo</h1>
 
 <div class="container">
     <div class="row justify-content-end mt-4">
@@ -36,15 +36,16 @@
                         <td>@Html.DisplayFor(modelItem => item.IdPreguntaNavigation.DescripcionPregunta)</td>
                         <td>
                             <div class="btn-group" role="group">
-                                <a asp-action="Edit" asp-route-id="@item.OpcionId" class="btn btn-primary">
+                                <a asp-action="Edit" asp-controller="Opcionpregunta" asp-route-id="@item.OpcionId" class="btn btn-primary">
                                     <i class="fas fa-edit"></i> Editar
                                 </a>
-                                <a asp-action="Details" asp-route-id="@item.OpcionId" class="btn btn-info">
+                                <a asp-action="Details" asp-controller="Opcionpregunta" asp-route-id="@item.OpcionId" class="btn btn-info">
                                     <i class="fas fa-info-circle"></i> Detalles
                                 </a>
-                                <a asp-action="Delete" asp-route-id="@item.OpcionId" class="btn btn-danger">
+                                <a asp-action="Delete" asp-controller="Opcionpregunta" asp-route-id="@item.OpcionId" class="btn btn-danger">
                                     <i class="fas fa-trash-alt"></i> Eliminar
                                 </a>
+
                             </div>
                         </td>
                     </tr>

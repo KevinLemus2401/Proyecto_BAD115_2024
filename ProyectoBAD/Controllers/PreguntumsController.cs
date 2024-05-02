@@ -169,5 +169,28 @@ namespace ProyectoBAD.Controllers
         {
           return (_context.Pregunta?.Any(e => e.IdPregunta == id)).GetValueOrDefault();
         }
+
+        // GET: Pregunta/ShowOptions/5
+        public async Task<IActionResult> ShowOptions(int? id)
+        {
+            if (id == null || _context.Pregunta == null)
+            {
+                return NotFound();
+            }
+
+            var preguntum = await _context.Pregunta
+                .Include(e => e.Opcionpregunta)  // Incluir las Opciones
+                .FirstOrDefaultAsync(m => m.IdPregunta == id);
+
+            if (preguntum == null)
+            {
+                return NotFound();
+            }
+
+            ViewBag.PreguntaTitulo = preguntum.DescripcionPregunta;
+
+            // Pasar los datos de las Opciones a la vista de preguntas existente
+            return View("~/Views/Opcionpregunta/Index.cshtml", preguntum.Opcionpregunta);
+        }
     }
 }

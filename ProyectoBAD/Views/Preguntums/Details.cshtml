@@ -24,6 +24,12 @@
                 <dt class="col-sm-3">Orden de la Pregunta</dt>
                 <dd class="col-sm-9">@Html.DisplayFor(model => model.OrdenPregunta)</dd>
             </dl>
+            <!-- "Mostrar Opciones" -->
+            <div class="text-center mt-4">
+                <a asp-action="ShowOptions" asp-route-id="@Model.IdPregunta" class="btn btn-primary">
+                    <i class="fas fa-list mr-1"></i> Mostrar Opciones de Respuesta
+                </a>
+            </div>
         </div>
     </div>
 </div>
