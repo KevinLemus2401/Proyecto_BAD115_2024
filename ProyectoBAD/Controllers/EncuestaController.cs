@@ -163,5 +163,31 @@ namespace ProyectoBAD.Controllers
         {
           return (_context.Encuesta?.Any(e => e.IdEncuesta == id)).GetValueOrDefault();
         }
+
+        // GET: Encuesta/ShowQuestions/5
+        public async Task<IActionResult> ShowQuestions(int? id)
+        {
+            if (id == null || _context.Encuesta == null)
+            {
+                return NotFound();
+            }
+
+            var encuestum = await _context.Encuesta
+                .Include(e => e.Pregunta)  // Incluir las preguntas
+                    .ThenInclude(p => p.TipoPregunta)  // Incluir el tipo de pregunta
+                .FirstOrDefaultAsync(m => m.IdEncuesta == id);
+
+            if (encuestum == null)
+            {
+                return NotFound();
+            }
+
+            ViewBag.EncuestaTitulo = encuestum.TituloEncuesta;
+
+            // Pasar los datos de las preguntas a la vista de preguntas existente
+            return View("~/Views/Preguntums/Index.cshtml", encuestum.Pregunta);
+        }
+
     }
 }
+
