@@ -21,13 +21,12 @@ namespace ProyectoBAD.Controllers
         // GET: Preguntums
         public async Task<IActionResult> Index()
         {
-              return _context.Pregunta != null ? 
-                          View(await _context.Pregunta.ToListAsync()) :
-                          Problem("Entity set 'sisencuestasContext.Pregunta'  is null.");
+            var sisencuestasContext = _context.Pregunta.Include(p => p.IdEncuestaNavigation).Include(p => p.TipoPregunta);
+            return View(await sisencuestasContext.ToListAsync());
         }
 
         // GET: Preguntums/Details/5
-        public async Task<IActionResult> Details(decimal? id)
+        public async Task<IActionResult> Details(int? id)
         {
             if (id == null || _context.Pregunta == null)
             {
@@ -35,6 +34,8 @@ namespace ProyectoBAD.Controllers
             }
 
             var preguntum = await _context.Pregunta
+                .Include(p => p.IdEncuestaNavigation)
+                .Include(p => p.TipoPregunta)
                 .FirstOrDefaultAsync(m => m.IdPregunta == id);
             if (preguntum == null)
             {
@@ -47,6 +48,8 @@ namespace ProyectoBAD.Controllers
         // GET: Preguntums/Create
         public IActionResult Create()
         {
+            ViewData["IdEncuesta"] = new SelectList(_context.Encuesta, "IdEncuesta", "IdEncuesta");
+            ViewData["TipoPreguntaId"] = new SelectList(_context.Tipopregunta, "TipoPreguntaId", "TipoPreguntaId");
             return View();
         }
 
@@ -63,11 +66,13 @@ namespace ProyectoBAD.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["IdEncuesta"] = new SelectList(_context.Encuesta, "IdEncuesta", "IdEncuesta", preguntum.IdEncuesta);
+            ViewData["TipoPreguntaId"] = new SelectList(_context.Tipopregunta, "TipoPreguntaId", "TipoPreguntaId", preguntum.TipoPreguntaId);
             return View(preguntum);
         }
 
         // GET: Preguntums/Edit/5
-        public async Task<IActionResult> Edit(decimal? id)
+        public async Task<IActionResult> Edit(int? id)
         {
             if (id == null || _context.Pregunta == null)
             {
@@ -79,6 +84,8 @@ namespace ProyectoBAD.Controllers
             {
                 return NotFound();
             }
+            ViewData["IdEncuesta"] = new SelectList(_context.Encuesta, "IdEncuesta", "IdEncuesta", preguntum.IdEncuesta);
+            ViewData["TipoPreguntaId"] = new SelectList(_context.Tipopregunta, "TipoPreguntaId", "TipoPreguntaId", preguntum.TipoPreguntaId);
             return View(preguntum);
         }
 
@@ -87,7 +94,7 @@ namespace ProyectoBAD.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(decimal id, [Bind("IdPregunta,IdEncuesta,TipoPreguntaId,DescripcionPregunta,RequeridaPregunta,OrdenPregunta")] Preguntum preguntum)
+        public async Task<IActionResult> Edit(int id, [Bind("IdPregunta,IdEncuesta,TipoPreguntaId,DescripcionPregunta,RequeridaPregunta,OrdenPregunta")] Preguntum preguntum)
         {
             if (id != preguntum.IdPregunta)
             {
@@ -114,11 +121,13 @@ namespace ProyectoBAD.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["IdEncuesta"] = new SelectList(_context.Encuesta, "IdEncuesta", "IdEncuesta", preguntum.IdEncuesta);
+            ViewData["TipoPreguntaId"] = new SelectList(_context.Tipopregunta, "TipoPreguntaId", "TipoPreguntaId", preguntum.TipoPreguntaId);
             return View(preguntum);
         }
 
         // GET: Preguntums/Delete/5
-        public async Task<IActionResult> Delete(decimal? id)
+        public async Task<IActionResult> Delete(int? id)
         {
             if (id == null || _context.Pregunta == null)
             {
@@ -126,6 +135,8 @@ namespace ProyectoBAD.Controllers
             }
 
             var preguntum = await _context.Pregunta
+                .Include(p => p.IdEncuestaNavigation)
+                .Include(p => p.TipoPregunta)
                 .FirstOrDefaultAsync(m => m.IdPregunta == id);
             if (preguntum == null)
             {
@@ -138,7 +149,7 @@ namespace ProyectoBAD.Controllers
         // POST: Preguntums/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(decimal id)
+        public async Task<IActionResult> DeleteConfirmed(int id)
         {
             if (_context.Pregunta == null)
             {
@@ -154,7 +165,7 @@ namespace ProyectoBAD.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        private bool PreguntumExists(decimal id)
+        private bool PreguntumExists(int id)
         {
           return (_context.Pregunta?.Any(e => e.IdPregunta == id)).GetValueOrDefault();
         }

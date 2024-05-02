@@ -10,12 +10,9 @@
 <p>
     <a asp-action="Create">Create New</a>
 </p>
-<table class="table table-striped" id="tabla1">
+<table class="table">
     <thead>
         <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.IdPregunta)
-            </th>
             <th>
                 @Html.DisplayNameFor(model => model.ValorOpcion)
             </th>
@@ -28,15 +25,15 @@
             <th>
                 @Html.DisplayNameFor(model => model.OrdenOpcion)
             </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdPreguntaNavigation)
+            </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
 @foreach (var item in Model) {
         <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.IdPregunta)
-            </td>
             <td>
                 @Html.DisplayFor(modelItem => item.ValorOpcion)
             </td>
@@ -48,6 +45,9 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.OrdenOpcion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdPreguntaNavigation.IdPregunta)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.OpcionId">Edit</a> |

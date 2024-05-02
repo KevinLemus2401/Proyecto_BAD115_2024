@@ -1,23 +1,19 @@
 ﻿@model ProyectoBAD.Models.Encuestado
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Edit";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Create</h1>
+<h1>Edit</h1>
 
 <h4>Encuestado</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="Create">
+        <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="IdEncuestado" class="control-label"></label>
-                <input asp-for="IdEncuestado" class="form-control" />
-                <span asp-validation-for="IdEncuestado" class="text-danger"></span>
-            </div>
+            <input type="hidden" asp-for="IdEncuestado" />
             <div class="form-group">
                 <label asp-for="EmailEncuestado" class="control-label"></label>
                 <input asp-for="EmailEncuestado" class="form-control" />
@@ -34,7 +30,7 @@
                 <span asp-validation-for="GenEncuestado" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Save" class="btn btn-primary" />
             </div>
         </form>
     </div>

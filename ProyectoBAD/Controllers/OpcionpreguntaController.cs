@@ -21,13 +21,12 @@ namespace ProyectoBAD.Controllers
         // GET: Opcionpregunta
         public async Task<IActionResult> Index()
         {
-              return _context.Opcionpregunta != null ? 
-                          View(await _context.Opcionpregunta.ToListAsync()) :
-                          Problem("Entity set 'sisencuestasContext.Opcionpregunta'  is null.");
+            var sisencuestasContext = _context.Opcionpregunta.Include(o => o.IdPreguntaNavigation);
+            return View(await sisencuestasContext.ToListAsync());
         }
 
         // GET: Opcionpregunta/Details/5
-        public async Task<IActionResult> Details(decimal? id)
+        public async Task<IActionResult> Details(int? id)
         {
             if (id == null || _context.Opcionpregunta == null)
             {
@@ -35,6 +34,7 @@ namespace ProyectoBAD.Controllers
             }
 
             var opcionpreguntum = await _context.Opcionpregunta
+                .Include(o => o.IdPreguntaNavigation)
                 .FirstOrDefaultAsync(m => m.OpcionId == id);
             if (opcionpreguntum == null)
             {
@@ -47,6 +47,7 @@ namespace ProyectoBAD.Controllers
         // GET: Opcionpregunta/Create
         public IActionResult Create()
         {
+            ViewData["IdPregunta"] = new SelectList(_context.Pregunta, "IdPregunta", "IdPregunta");
             return View();
         }
 
@@ -63,11 +64,12 @@ namespace ProyectoBAD.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["IdPregunta"] = new SelectList(_context.Pregunta, "IdPregunta", "IdPregunta", opcionpreguntum.IdPregunta);
             return View(opcionpreguntum);
         }
 
         // GET: Opcionpregunta/Edit/5
-        public async Task<IActionResult> Edit(decimal? id)
+        public async Task<IActionResult> Edit(int? id)
         {
             if (id == null || _context.Opcionpregunta == null)
             {
@@ -79,6 +81,7 @@ namespace ProyectoBAD.Controllers
             {
                 return NotFound();
             }
+            ViewData["IdPregunta"] = new SelectList(_context.Pregunta, "IdPregunta", "IdPregunta", opcionpreguntum.IdPregunta);
             return View(opcionpreguntum);
         }
 
@@ -87,7 +90,7 @@ namespace ProyectoBAD.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(decimal id, [Bind("OpcionId,IdPregunta,ValorOpcion,DescripcionOpcion,EstadoOpcion,OrdenOpcion")] Opcionpreguntum opcionpreguntum)
+        public async Task<IActionResult> Edit(int id, [Bind("OpcionId,IdPregunta,ValorOpcion,DescripcionOpcion,EstadoOpcion,OrdenOpcion")] Opcionpreguntum opcionpreguntum)
         {
             if (id != opcionpreguntum.OpcionId)
             {
@@ -114,11 +117,12 @@ namespace ProyectoBAD.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["IdPregunta"] = new SelectList(_context.Pregunta, "IdPregunta", "IdPregunta", opcionpreguntum.IdPregunta);
             return View(opcionpreguntum);
         }
 
         // GET: Opcionpregunta/Delete/5
-        public async Task<IActionResult> Delete(decimal? id)
+        public async Task<IActionResult> Delete(int? id)
         {
             if (id == null || _context.Opcionpregunta == null)
             {
@@ -126,6 +130,7 @@ namespace ProyectoBAD.Controllers
             }
 
             var opcionpreguntum = await _context.Opcionpregunta
+                .Include(o => o.IdPreguntaNavigation)
                 .FirstOrDefaultAsync(m => m.OpcionId == id);
             if (opcionpreguntum == null)
             {
@@ -138,7 +143,7 @@ namespace ProyectoBAD.Controllers
         // POST: Opcionpregunta/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(decimal id)
+        public async Task<IActionResult> DeleteConfirmed(int id)
         {
             if (_context.Opcionpregunta == null)
             {
@@ -154,7 +159,7 @@ namespace ProyectoBAD.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        private bool OpcionpreguntumExists(decimal id)
+        private bool OpcionpreguntumExists(int id)
         {
           return (_context.Opcionpregunta?.Any(e => e.OpcionId == id)).GetValueOrDefault();
         }

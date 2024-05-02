@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace ProyectoBAD.Models
 {
@@ -17,7 +18,9 @@ namespace ProyectoBAD.Models
         public string ObjetivoEncuesta { get; set; } = null!;
         public string GrupometaEncuesta { get; set; } = null!;
         public string IndicacionesEncuesta { get; set; } = null!;
-        public DateTime FechaEncuesta { get; set; }
+
+        [DataType(DataType.Date)]
+        public DateTime? FechaEncuesta { get; set; }
         public bool? EstadoEncuesta { get; set; }
 
         public virtual Usuario? IdUsuarioNavigation { get; set; }

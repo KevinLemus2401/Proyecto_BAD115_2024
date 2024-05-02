@@ -18,7 +18,7 @@
                         <input type="hidden" asp-for="IdEncuesta" />
                         <div class="form-group">
                             <label asp-for="IdUsuario" class="control-label">ID de Usuario</label>
-                            <input asp-for="IdUsuario" class="form-control" />
+                            <select asp-for="IdUsuario" class="form-control" asp-items="ViewBag.IdUsuario"></select>
                             <span asp-validation-for="IdUsuario" class="text-danger"></span>
                         </div>
                         <div class="form-group">
@@ -43,7 +43,7 @@
                         </div>
                         <div class="form-group">
                             <label asp-for="FechaEncuesta" class="control-label">Fecha de la Encuesta</label>
-                            <input asp-for="FechaEncuesta" class="form-control" />
+                            <input asp-for="FechaEncuesta" type="date" class="form-control" />
                             <span asp-validation-for="FechaEncuesta" class="text-danger"></span>
                         </div>
                         <div class="form-group">

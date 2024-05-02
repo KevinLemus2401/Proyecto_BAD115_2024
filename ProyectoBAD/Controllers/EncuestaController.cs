@@ -21,13 +21,12 @@ namespace ProyectoBAD.Controllers
         // GET: Encuesta
         public async Task<IActionResult> Index()
         {
-              return _context.Encuesta != null ? 
-                          View(await _context.Encuesta.ToListAsync()) :
-                          Problem("Entity set 'sisencuestasContext.Encuesta'  is null.");
+            var sisencuestasContext = _context.Encuesta.Include(e => e.IdUsuarioNavigation);
+            return View(await sisencuestasContext.ToListAsync());
         }
 
         // GET: Encuesta/Details/5
-        public async Task<IActionResult> Details(decimal? id)
+        public async Task<IActionResult> Details(int? id)
         {
             if (id == null || _context.Encuesta == null)
             {
@@ -35,6 +34,7 @@ namespace ProyectoBAD.Controllers
             }
 
             var encuestum = await _context.Encuesta
+                .Include(e => e.IdUsuarioNavigation)
                 .FirstOrDefaultAsync(m => m.IdEncuesta == id);
             if (encuestum == null)
             {
@@ -47,6 +47,7 @@ namespace ProyectoBAD.Controllers
         // GET: Encuesta/Create
         public IActionResult Create()
         {
+            ViewData["IdUsuario"] = new SelectList(_context.Usuarios, "IdUsuario", "IdUsuario");
             return View();
         }
 
@@ -63,11 +64,12 @@ namespace ProyectoBAD.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["IdUsuario"] = new SelectList(_context.Usuarios, "IdUsuario", "IdUsuario", encuestum.IdUsuario);
             return View(encuestum);
         }
 
         // GET: Encuesta/Edit/5
-        public async Task<IActionResult> Edit(decimal? id)
+        public async Task<IActionResult> Edit(int? id)
         {
             if (id == null || _context.Encuesta == null)
             {
@@ -79,6 +81,7 @@ namespace ProyectoBAD.Controllers
             {
                 return NotFound();
             }
+            ViewData["IdUsuario"] = new SelectList(_context.Usuarios, "IdUsuario", "IdUsuario", encuestum.IdUsuario);
             return View(encuestum);
         }
 
@@ -87,7 +90,7 @@ namespace ProyectoBAD.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(decimal id, [Bind("IdEncuesta,IdUsuario,TituloEncuesta,ObjetivoEncuesta,GrupometaEncuesta,IndicacionesEncuesta,FechaEncuesta,EstadoEncuesta")] Encuestum encuestum)
+        public async Task<IActionResult> Edit(int id, [Bind("IdEncuesta,IdUsuario,TituloEncuesta,ObjetivoEncuesta,GrupometaEncuesta,IndicacionesEncuesta,FechaEncuesta,EstadoEncuesta")] Encuestum encuestum)
         {
             if (id != encuestum.IdEncuesta)
             {
@@ -114,11 +117,12 @@ namespace ProyectoBAD.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["IdUsuario"] = new SelectList(_context.Usuarios, "IdUsuario", "IdUsuario", encuestum.IdUsuario);
             return View(encuestum);
         }
 
         // GET: Encuesta/Delete/5
-        public async Task<IActionResult> Delete(decimal? id)
+        public async Task<IActionResult> Delete(int? id)
         {
             if (id == null || _context.Encuesta == null)
             {
@@ -126,6 +130,7 @@ namespace ProyectoBAD.Controllers
             }
 
             var encuestum = await _context.Encuesta
+                .Include(e => e.IdUsuarioNavigation)
                 .FirstOrDefaultAsync(m => m.IdEncuesta == id);
             if (encuestum == null)
             {
@@ -138,7 +143,7 @@ namespace ProyectoBAD.Controllers
         // POST: Encuesta/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(decimal id)
+        public async Task<IActionResult> DeleteConfirmed(int id)
         {
             if (_context.Encuesta == null)
             {
@@ -154,7 +159,7 @@ namespace ProyectoBAD.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        private bool EncuestumExists(decimal id)
+        private bool EncuestumExists(int id)
         {
           return (_context.Encuesta?.Any(e => e.IdEncuesta == id)).GetValueOrDefault();
         }
