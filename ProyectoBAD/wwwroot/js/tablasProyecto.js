@@ -44,8 +44,13 @@ document.addEventListener("DOMContentLoaded", function () {
         select: true,
         language,
         dom: "<'row'<'col-sm-12 py-4'B>>" +
-            "<'row'<'col-12 col-md-4 col-xl-8'l><'col-12 col-md-8 col-xl-4'f>>" +
-            "<'row'<'col-sm-12'tr>>" +
-            "<'row'<'col-sm-5'i><'col-sm-7'p>>",
+            "<'row'<'col-12 col-md-4 col-xl-8 text-left'l><'col-12 col-md-8 col-xl-4 text-right'f>>" +
+            "<'p-2'>"+
+            "<'row'<'col-12'tr>>" +
+            "<'p-2'>" +
+            "<'row'<'col-sm-5'i><'col-sm-7 d-flex justify-content-end'p>>",
+        buttons: [
+            'copy', 'excel', 'pdf'
+        ]
     });
 })
