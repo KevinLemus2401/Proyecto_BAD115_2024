@@ -100,7 +100,6 @@ namespace ProyectoBAD.Models
                 entity.HasOne(d => d.IdUsuarioNavigation)
                     .WithMany(p => p.Encuesta)
                     .HasForeignKey(d => d.IdUsuario)
-                    .OnDelete(DeleteBehavior.Cascade)
                     .HasConstraintName("FK_ENCUESTA_USUARIO_E_USUARIO");
             });
 
@@ -164,7 +163,6 @@ namespace ProyectoBAD.Models
                 entity.HasOne(d => d.IdEncuestaNavigation)
                     .WithMany(p => p.Pregunta)
                     .HasForeignKey(d => d.IdEncuesta)
-                    .OnDelete(DeleteBehavior.Cascade)
                     .HasConstraintName("FK_PREGUNTA_REL_ENCUE_ENCUESTA");
 
                 entity.HasOne(d => d.TipoPregunta)
@@ -209,7 +207,6 @@ namespace ProyectoBAD.Models
                 entity.HasOne(d => d.IdEncuestaNavigation)
                     .WithMany(p => p.Respuesta)
                     .HasForeignKey(d => d.IdEncuesta)
-                    .OnDelete(DeleteBehavior.Cascade)
                     .HasConstraintName("FK_RESPUEST_RELATIONS_ENCUESTA");
 
                 entity.HasOne(d => d.IdEncuestadoNavigation)

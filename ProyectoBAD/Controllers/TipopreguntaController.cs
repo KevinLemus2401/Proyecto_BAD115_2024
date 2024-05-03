@@ -27,7 +27,7 @@ namespace ProyectoBAD.Controllers
         }
 
         // GET: Tipopregunta/Details/5
-        public async Task<IActionResult> Details(decimal? id)
+        public async Task<IActionResult> Details(int? id)
         {
             if (id == null || _context.Tipopregunta == null)
             {
@@ -67,7 +67,7 @@ namespace ProyectoBAD.Controllers
         }
 
         // GET: Tipopregunta/Edit/5
-        public async Task<IActionResult> Edit(decimal? id)
+        public async Task<IActionResult> Edit(int? id)
         {
             if (id == null || _context.Tipopregunta == null)
             {
@@ -87,7 +87,7 @@ namespace ProyectoBAD.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(decimal id, [Bind("TipoPreguntaId,NombreTipoPregunta,DescripcionTipoPregunta")] Tipopreguntum tipopreguntum)
+        public async Task<IActionResult> Edit(int id, [Bind("TipoPreguntaId,NombreTipoPregunta,DescripcionTipoPregunta")] Tipopreguntum tipopreguntum)
         {
             if (id != tipopreguntum.TipoPreguntaId)
             {
@@ -118,7 +118,7 @@ namespace ProyectoBAD.Controllers
         }
 
         // GET: Tipopregunta/Delete/5
-        public async Task<IActionResult> Delete(decimal? id)
+        public async Task<IActionResult> Delete(int? id)
         {
             if (id == null || _context.Tipopregunta == null)
             {
@@ -138,7 +138,7 @@ namespace ProyectoBAD.Controllers
         // POST: Tipopregunta/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(decimal id)
+        public async Task<IActionResult> DeleteConfirmed(int id)
         {
             if (_context.Tipopregunta == null)
             {
@@ -154,7 +154,7 @@ namespace ProyectoBAD.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        private bool TipopreguntumExists(decimal id)
+        private bool TipopreguntumExists(int id)
         {
           return (_context.Tipopregunta?.Any(e => e.TipoPreguntaId == id)).GetValueOrDefault();
         }

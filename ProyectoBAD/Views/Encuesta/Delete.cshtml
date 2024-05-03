@@ -13,13 +13,13 @@
             <div class="card">
                 <h3 class="card-title text-center mb-4 mt-4">¿Estás seguro de que deseas eliminar esta encuesta?</h3>
                 <div class="card-body">
-         
+
                     <div class="row justify-content-center">
                         <div class="col-md-8">
                             <h4 class="card-subtitle mb-3">Detalles de la Encuesta</h4>
                             <dl class="row">
                                 <dt class="col-sm-4 text-muted">ID de Usuario</dt>
-                                <dd class="col-sm-8">@Html.DisplayFor(model => model.IdUsuario)</dd>
+                                <dd class="col-sm-8">@Html.DisplayFor(model => model.IdUsuarioNavigation.IdUsuario)</dd>
                                 <dt class="col-sm-4 text-muted">Título de la Encuesta</dt>
                                 <dd class="col-sm-8">@Html.DisplayFor(model => model.TituloEncuesta)</dd>
                                 <dt class="col-sm-4 text-muted">Objetivo de la Encuesta</dt>
