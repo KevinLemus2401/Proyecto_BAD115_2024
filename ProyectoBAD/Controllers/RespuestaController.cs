@@ -21,13 +21,12 @@ namespace ProyectoBAD.Controllers
         // GET: Respuesta
         public async Task<IActionResult> Index()
         {
-              return _context.Respuesta != null ? 
-                          View(await _context.Respuesta.ToListAsync()) :
-                          Problem("Entity set 'sisencuestasContext.Respuesta'  is null.");
+            var sisencuestasContext = _context.Respuesta.Include(r => r.IdEncuestaNavigation).Include(r => r.IdEncuestadoNavigation).Include(r => r.IdPreguntaNavigation).Include(r => r.Opcion);
+            return View(await sisencuestasContext.ToListAsync());
         }
 
         // GET: Respuesta/Details/5
-        public async Task<IActionResult> Details(decimal? id)
+        public async Task<IActionResult> Details(int? id)
         {
             if (id == null || _context.Respuesta == null)
             {
@@ -35,6 +34,10 @@ namespace ProyectoBAD.Controllers
             }
 
             var respuestum = await _context.Respuesta
+                .Include(r => r.IdEncuestaNavigation)
+                .Include(r => r.IdEncuestadoNavigation)
+                .Include(r => r.IdPreguntaNavigation)
+                .Include(r => r.Opcion)
                 .FirstOrDefaultAsync(m => m.RespuestaId == id);
             if (respuestum == null)
             {
@@ -47,6 +50,10 @@ namespace ProyectoBAD.Controllers
         // GET: Respuesta/Create
         public IActionResult Create()
         {
+            ViewData["IdEncuesta"] = new SelectList(_context.Encuesta, "IdEncuesta", "IdEncuesta");
+            ViewData["IdEncuestado"] = new SelectList(_context.Encuestados, "IdEncuestado", "IdEncuestado");
+            ViewData["IdPregunta"] = new SelectList(_context.Pregunta, "IdPregunta", "IdPregunta");
+            ViewData["OpcionId"] = new SelectList(_context.Opcionpregunta, "OpcionId", "OpcionId");
             return View();
         }
 
@@ -63,11 +70,15 @@ namespace ProyectoBAD.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["IdEncuesta"] = new SelectList(_context.Encuesta, "IdEncuesta", "IdEncuesta", respuestum.IdEncuesta);
+            ViewData["IdEncuestado"] = new SelectList(_context.Encuestados, "IdEncuestado", "IdEncuestado", respuestum.IdEncuestado);
+            ViewData["IdPregunta"] = new SelectList(_context.Pregunta, "IdPregunta", "IdPregunta", respuestum.IdPregunta);
+            ViewData["OpcionId"] = new SelectList(_context.Opcionpregunta, "OpcionId", "OpcionId", respuestum.OpcionId);
             return View(respuestum);
         }
 
         // GET: Respuesta/Edit/5
-        public async Task<IActionResult> Edit(decimal? id)
+        public async Task<IActionResult> Edit(int? id)
         {
             if (id == null || _context.Respuesta == null)
             {
@@ -79,6 +90,10 @@ namespace ProyectoBAD.Controllers
             {
                 return NotFound();
             }
+            ViewData["IdEncuesta"] = new SelectList(_context.Encuesta, "IdEncuesta", "IdEncuesta", respuestum.IdEncuesta);
+            ViewData["IdEncuestado"] = new SelectList(_context.Encuestados, "IdEncuestado", "IdEncuestado", respuestum.IdEncuestado);
+            ViewData["IdPregunta"] = new SelectList(_context.Pregunta, "IdPregunta", "IdPregunta", respuestum.IdPregunta);
+            ViewData["OpcionId"] = new SelectList(_context.Opcionpregunta, "OpcionId", "OpcionId", respuestum.OpcionId);
             return View(respuestum);
         }
 
@@ -87,7 +102,7 @@ namespace ProyectoBAD.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(decimal id, [Bind("RespuestaId,OpcionId,IdPregunta,IdEncuestado,IdEncuesta,FechaRespuesta,TextoRespuesta")] Respuestum respuestum)
+        public async Task<IActionResult> Edit(int id, [Bind("RespuestaId,OpcionId,IdPregunta,IdEncuestado,IdEncuesta,FechaRespuesta,TextoRespuesta")] Respuestum respuestum)
         {
             if (id != respuestum.RespuestaId)
             {
@@ -114,11 +129,15 @@ namespace ProyectoBAD.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["IdEncuesta"] = new SelectList(_context.Encuesta, "IdEncuesta", "IdEncuesta", respuestum.IdEncuesta);
+            ViewData["IdEncuestado"] = new SelectList(_context.Encuestados, "IdEncuestado", "IdEncuestado", respuestum.IdEncuestado);
+            ViewData["IdPregunta"] = new SelectList(_context.Pregunta, "IdPregunta", "IdPregunta", respuestum.IdPregunta);
+            ViewData["OpcionId"] = new SelectList(_context.Opcionpregunta, "OpcionId", "OpcionId", respuestum.OpcionId);
             return View(respuestum);
         }
 
         // GET: Respuesta/Delete/5
-        public async Task<IActionResult> Delete(decimal? id)
+        public async Task<IActionResult> Delete(int? id)
         {
             if (id == null || _context.Respuesta == null)
             {
@@ -126,6 +145,10 @@ namespace ProyectoBAD.Controllers
             }
 
             var respuestum = await _context.Respuesta
+                .Include(r => r.IdEncuestaNavigation)
+                .Include(r => r.IdEncuestadoNavigation)
+                .Include(r => r.IdPreguntaNavigation)
+                .Include(r => r.Opcion)
                 .FirstOrDefaultAsync(m => m.RespuestaId == id);
             if (respuestum == null)
             {
@@ -138,7 +161,7 @@ namespace ProyectoBAD.Controllers
         // POST: Respuesta/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(decimal id)
+        public async Task<IActionResult> DeleteConfirmed(int id)
         {
             if (_context.Respuesta == null)
             {
@@ -154,7 +177,7 @@ namespace ProyectoBAD.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        private bool RespuestumExists(decimal id)
+        private bool RespuestumExists(int id)
         {
           return (_context.Respuesta?.Any(e => e.RespuestaId == id)).GetValueOrDefault();
         }

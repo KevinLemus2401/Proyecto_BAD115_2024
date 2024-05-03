@@ -14,16 +14,22 @@
             <hr class="mt-4"/>
             <dl class="row">
                 <dt class="col-sm-3">ID de la Encuesta</dt>
-                <dd class="col-sm-9">@Html.DisplayFor(model => model.IdEncuesta)</dd>
+                <dd class="col-sm-9">@Html.DisplayFor(model => model.IdEncuestaNavigation.IdEncuesta)</dd>
                 <dt class="col-sm-3">Tipo de Pregunta</dt>
-                <dd class="col-sm-9">@Html.DisplayFor(model => model.TipoPreguntaId)</dd>
-                <dt class="col-sm-3">Descripción de la Pregunta</dt>
+                <dd class="col-sm-9">@Html.DisplayFor(model => model.TipoPregunta.TipoPreguntaId)</dd>
+                <dt class="col-sm-3">Pregunta</dt>
                 <dd class="col-sm-9">@Html.DisplayFor(model => model.DescripcionPregunta)</dd>
                 <dt class="col-sm-3">Requerida</dt>
                 <dd class="col-sm-9">@Html.DisplayFor(model => model.RequeridaPregunta)</dd>
                 <dt class="col-sm-3">Orden de la Pregunta</dt>
                 <dd class="col-sm-9">@Html.DisplayFor(model => model.OrdenPregunta)</dd>
             </dl>
+            <!-- "Mostrar Opciones" -->
+            <div class="text-center mt-4">
+                <a asp-action="ShowOptions" asp-route-id="@Model.IdPregunta" class="btn btn-primary">
+                    <i class="fas fa-list mr-1"></i> Mostrar Opciones de Respuesta
+                </a>
+            </div>
         </div>
     </div>
 </div>

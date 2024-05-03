@@ -27,7 +27,7 @@ namespace ProyectoBAD.Controllers
         }
 
         // GET: Usuarios/Details/5
-        public async Task<IActionResult> Details(decimal? id)
+        public async Task<IActionResult> Details(int? id)
         {
             if (id == null || _context.Usuarios == null)
             {
@@ -67,7 +67,7 @@ namespace ProyectoBAD.Controllers
         }
 
         // GET: Usuarios/Edit/5
-        public async Task<IActionResult> Edit(decimal? id)
+        public async Task<IActionResult> Edit(int? id)
         {
             if (id == null || _context.Usuarios == null)
             {
@@ -87,7 +87,7 @@ namespace ProyectoBAD.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(decimal id, [Bind("IdUsuario,EmailUsuario,TelefonoUsuario,PrimerNombreUsuario,SegundoNombreUsuario,PrimerApellidoUsuario,SegundoApellidoUsuario,GenUsuario")] Usuario usuario)
+        public async Task<IActionResult> Edit(int id, [Bind("IdUsuario,EmailUsuario,TelefonoUsuario,PrimerNombreUsuario,SegundoNombreUsuario,PrimerApellidoUsuario,SegundoApellidoUsuario,GenUsuario")] Usuario usuario)
         {
             if (id != usuario.IdUsuario)
             {
@@ -118,7 +118,7 @@ namespace ProyectoBAD.Controllers
         }
 
         // GET: Usuarios/Delete/5
-        public async Task<IActionResult> Delete(decimal? id)
+        public async Task<IActionResult> Delete(int? id)
         {
             if (id == null || _context.Usuarios == null)
             {
@@ -138,7 +138,7 @@ namespace ProyectoBAD.Controllers
         // POST: Usuarios/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(decimal id)
+        public async Task<IActionResult> DeleteConfirmed(int id)
         {
             if (_context.Usuarios == null)
             {
@@ -154,7 +154,7 @@ namespace ProyectoBAD.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        private bool UsuarioExists(decimal id)
+        private bool UsuarioExists(int id)
         {
           return (_context.Usuarios?.Any(e => e.IdUsuario == id)).GetValueOrDefault();
         }

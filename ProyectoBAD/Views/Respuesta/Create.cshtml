@@ -14,24 +14,25 @@
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
+                <label asp-for="RespuestaId" class="control-label"></label>
+                <input asp-for="RespuestaId" class="form-control" />
+                <span asp-validation-for="RespuestaId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
                 <label asp-for="OpcionId" class="control-label"></label>
-                <input asp-for="OpcionId" class="form-control" />
-                <span asp-validation-for="OpcionId" class="text-danger"></span>
+                <select asp-for="OpcionId" class ="form-control" asp-items="ViewBag.OpcionId"></select>
             </div>
             <div class="form-group">
                 <label asp-for="IdPregunta" class="control-label"></label>
-                <input asp-for="IdPregunta" class="form-control" />
-                <span asp-validation-for="IdPregunta" class="text-danger"></span>
+                <select asp-for="IdPregunta" class ="form-control" asp-items="ViewBag.IdPregunta"></select>
             </div>
             <div class="form-group">
                 <label asp-for="IdEncuestado" class="control-label"></label>
-                <input asp-for="IdEncuestado" class="form-control" />
-                <span asp-validation-for="IdEncuestado" class="text-danger"></span>
+                <select asp-for="IdEncuestado" class ="form-control" asp-items="ViewBag.IdEncuestado"></select>
             </div>
             <div class="form-group">
                 <label asp-for="IdEncuesta" class="control-label"></label>
-                <input asp-for="IdEncuesta" class="form-control" />
-                <span asp-validation-for="IdEncuesta" class="text-danger"></span>
+                <select asp-for="IdEncuesta" class ="form-control" asp-items="ViewBag.IdEncuesta"></select>
             </div>
             <div class="form-group">
                 <label asp-for="TextoRespuesta" class="control-label"></label>

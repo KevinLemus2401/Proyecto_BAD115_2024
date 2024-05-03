@@ -12,6 +12,7 @@
         <div class="col-md-6">
             <form asp-action="Create">
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
                 <div class="form-group">
                     <label asp-for="IdUsuario" class="control-label">ID de Usuario</label>
                     <input asp-for="IdUsuario" class="form-control" />
@@ -42,6 +43,7 @@
                     <input asp-for="FechaEncuesta" type="date" class="form-control" />
                     <span asp-validation-for="FechaEncuesta" class="text-danger"></span>
                 </div>
+
                 <div class="form-group">
                     <label asp-for="EstadoEncuesta" class="control-label">Estado de la Encuesta</label>
                     <input asp-for="EstadoEncuesta" class="form-control" />

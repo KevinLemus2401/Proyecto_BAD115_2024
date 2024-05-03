@@ -11,16 +11,16 @@
     <div class="card mt-4">
         <h3 class="card-title text-center mb-4 mt-4">¿Estás seguro de que deseas eliminar esta pregunta?</h3>
         <div class="card-body">
-            
+
             <div class="row justify-content-center">
                 <div class="col-md-12">
                     <h4 class="card-subtitle mb-3">Detalles de la Pregunta</h4>
                     <dl class="row">
                         <dt class="col-sm-3 text-muted">ID de la Encuesta</dt>
-                        <dd class="col-sm-9">@Html.DisplayFor(model => model.IdEncuesta)</dd>
+                        <dd class="col-sm-9">@Html.DisplayFor(model => model.IdEncuestaNavigation.IdEncuesta)</dd>
                         <dt class="col-sm-3 text-muted">Tipo de Pregunta</dt>
-                        <dd class="col-sm-9">@Html.DisplayFor(model => model.TipoPreguntaId)</dd>
-                        <dt class="col-sm-3 text-muted">Descripción de la Pregunta</dt>
+                        <dd class="col-sm-9">@Html.DisplayFor(model => model.TipoPregunta.TipoPreguntaId)</dd>
+                        <dt class="col-sm-3 text-muted">Pregunta</dt>
                         <dd class="col-sm-9">@Html.DisplayFor(model => model.DescripcionPregunta)</dd>
                         <dt class="col-sm-3 text-muted">Requerida</dt>
                         <dd class="col-sm-9">@Html.DisplayFor(model => model.RequeridaPregunta)</dd>
@@ -31,7 +31,7 @@
             </div>
             <div class="row justify-content-center mt-4">
                 <div class="col-md-6">
-                    <form asp-action="Delete" class="text-center">
+                    <form asp-action="Delete">
                         <input type="hidden" asp-for="IdPregunta" />
                         <button type="submit" class="btn btn-danger btn-block">
                             <i class="fas fa-trash-alt mr-2"></i> Eliminar
