@@ -5,57 +5,64 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Details</h1>
 
-<div>
-    <h4>Usuario</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.EmailUsuario)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.EmailUsuario)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.TelefonoUsuario)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.TelefonoUsuario)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.PrimerNombreUsuario)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.PrimerNombreUsuario)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.SegundoNombreUsuario)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.SegundoNombreUsuario)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.PrimerApellidoUsuario)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.PrimerApellidoUsuario)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.SegundoApellidoUsuario)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.SegundoApellidoUsuario)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.GenUsuario)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.GenUsuario)
-        </dd>
-    </dl>
-</div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model.IdUsuario">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+
+<div class="p-4">
+    <div class="card container px-0" style="width: 800px;">
+        <div class="card-header text-center">
+            <h1>Detalles de Usuario</h1>
+        </div>
+        <div class="card-body">
+            <dl class="row">
+                <dt class="col-4">
+                    Correo electrónico:
+                </dt>
+                <dd class="col-8">
+                    @Html.DisplayFor(model => model.EmailUsuario)
+                </dd>
+                <dt class="col-4">
+                    Teléfono Movil:
+                </dt>
+                <dd class="col-8">
+                    @Html.DisplayFor(model => model.TelefonoUsuario)
+                </dd>
+                <dt class="col-4">
+                    Primer nombre:
+                </dt>
+                <dd class="col-8">
+                    @Html.DisplayFor(model => model.PrimerNombreUsuario)
+                </dd>
+                <dt class="col-4">
+                    Segundo Nombre:
+                </dt>
+                <dd class="col-8">
+                    @Html.DisplayFor(model => model.SegundoNombreUsuario)
+                </dd>
+                <dt class="col-4">
+                    Primer Apellido:
+                </dt>
+                <dd class="col-8">
+                    @Html.DisplayFor(model => model.PrimerApellidoUsuario)
+                </dd>
+                <dt class="col-4">
+                    Segundo Apellido:
+                </dt>
+                <dd class="col-8">
+                    @Html.DisplayFor(model => model.SegundoApellidoUsuario)
+                </dd>
+                <dt class="col-4">
+                    Genero:
+                </dt>
+                <dd class="col-8">
+                    <span>@(Model.GenUsuario.Trim().Replace(" ", "") == "M" ? "Masculino" : (Model.GenUsuario.Trim().Replace(" ", "") == "F" ? "Femenino" : ""))</span>
+                </dd>
+            </dl>
+        </div>
+        <div class="card-footer">
+            <div class="row">
+                <div class="px-2"> <a class="btn btn-secondary text-white" asp-action="Edit" asp-route-id="@Model.IdUsuario">Editar</a> </div>
+                <div class=""> <a type="submit" value="Guardar" class="btn btn-primary" asp-action="Index"> Regresar</a></div>
+            </div>
+        </div>
+    </div>
 </div>

@@ -6,7 +6,7 @@
 }
 
 
-<div class="container-fluid p-4">
+<div class="container">
     <div class="row py-4">
         <div class="col-6">
             <h1 class="text-bold">@ViewData["Title"]</h1>
@@ -17,9 +17,8 @@
             </a>
         </div>
     </div>
-    <div class="card p-4">
-        <div class="table-responsive">
-            <table class="table table-striped" id="tabla1">
+    <div class="table-responsive mt-4">
+        <table class="table table-borderless table-hover  nowrap" style="width:100%" id="tblUsuarios" name="tblUsuarios">
                 <thead>
                     <tr>
                         <th>@Html.DisplayNameFor(model => model.EmailUsuario)</th>
@@ -42,23 +41,24 @@
                             <td>@Html.DisplayFor(modelItem => item.SegundoNombreUsuario)</td>
                             <td>@Html.DisplayFor(modelItem => item.PrimerApellidoUsuario)</td>
                             <td>@Html.DisplayFor(modelItem => item.SegundoApellidoUsuario)</td>
-                            <td>@Html.DisplayFor(modelItem => item.GenUsuario)</td>
+                            <td>
+                                <span>@(item.GenUsuario.Trim().Replace(" ", "") == "M" ? "Masculino" : (item.GenUsuario.Trim().Replace(" ", "") == "F" ? "Femenino" : ""))</span>
+                            </td>
                             <td>
                                 <a asp-action="Edit" asp-route-id="@item.IdUsuario" class="btn btn-primary btn-sm">
-                                    <i class="fas fa-edit"></i> Editar
+                                    <i class="fas fa-edit"></i>
                                 </a>
                                 <a asp-action="Details" asp-route-id="@item.IdUsuario" class="btn btn-info btn-sm">
-                                    <i class="fas fa-info-circle"></i> Detalles
+                                    <i class="fas fa-eye"></i>
                                 </a>
                                 <a asp-action="Delete" asp-route-id="@item.IdUsuario" class="btn btn-danger btn-sm">
-                                    <i class="fas fa-trash-alt"></i> Eliminar
+                                    <i class="fas fa-trash-alt"></i>
                                 </a>
                             </td>
                         </tr>
                     }
                 </tbody>
             </table>
-        </div>
 
         
 
