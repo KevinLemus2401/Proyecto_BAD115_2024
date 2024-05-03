@@ -49,8 +49,6 @@ namespace ProyectoBAD.Controllers
         // GET: Usuarios/Create
         public IActionResult Create()
         {
-            int count = _context.Usuarios.Count();
-            ViewData["cantUsuarios"] = count;
             return View(); 
         }
 
@@ -59,11 +57,12 @@ namespace ProyectoBAD.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("IdUsuario,EmailUsuario,TelefonoUsuario,PrimerNombreUsuario,SegundoNombreUsuario,PrimerApellidoUsuario,SegundoApellidoUsuario,GenUsuario")] Usuario usuario)
+        public async Task<IActionResult> Create([Bind("EmailUsuario,TelefonoUsuario,PrimerNombreUsuario,SegundoNombreUsuario,PrimerApellidoUsuario,SegundoApellidoUsuario,GenUsuario")] Usuario usuario)
         {
             if (ModelState.IsValid)
             {
                 _context.Add(usuario);
+                Usuario u1 = usuario;
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }

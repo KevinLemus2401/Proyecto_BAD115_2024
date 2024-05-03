@@ -16,10 +16,10 @@ document.addEventListener("DOMContentLoaded", function () {
         "search": "Buscar:",
         "zeroRecords": "Sin resultados encontrados",
         "paginate": {
-            "first": "Primero",
-            "last": "Ultimo",
-            "next": "Siguiente",
-            "previous": "Anterior"
+            "first": '<i class="fas fa-angle-double-left"></i>',
+            "last": '<i class="fas fa-angle-double-right"></i>',
+            "next": '<i class="fa fa-solid fa-angle-right"></i>',
+            "previous": '<i class="fa fa-solid fa-angle-left"></i>'
         },
         "buttons": {
             'copy': 'Copy',
@@ -41,16 +41,22 @@ document.addEventListener("DOMContentLoaded", function () {
     tblUsuarios = new DataTable('#tblUsuarios', {
         fixedHeader: true,
         responsive: true,
-        select: true,
         language,
-        dom: "<'row'<'col-sm-12 py-4'B>>" +
+        dom: "<'row'<'col-sm-12 py-4 text-right'B>>" +
             "<'row'<'col-12 col-md-4 col-xl-8 text-left'l><'col-12 col-md-8 col-xl-4 text-right'f>>" +
             "<'p-2'>"+
             "<'row'<'col-12'tr>>" +
             "<'p-2'>" +
             "<'row'<'col-sm-5'i><'col-sm-7 d-flex justify-content-end'p>>",
         buttons: [
-            'copy', 'excel', 'pdf'
+            {
+                text: '<a class="btn btn-success"><i class="fas fa-plus-circle mr-2" ></i> Crear Usuario</a>',
+                className: "btn-sm btn-success p-0",
+                action: function (e, dt, button, config) {
+                    var url = $('#urlCreateUsuarios').val();
+                    window.location.href = url;
+                }
+            },
         ]
     });
 })

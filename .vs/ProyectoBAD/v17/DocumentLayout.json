@@ -3,24 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\jor05\\source\\repos\\Proyecto_BAD115_2024\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B288A2FF-A288-42AE-A24D-0A0A127ECFA8}|ProyectoBAD\\ProyectoBAD.csproj|c:\\users\\jor05\\source\\repos\\proyecto_bad115_2024\\proyectobad\\views\\usuarios\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B288A2FF-A288-42AE-A24D-0A0A127ECFA8}|ProyectoBAD\\ProyectoBAD.csproj|solutionrelative:proyectobad\\views\\usuarios\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{B288A2FF-A288-42AE-A24D-0A0A127ECFA8}|ProyectoBAD\\ProyectoBAD.csproj|c:\\users\\jor05\\source\\repos\\proyecto_bad115_2024\\proyectobad\\models\\sisencuestascontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B288A2FF-A288-42AE-A24D-0A0A127ECFA8}|ProyectoBAD\\ProyectoBAD.csproj|solutionrelative:proyectobad\\models\\sisencuestascontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B288A2FF-A288-42AE-A24D-0A0A127ECFA8}|ProyectoBAD\\ProyectoBAD.csproj|c:\\users\\jor05\\source\\repos\\proyecto_bad115_2024\\proyectobad\\views\\usuarios\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B288A2FF-A288-42AE-A24D-0A0A127ECFA8}|ProyectoBAD\\ProyectoBAD.csproj|solutionrelative:proyectobad\\views\\usuarios\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{B288A2FF-A288-42AE-A24D-0A0A127ECFA8}|ProyectoBAD\\ProyectoBAD.csproj|c:\\users\\jor05\\source\\repos\\proyecto_bad115_2024\\proyectobad\\models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B288A2FF-A288-42AE-A24D-0A0A127ECFA8}|ProyectoBAD\\ProyectoBAD.csproj|solutionrelative:proyectobad\\models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B288A2FF-A288-42AE-A24D-0A0A127ECFA8}|ProyectoBAD\\ProyectoBAD.csproj|c:\\users\\jor05\\source\\repos\\proyecto_bad115_2024\\proyectobad\\models\\encuestum.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B288A2FF-A288-42AE-A24D-0A0A127ECFA8}|ProyectoBAD\\ProyectoBAD.csproj|solutionrelative:proyectobad\\models\\encuestum.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B288A2FF-A288-42AE-A24D-0A0A127ECFA8}|ProyectoBAD\\ProyectoBAD.csproj|c:\\users\\jor05\\source\\repos\\proyecto_bad115_2024\\proyectobad\\controllers\\usuarioscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B288A2FF-A288-42AE-A24D-0A0A127ECFA8}|ProyectoBAD\\ProyectoBAD.csproj|solutionrelative:proyectobad\\controllers\\usuarioscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B288A2FF-A288-42AE-A24D-0A0A127ECFA8}|ProyectoBAD\\ProyectoBAD.csproj|c:\\users\\jor05\\source\\repos\\proyecto_bad115_2024\\proyectobad\\views\\usuarios\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B288A2FF-A288-42AE-A24D-0A0A127ECFA8}|ProyectoBAD\\ProyectoBAD.csproj|solutionrelative:proyectobad\\views\\usuarios\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B288A2FF-A288-42AE-A24D-0A0A127ECFA8}|ProyectoBAD\\ProyectoBAD.csproj|c:\\users\\jor05\\source\\repos\\proyecto_bad115_2024\\proyectobad\\views\\usuarios\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B288A2FF-A288-42AE-A24D-0A0A127ECFA8}|ProyectoBAD\\ProyectoBAD.csproj|solutionrelative:proyectobad\\views\\usuarios\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,48 +26,46 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Create.cshtml",
-              "DocumentMoniker": "C:\\Users\\jor05\\source\\repos\\Proyecto_BAD115_2024\\ProyectoBAD\\Views\\Usuarios\\Create.cshtml",
-              "RelativeDocumentMoniker": "ProyectoBAD\\Views\\Usuarios\\Create.cshtml",
-              "ToolTip": "C:\\Users\\jor05\\source\\repos\\Proyecto_BAD115_2024\\ProyectoBAD\\Views\\Usuarios\\Create.cshtml",
-              "RelativeToolTip": "ProyectoBAD\\Views\\Usuarios\\Create.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAWAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-05-02T06:25:56.717Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Edit.cshtml",
-              "DocumentMoniker": "C:\\Users\\jor05\\source\\repos\\Proyecto_BAD115_2024\\ProyectoBAD\\Views\\Usuarios\\Edit.cshtml",
-              "RelativeDocumentMoniker": "ProyectoBAD\\Views\\Usuarios\\Edit.cshtml",
-              "ToolTip": "C:\\Users\\jor05\\source\\repos\\Proyecto_BAD115_2024\\ProyectoBAD\\Views\\Usuarios\\Edit.cshtml",
-              "RelativeToolTip": "ProyectoBAD\\Views\\Usuarios\\Edit.cshtml",
-              "ViewState": "AQIAACsAAACAl5mZmRkWwEAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-05-02T06:25:50.352Z",
+              "Title": "Usuario.cs",
+              "DocumentMoniker": "C:\\Users\\jor05\\source\\repos\\Proyecto_BAD115_2024\\ProyectoBAD\\Models\\Usuario.cs",
+              "RelativeDocumentMoniker": "ProyectoBAD\\Models\\Usuario.cs",
+              "ToolTip": "C:\\Users\\jor05\\source\\repos\\Proyecto_BAD115_2024\\ProyectoBAD\\Models\\Usuario.cs",
+              "RelativeToolTip": "ProyectoBAD\\Models\\Usuario.cs",
+              "ViewState": "AQIAAAgAAADAYmZmZmYswBUAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-03T04:44:31.381Z",
               "IsPinned": true,
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Details.cshtml",
-              "DocumentMoniker": "C:\\Users\\jor05\\source\\repos\\Proyecto_BAD115_2024\\ProyectoBAD\\Views\\Usuarios\\Details.cshtml",
-              "RelativeDocumentMoniker": "ProyectoBAD\\Views\\Usuarios\\Details.cshtml",
-              "ToolTip": "C:\\Users\\jor05\\source\\repos\\Proyecto_BAD115_2024\\ProyectoBAD\\Views\\Usuarios\\Details.cshtml",
-              "RelativeToolTip": "ProyectoBAD\\Views\\Usuarios\\Details.cshtml",
-              "ViewState": "AQIAACsAAAAAnZmZmVkowD8AAAAiAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-05-02T23:17:23.121Z",
-              "IsPinned": true,
+              "Title": "sisencuestasContext.cs",
+              "DocumentMoniker": "C:\\Users\\jor05\\source\\repos\\Proyecto_BAD115_2024\\ProyectoBAD\\Models\\sisencuestasContext.cs",
+              "RelativeDocumentMoniker": "ProyectoBAD\\Models\\sisencuestasContext.cs",
+              "ToolTip": "C:\\Users\\jor05\\source\\repos\\Proyecto_BAD115_2024\\ProyectoBAD\\Models\\sisencuestasContext.cs",
+              "RelativeToolTip": "ProyectoBAD\\Models\\sisencuestasContext.cs",
+              "ViewState": "AQIAAPEAAAAASJmZmRkjwPkAAAAoAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-03T05:23:02.377Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Encuestum.cs",
+              "DocumentMoniker": "C:\\Users\\jor05\\source\\repos\\Proyecto_BAD115_2024\\ProyectoBAD\\Models\\Encuestum.cs",
+              "RelativeDocumentMoniker": "ProyectoBAD\\Models\\Encuestum.cs",
+              "ToolTip": "C:\\Users\\jor05\\source\\repos\\Proyecto_BAD115_2024\\ProyectoBAD\\Models\\Encuestum.cs",
+              "RelativeToolTip": "ProyectoBAD\\Models\\Encuestum.cs",
+              "ViewState": "AQIAAAkAAABAMjMzMzMfwBUAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-03T05:19:38.764Z",
               "EditorCaption": ""
             },
             {
@@ -80,26 +74,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\jor05\\source\\repos\\Proyecto_BAD115_2024\\ProyectoBAD\\Views\\Usuarios\\Index.cshtml",
-              "RelativeDocumentMoniker": "ProyectoBAD\\Views\\Usuarios\\Index.cshtml",
-              "ToolTip": "C:\\Users\\jor05\\source\\repos\\Proyecto_BAD115_2024\\ProyectoBAD\\Views\\Usuarios\\Index.cshtml",
-              "RelativeToolTip": "ProyectoBAD\\Views\\Usuarios\\Index.cshtml",
-              "ViewState": "AQIAACMAAACALTMzMzMbwDEAAAA2AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-05-02T06:03:33.711Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "UsuariosController.cs",
               "DocumentMoniker": "C:\\Users\\jor05\\source\\repos\\Proyecto_BAD115_2024\\ProyectoBAD\\Controllers\\UsuariosController.cs",
               "RelativeDocumentMoniker": "ProyectoBAD\\Controllers\\UsuariosController.cs",
               "ToolTip": "C:\\Users\\jor05\\source\\repos\\Proyecto_BAD115_2024\\ProyectoBAD\\Controllers\\UsuariosController.cs",
               "RelativeToolTip": "ProyectoBAD\\Controllers\\UsuariosController.cs",
-              "ViewState": "AQIAAB0AAABAIDMzM/MhwCoAAAAdAAAA",
+              "ViewState": "AQIAAH0AAAAAMJmZmZn/vxcAAAAdAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-02T01:37:54.646Z",
               "EditorCaption": ""

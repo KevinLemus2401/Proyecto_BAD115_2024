@@ -1,68 +1,44 @@
 ﻿@model ProyectoBAD.Models.Usuario
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Detalles de Usuario";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+<h1 class="display-4 text-center my-4">@ViewData["Title"]</h1>
 
-
-<div class="p-4">
-    <div class="card container px-0" style="width: 800px;">
-        <div class="card-header text-center">
-            <h1>Detalles de Usuario</h1>
-        </div>
+<div class="container">
+    <div class="card mt-4">
         <div class="card-body">
+            <h4 class="card-title mb-4">Detalles</h4>
+            <hr class="mt-4" />
             <dl class="row">
-                <dt class="col-4">
-                    Correo electrónico:
-                </dt>
-                <dd class="col-8">
-                    @Html.DisplayFor(model => model.EmailUsuario)
-                </dd>
-                <dt class="col-4">
-                    Teléfono Movil:
-                </dt>
-                <dd class="col-8">
-                    @Html.DisplayFor(model => model.TelefonoUsuario)
-                </dd>
-                <dt class="col-4">
-                    Primer nombre:
-                </dt>
-                <dd class="col-8">
-                    @Html.DisplayFor(model => model.PrimerNombreUsuario)
-                </dd>
-                <dt class="col-4">
-                    Segundo Nombre:
-                </dt>
-                <dd class="col-8">
-                    @Html.DisplayFor(model => model.SegundoNombreUsuario)
-                </dd>
-                <dt class="col-4">
-                    Primer Apellido:
-                </dt>
-                <dd class="col-8">
-                    @Html.DisplayFor(model => model.PrimerApellidoUsuario)
-                </dd>
-                <dt class="col-4">
-                    Segundo Apellido:
-                </dt>
-                <dd class="col-8">
-                    @Html.DisplayFor(model => model.SegundoApellidoUsuario)
-                </dd>
-                <dt class="col-4">
-                    Genero:
-                </dt>
-                <dd class="col-8">
+                <dt class="col-sm-3">Correo electrónico</dt>
+                <dd class="col-sm-9">@Html.DisplayFor(model => model.EmailUsuario)</dd>
+                <dt class="col-sm-3">Teléfono Movil</dt>
+                <dd class="col-sm-9">@Html.DisplayFor(model => model.TelefonoUsuario)</dd>
+                <dt class="col-sm-3">Primer nombre</dt>
+                <dd class="col-sm-9">@Html.DisplayFor(model => model.PrimerNombreUsuario)</dd>
+                <dt class="col-sm-3">Segundo Nombre</dt>
+                <dd class="col-sm-9">@Html.DisplayFor(model => model.SegundoNombreUsuario)</dd>
+                <dt class="col-sm-3">Primer Apellido</dt>
+                <dd class="col-sm-9">@Html.DisplayFor(model => model.PrimerApellidoUsuario)</dd>
+                <dt class="col-sm-3"> Segundo Apellido</dt>
+                <dd class="col-sm-9"> @Html.DisplayFor(model => model.SegundoApellidoUsuario)</dd>
+                <dt class="col-sm-3">Genero</dt>
+                <dd class="col-sm-9">
                     <span>@(Model.GenUsuario.Trim().Replace(" ", "") == "M" ? "Masculino" : (Model.GenUsuario.Trim().Replace(" ", "") == "F" ? "Femenino" : ""))</span>
                 </dd>
             </dl>
         </div>
-        <div class="card-footer">
-            <div class="row">
-                <div class="px-2"> <a class="btn btn-secondary text-white" asp-action="Edit" asp-route-id="@Model.IdUsuario">Editar</a> </div>
-                <div class=""> <a type="submit" value="Guardar" class="btn btn-primary" asp-action="Index"> Regresar</a></div>
-            </div>
-        </div>
+    </div>
+    <div class="text-center mt-4">
+        <a asp-action="Edit" asp-route-id="@Model.IdUsuario" class="btn btn-primary mr-2">
+            <i class="fas fa-edit mr-1"></i> Editar
+        </a>
+        <a asp-action="Index" class="btn btn-secondary">
+            <i class="fas fa-arrow-left mr-1"></i> Volver a la Lista
+        </a>
     </div>
 </div>
+

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "AXcC0YZNQOisU1/jMw0GJMem08tGzO99Gcr3cgPt7YA=",
+  "Hash": "FnadaHS7+xBuN3daDZGlj/Nt0unpQEUvjjeKRnUIysg=",
   "Source": "ProyectoBAD",
   "BasePath": "_content/ProyectoBAD",
   "Mode": "Default",
@@ -6855,6 +6855,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\site.js"
+    },
+    {
+      "Identity": "C:\\Users\\jor05\\source\\repos\\Proyecto_BAD115_2024\\ProyectoBAD\\wwwroot\\js\\tablasProyecto.js",
+      "SourceId": "ProyectoBAD",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jor05\\source\\repos\\Proyecto_BAD115_2024\\ProyectoBAD\\wwwroot\\",
+      "BasePath": "_content/ProyectoBAD",
+      "RelativePath": "js/tablasProyecto.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\tablasProyecto.js"
     },
     {
       "Identity": "C:\\Users\\jor05\\source\\repos\\Proyecto_BAD115_2024\\ProyectoBAD\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
