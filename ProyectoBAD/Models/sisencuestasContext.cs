@@ -41,9 +41,7 @@ namespace ProyectoBAD.Models
 
                 entity.ToTable("ENCUESTADO");
 
-                entity.Property(e => e.IdEncuestado)
-                    .ValueGeneratedNever()
-                    .HasColumnName("ID_ENCUESTADO");
+                entity.Property(e => e.IdEncuestado).HasColumnName("ID_ENCUESTADO");
 
                 entity.Property(e => e.EmailEncuestado)
                     .HasMaxLength(50)
@@ -69,15 +67,12 @@ namespace ProyectoBAD.Models
 
                 entity.HasIndex(e => e.IdUsuario, "USUARIO_ENCUESTA_FK");
 
-                entity.Property(e => e.IdEncuesta)
-                    .ValueGeneratedNever()
-                    .HasColumnName("ID_ENCUESTA");
+                entity.Property(e => e.IdEncuesta).HasColumnName("ID_ENCUESTA");
 
                 entity.Property(e => e.EstadoEncuesta).HasColumnName("ESTADO_ENCUESTA");
 
                 entity.Property(e => e.FechaEncuesta)
-                    .IsRowVersion()
-                    .IsConcurrencyToken()
+                    .HasColumnType("datetime")
                     .HasColumnName("FECHA_ENCUESTA");
 
                 entity.Property(e => e.GrupometaEncuesta)
@@ -116,9 +111,7 @@ namespace ProyectoBAD.Models
 
                 entity.HasIndex(e => e.IdPregunta, "REL_PREGUNTA_OPCIONPREGUNTA_FK");
 
-                entity.Property(e => e.OpcionId)
-                    .ValueGeneratedNever()
-                    .HasColumnName("OPCION_ID");
+                entity.Property(e => e.OpcionId).HasColumnName("OPCION_ID");
 
                 entity.Property(e => e.DescripcionOpcion)
                     .HasMaxLength(1000)
@@ -152,9 +145,7 @@ namespace ProyectoBAD.Models
 
                 entity.HasIndex(e => e.TipoPreguntaId, "REL_TIPOPREGUNTA_PREGUNTA_FK");
 
-                entity.Property(e => e.IdPregunta)
-                    .ValueGeneratedNever()
-                    .HasColumnName("ID_PREGUNTA");
+                entity.Property(e => e.IdPregunta).HasColumnName("ID_PREGUNTA");
 
                 entity.Property(e => e.DescripcionPregunta)
                     .HasMaxLength(1000)
@@ -194,13 +185,10 @@ namespace ProyectoBAD.Models
 
                 entity.HasIndex(e => e.IdPregunta, "REL_RESPUESTA_PREGUNTA_FK");
 
-                entity.Property(e => e.RespuestaId)
-                    .ValueGeneratedNever()
-                    .HasColumnName("RESPUESTA_ID");
+                entity.Property(e => e.RespuestaId).HasColumnName("RESPUESTA_ID");
 
                 entity.Property(e => e.FechaRespuesta)
-                    .IsRowVersion()
-                    .IsConcurrencyToken()
+                    .HasColumnType("datetime")
                     .HasColumnName("FECHA_RESPUESTA");
 
                 entity.Property(e => e.IdEncuesta).HasColumnName("ID_ENCUESTA");
@@ -243,9 +231,7 @@ namespace ProyectoBAD.Models
 
                 entity.ToTable("TIPOPREGUNTA");
 
-                entity.Property(e => e.TipoPreguntaId)
-                    .ValueGeneratedNever()
-                    .HasColumnName("TIPO_PREGUNTA_ID");
+                entity.Property(e => e.TipoPreguntaId).HasColumnName("TIPO_PREGUNTA_ID");
 
                 entity.Property(e => e.DescripcionTipoPregunta)
                     .HasMaxLength(500)
@@ -264,9 +250,7 @@ namespace ProyectoBAD.Models
 
                 entity.ToTable("USUARIO");
 
-                entity.Property(e => e.IdUsuario)
-                    .ValueGeneratedNever()
-                    .HasColumnName("ID_USUARIO");
+                entity.Property(e => e.IdUsuario).HasColumnName("ID_USUARIO");
 
                 entity.Property(e => e.EmailUsuario)
                     .HasMaxLength(100)

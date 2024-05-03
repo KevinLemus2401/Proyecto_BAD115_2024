@@ -10,7 +10,7 @@ namespace ProyectoBAD.Models
         public int? IdPregunta { get; set; }
         public int? IdEncuestado { get; set; }
         public int? IdEncuesta { get; set; }
-        public byte[]? FechaRespuesta { get; set; }
+        public DateTime? FechaRespuesta { get; set; }
         public string? TextoRespuesta { get; set; }
 
         public virtual Encuestum? IdEncuestaNavigation { get; set; }
