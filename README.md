@@ -19,8 +19,7 @@
 
 1. Clic derecho en "Dependencias"
 2. Clic en "Instalar Paquetes con Nugget"
-3. Instalar: Microsoft.EntityFrameworkCore.SqlServer (6.0.1) y Microsoft.Ent1tyFrameworkCore.Tools (6.0.1)
-	***Justo esas versiones
+3. Instalar: Microsoft.EntityFrameworkCore.SqlServer (6.0.1), Microsoft.Ent1tyFrameworkCore.Tools (6.0.1)  y Microsoft.AspNetCore.Identity.EntityFrameworkCore(6.0.1) ***Justo esas versiones
 
 ---------- Generacion de modelos -----------------
 
