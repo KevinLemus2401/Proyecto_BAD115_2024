@@ -3,16 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\jor05\\source\\repos\\Proyecto_BAD115_2024\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B288A2FF-A288-42AE-A24D-0A0A127ECFA8}|ProyectoBAD\\ProyectoBAD.csproj|c:\\users\\jor05\\source\\repos\\proyecto_bad115_2024\\proyectobad\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B288A2FF-A288-42AE-A24D-0A0A127ECFA8}|ProyectoBAD\\ProyectoBAD.csproj|solutionrelative:proyectobad\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B288A2FF-A288-42AE-A24D-0A0A127ECFA8}|ProyectoBAD\\ProyectoBAD.csproj|c:\\users\\jor05\\source\\repos\\proyecto_bad115_2024\\proyectobad\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B288A2FF-A288-42AE-A24D-0A0A127ECFA8}|ProyectoBAD\\ProyectoBAD.csproj|solutionrelative:proyectobad\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B288A2FF-A288-42AE-A24D-0A0A127ECFA8}|ProyectoBAD\\ProyectoBAD.csproj|c:\\users\\jor05\\source\\repos\\proyecto_bad115_2024\\proyectobad\\views\\usuarios\\asignarrol.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B288A2FF-A288-42AE-A24D-0A0A127ECFA8}|ProyectoBAD\\ProyectoBAD.csproj|solutionrelative:proyectobad\\views\\usuarios\\asignarrol.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{B288A2FF-A288-42AE-A24D-0A0A127ECFA8}|ProyectoBAD\\ProyectoBAD.csproj|c:\\users\\jor05\\source\\repos\\proyecto_bad115_2024\\proyectobad\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B288A2FF-A288-42AE-A24D-0A0A127ECFA8}|ProyectoBAD\\ProyectoBAD.csproj|solutionrelative:proyectobad\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,7 +14,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -34,41 +26,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "HomeController.cs",
-              "DocumentMoniker": "C:\\Users\\jor05\\source\\repos\\Proyecto_BAD115_2024\\ProyectoBAD\\Controllers\\HomeController.cs",
-              "RelativeDocumentMoniker": "ProyectoBAD\\Controllers\\HomeController.cs",
-              "ToolTip": "C:\\Users\\jor05\\source\\repos\\Proyecto_BAD115_2024\\ProyectoBAD\\Controllers\\HomeController.cs",
-              "RelativeToolTip": "ProyectoBAD\\Controllers\\HomeController.cs",
-              "ViewState": "AQIAAAcAAADAYmZmZmYkwA8AAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-17T04:16:54.96Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "C:\\Users\\jor05\\source\\repos\\Proyecto_BAD115_2024\\ProyectoBAD\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "ProyectoBAD\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "C:\\Users\\jor05\\source\\repos\\Proyecto_BAD115_2024\\ProyectoBAD\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "ProyectoBAD\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AQIAACoAAAAAIAAAAAABwEYAAABMAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-05-17T04:10:54.605Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "AsignarRol.cshtml",
-              "DocumentMoniker": "C:\\Users\\jor05\\source\\repos\\Proyecto_BAD115_2024\\ProyectoBAD\\Views\\Usuarios\\AsignarRol.cshtml",
-              "RelativeDocumentMoniker": "ProyectoBAD\\Views\\Usuarios\\AsignarRol.cshtml",
-              "ToolTip": "C:\\Users\\jor05\\source\\repos\\Proyecto_BAD115_2024\\ProyectoBAD\\Views\\Usuarios\\AsignarRol.cshtml",
-              "RelativeToolTip": "ProyectoBAD\\Views\\Usuarios\\AsignarRol.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAkAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-05-17T04:09:12.057Z",
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\jor05\\source\\repos\\Proyecto_BAD115_2024\\ProyectoBAD\\Program.cs",
+              "RelativeDocumentMoniker": "ProyectoBAD\\Program.cs",
+              "ToolTip": "C:\\Users\\jor05\\source\\repos\\Proyecto_BAD115_2024\\ProyectoBAD\\Program.cs",
+              "RelativeToolTip": "ProyectoBAD\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACIAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-17T04:32:54.647Z",
               "EditorCaption": ""
             }
           ]
