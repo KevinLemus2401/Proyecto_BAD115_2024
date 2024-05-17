@@ -23,7 +23,6 @@ namespace ProyectoBAD.Models
             Encuesta = new HashSet<Encuestum>();
         }
 
-        public int IdUsuario { get; set; }
         public string EmailUsuario { get; set; } = null!;
         public string? TelefonoUsuario { get; set; }
         public string PrimerNombreUsuario { get; set; } = null!;

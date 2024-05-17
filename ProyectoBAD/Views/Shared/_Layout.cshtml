@@ -35,8 +35,16 @@
 <body class="hold-transition sidebar-mini layout-fixed">
     
     <div class="wrapper">    
+
         @using Microsoft.AspNetCore.Identity;
         @inject SignInManager<Usuario> signInManager;
+        @inject Microsoft.AspNetCore.Authorization.IAuthorizationService AuthorizationService
+        @inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
+
+        @{
+            var user = HttpContextAccessor.HttpContext!.User;
+            var authorizationResult = await AuthorizationService.AuthorizeAsync(user, null, "PermissionReadUser");
+        }
 
         @if (signInManager.IsSignedIn(User))
         {
@@ -133,31 +141,33 @@
                             </li>
 
 
+                            @if (authorizationResult.Succeeded)
+                            {
+                                <li class="nav-item menu-open">
+                                    <a class="nav-link">
+                                        <i class="nav-icon fas fa-tools"></i>
+                                        <p>
+                                            Administración
+                                            <i class="right fas fa-angle-left"></i>
+                                        </p>
+                                    </a>
+                                    <ul class="nav nav-treeview">
 
-                            <li class="nav-item menu-open">
-                                <a class="nav-link">
-                                    <i class="nav-icon fas fa-tools"></i>
-                                    <p>
-                                        Administración
-                                        <i class="right fas fa-angle-left"></i>
-                                    </p>
-                                </a>
-                                <ul class="nav nav-treeview">
-
-                                    <li class="nav-item">
-                                        <a class="nav-link" asp-area="" asp-controller="Usuarios" asp-action="Index">
-                                            <i class="far fa-list"></i>
-                                            <p>Usuarios</p>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" asp-area="" asp-controller="Roles" asp-action="Index">
-                                            <i class="far fa-list"></i>
-                                            <p>Roles</p>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" asp-area="" asp-controller="Usuarios" asp-action="Index">
+                                                <i class="far fa-list"></i>
+                                                <p>Usuarios</p>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" asp-area="" asp-controller="Roles" asp-action="Index">
+                                                <i class="far fa-list"></i>
+                                                <p>Roles</p>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            }
 
                             <li class="nav-item">
                                 <a class="nav-link" asp-area="" asp-controller="Encuestados" asp-action="Index">
@@ -221,6 +231,7 @@
                 </div>
             </footer>
         }
+    </div>
 
     <!-- jQuery -->
     <script src="plugins/jquery/jquery.min.js"></script>

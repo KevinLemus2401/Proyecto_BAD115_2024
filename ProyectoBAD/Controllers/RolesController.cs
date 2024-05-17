@@ -153,27 +153,18 @@ namespace ProyectoBAD.Controllers
                 return View("Error");
             }
 
-            try
+            var resultado = await _roleManager.DeleteAsync(rol);
+            if (resultado.Succeeded)
             {
-                var resultado = await _roleManager.DeleteAsync(rol);
-                if (resultado.Succeeded)
-                {
-                    return RedirectToAction("Index"); // Redirigir a la página de lista de roles
-                }
-                else
-                {
-                    foreach (var error in resultado.Errors)
-                    {
-                        ModelState.AddModelError(string.Empty, error.Description);
-                    }
-                    return View("EliminarRol", rol);
-                }
+                return RedirectToAction("Index"); // Redirigir a la página de lista de roles
             }
-            catch (DbUpdateException ex)
+            else
             {
-                // Manejar la excepción de restricción de clave externa aquí
-                ViewBag.ErrorMessage = "No se puede eliminar el rol porque está asignado a uno o varios usuarios.";
-                return View("Error");
+                foreach (var error in resultado.Errors)
+                {
+                    ModelState.AddModelError(string.Empty, error.Description);
+                }
+                return View("EliminarRol", rol);
             }
         }
 
@@ -200,6 +191,7 @@ namespace ProyectoBAD.Controllers
             }
         }
 
+        //Lista de reclamaciones
         public List<SelectListItem> permission()
         {
             return new List<SelectListItem>

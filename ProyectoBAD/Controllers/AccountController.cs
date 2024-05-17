@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using ProyectoBAD.Models;
-using Microsoft.EntityFrameworkCore;
 using ProyectoBAD.ViewModels;
 
 namespace ProyectoBAD.Controllers
