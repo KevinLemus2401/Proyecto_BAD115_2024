@@ -1,0 +1,66 @@
+﻿@model ProyectoBAD.ViewModels.RegisterVM
+
+@{
+    ViewData["Title"] = "Registrarse";
+}
+
+<div class="row d-flex align-items-center justify-content-center">
+    <div class="col-md-3 card p-3">
+        <h2 class="text-center text-info">Registrarse</h2>
+        <form asp-action="Register" method="post">
+            <div asp-validation-summary="ModelOnly"></div>
+            <div class="mb-1">
+                <label asp-for="Name" class="control-label">Nombre de usuario</label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="mb-1">
+                <label asp-for="PrimerNombre" class="control-label">Su primer nombre</label>
+                <input asp-for="PrimerNombre" class="form-control" />
+                <span asp-validation-for="PrimerNombre" class="text-danger"></span>
+            </div>
+            <div class="mb-1">
+                <label asp-for="PrimerApellido" class="control-label">Su primer apellido</label>
+                <input asp-for="PrimerApellido" class="form-control" />
+                <span asp-validation-for="PrimerApellido" class="text-danger"></span>
+            </div>
+            <div class="mb-1">
+                <label asp-for="Genero" class="control-label">Sexo</label>
+                <select asp-for=Genero name="Genero" id="Genero" class="form-control">
+                    <option value="M">Masculino</option>
+                    <option value="F">Femenino</option>
+                </select>
+                <span asp-validation-for="Genero" class="text-danger"></span>
+            </div>
+            <div class="mb-1">
+                <label asp-for="Email" class="control-label">Correo electrónico</label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="mb-1">
+                <label asp-for="Password" class="control-label">Contraseña</label>
+                <input asp-for="Password" class="form-control" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <div class="mb-1">
+                <label asp-for="ConfirmPassword" class="control-label">Confirmar contraseña</label>
+                <input asp-for="ConfirmPassword" class="form-control" />
+                <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+            </div>
+            <div class="row mt-4">
+                <div class="col-8">
+                    <a asp-action="Login" class="text-decoration-none float-start mt-2">¿Ya tienes cuenta?</a>
+                </div>
+                <div class="col-4 text-right">
+                    <button type="submit" value="Register" class="btn btn-primary btn-sm float-end px-4">Aceptar</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

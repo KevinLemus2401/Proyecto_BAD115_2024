@@ -1,0 +1,43 @@
+﻿@using Microsoft.AspNetCore.Identity
+@model List<Roles>
+
+@{
+    ViewData["Title"] = "Gestión de Roles";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var urlCreateRol = Url.Action("CrearRol", "Roles");
+
+}
+<input type="hidden" id="urlCreateRol" value="@urlCreateRol" />
+
+<h1 class="display-4 text-center my-4">@ViewData["Title"]</h1>
+
+<div class="container">
+    <div class="table-responsive mt-4">
+        <table class="table table-bordered table-hover table-striped nowrap" style="width:100%" id="tblRoles" name="tblRoles">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Descripción</th>
+                    <th>Opciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var role in Model)
+                {
+                    <tr>
+                        <td>@role.Name</td>
+                        <td>@role.Descripcion</td>
+                        <td>
+                            <a asp-action="ActualizarRol" asp-route-id="@role.Id" class="btn btn-primary btn-sm">
+                                <i class="fas fa-edit"></i>
+                            </a>
+                            <a asp-action="EliminarRol" asp-route-id="@role.Id" class="btn btn-danger btn-sm">
+                                <i class="fas fa-trash-alt"></i>
+                            </a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

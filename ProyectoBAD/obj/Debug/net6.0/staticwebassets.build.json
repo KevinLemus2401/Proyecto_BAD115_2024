@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "FnadaHS7+xBuN3daDZGlj/Nt0unpQEUvjjeKRnUIysg=",
+  "Hash": "/DwBav9ZWM1k1vHhKWvnRAqCviZWMPbU9Cj0KCBi34o=",
   "Source": "ProyectoBAD",
   "BasePath": "_content/ProyectoBAD",
   "Mode": "Default",
@@ -6836,6 +6836,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\index3.html"
+    },
+    {
+      "Identity": "C:\\Users\\jor05\\source\\repos\\Proyecto_BAD115_2024\\ProyectoBAD\\wwwroot\\js\\Select2.js",
+      "SourceId": "ProyectoBAD",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jor05\\source\\repos\\Proyecto_BAD115_2024\\ProyectoBAD\\wwwroot\\",
+      "BasePath": "_content/ProyectoBAD",
+      "RelativePath": "js/Select2.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\Select2.js"
     },
     {
       "Identity": "C:\\Users\\jor05\\source\\repos\\Proyecto_BAD115_2024\\ProyectoBAD\\wwwroot\\js\\site.js",

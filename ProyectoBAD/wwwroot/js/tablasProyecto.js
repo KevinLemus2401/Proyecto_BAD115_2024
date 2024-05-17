@@ -1,6 +1,6 @@
 
 
-let tblUsuarios;
+let tblUsuarios, tblRoles;
 document.addEventListener("DOMContentLoaded", function () {
     const language = {
         "decimal": "",
@@ -50,13 +50,44 @@ document.addEventListener("DOMContentLoaded", function () {
             "<'row'<'col-sm-5'i><'col-sm-7 d-flex justify-content-end'p>>",
         buttons: [
             {
+                text: '<a class="btn btn-dark"><i class="fas fa-user-tag mr-2" ></i> Crear Roles</a>',
+                className: "btn-sm btn-dark p-0 mx-2",
+                action: function (e, dt, button, config) {
+                    var url = $('#urlCreateRol').val();
+                    window.location.href = url;
+                }
+            },
+            {
                 text: '<a class="btn btn-success"><i class="fas fa-plus-circle mr-2" ></i> Crear Usuario</a>',
-                className: "btn-sm btn-success p-0",
+                className: "btn-sm btn-success p-0 mx-2",
                 action: function (e, dt, button, config) {
                     var url = $('#urlCreateUsuarios').val();
                     window.location.href = url;
                 }
             },
-        ]
+
+        ],
+    });
+    tblRoles = new DataTable('#tblRoles', {
+        fixedHeader: true,
+        responsive: true,
+        language,
+        dom: "<'row'<'col-sm-12 py-4 text-right'B>>" +
+            "<'row'<'col-12 col-md-4 col-xl-8 text-left'l><'col-12 col-md-8 col-xl-4 text-right'f>>" +
+            "<'p-2'>" +
+            "<'row'<'col-12'tr>>" +
+            "<'p-2'>" +
+            "<'row'<'col-sm-5'i><'col-sm-7 d-flex justify-content-end'p>>",
+        buttons: [
+            {
+                text: '<a class="btn btn-success"><i class="fas fa-plus-circle mr-2" ></i> Crear Rol</a>',
+                className: "btn-sm btn-success p-0 mx-2",
+                action: function (e, dt, button, config) {
+                    var url = $('#urlCreateRol').val();
+                    window.location.href = url;
+                }
+            },
+
+        ],
     });
 })

@@ -1,12 +1,25 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Identity;
+using System.ComponentModel.DataAnnotations;
+using System;
 using System.Collections.Generic;
 
 namespace ProyectoBAD.Models
 {
-    public partial class Usuario
+    public partial class Usuario : IdentityUser
     {
         public Usuario()
         {
+            Encuesta = new HashSet<Encuestum>();
+        }
+
+        public Usuario(string EmailUsuario, string PrimerNombreUsuario, string PrimerApellidoUsuario, string GenUsuario) : base()
+        {
+            
+            this.EmailUsuario = EmailUsuario;
+            this.PrimerNombreUsuario = PrimerNombreUsuario;
+            this.PrimerApellidoUsuario = PrimerApellidoUsuario;
+            this.GenUsuario = GenUsuario;
+
             Encuesta = new HashSet<Encuestum>();
         }
 
@@ -20,5 +33,6 @@ namespace ProyectoBAD.Models
         public string GenUsuario { get; set; } = null!;
 
         public virtual ICollection<Encuestum> Encuesta { get; set; }
+
     }
 }

@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.AspNetCore.Identity;
 
 namespace ProyectoBAD.Models
 {
-    public partial class sisencuestasContext : DbContext
+    public partial class sisencuestasContext : IdentityDbContext<Usuario, Roles, string>
     {
         public sisencuestasContext()
         {
@@ -23,18 +25,21 @@ namespace ProyectoBAD.Models
         public virtual DbSet<Respuestum> Respuesta { get; set; } = null!;
         public virtual DbSet<Tipopreguntum> Tipopregunta { get; set; } = null!;
         public virtual DbSet<Usuario> Usuarios { get; set; } = null!;
+        public virtual DbSet<Roles> Roles { get; set; } = null!;
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-                optionsBuilder.UseSqlServer("Server=bad-encuestas.database.windows.net; Database=sis-encuestas; User Id=lf18010; Password=Nueva2023!.;");
+                optionsBuilder.UseSqlServer("Server=localhost; Database=sis-encuestas; User Id=jorgesql; Password=jorge12345");
             }
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            base.OnModelCreating(modelBuilder);
+
             modelBuilder.Entity<Encuestado>(entity =>
             {
                 entity.HasKey(e => e.IdEncuestado);
@@ -246,11 +251,11 @@ namespace ProyectoBAD.Models
 
             modelBuilder.Entity<Usuario>(entity =>
             {
-                entity.HasKey(e => e.IdUsuario);
+                entity.HasKey(e => e.Id);
 
                 entity.ToTable("USUARIO");
 
-                entity.Property(e => e.IdUsuario).HasColumnName("ID_USUARIO");
+                entity.Property(e => e.Id).HasColumnName("ID_USUARIO");
 
                 entity.Property(e => e.EmailUsuario)
                     .HasMaxLength(100)
@@ -287,6 +292,15 @@ namespace ProyectoBAD.Models
                     .HasMaxLength(8)
                     .IsUnicode(false)
                     .HasColumnName("TELEFONO_USUARIO");
+            });
+
+            modelBuilder.Entity<Roles>(entity =>
+            {
+                entity.ToTable("ROLES");
+
+                entity.Property(e => e.Descripcion)
+                    .HasColumnType("text")
+                    .HasColumnName("DESCRIPCION");
             });
 
             OnModelCreatingPartial(modelBuilder);

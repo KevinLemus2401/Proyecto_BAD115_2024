@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -9,6 +10,7 @@ using ProyectoBAD.Models;
 
 namespace ProyectoBAD.Controllers
 {
+    [Authorize]
     public class EncuestaController : Controller
     {
         private readonly sisencuestasContext _context;
@@ -47,7 +49,7 @@ namespace ProyectoBAD.Controllers
         // GET: Encuesta/Create
         public IActionResult Create()
         {
-            ViewData["IdUsuario"] = new SelectList(_context.Usuarios, "IdUsuario", "IdUsuario");
+            ViewData["IdUsuario"] = new SelectList(_context.Usuarios, "Id", "Id");
             return View();
         }
 

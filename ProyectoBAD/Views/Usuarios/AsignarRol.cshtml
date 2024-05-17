@@ -1,0 +1,41 @@
+﻿@model ProyectoBAD.ViewModels.AsignarRolesVM;
+
+@{
+    ViewData["Title"] = "Detalles de Usuario";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    .select2-selection__choice__display {
+        color: #000;
+    }
+</style>
+<div class="p-4">
+    <div class="card container px-0" style="width: 500px;">
+        <form asp-action="AsignarRol">
+            <div class="card-header text-center">
+                <h1>Asignar Rol</h1>
+            </div>
+            <div class="card-body">
+                <div asp-validation-summary="ModelOnly"></div>
+                <input type="hidden" asp-name="UserId" asp-for="UserId" />
+                <div class="form-group">
+                    <label for="RoleName">Rol:</label>
+                    <select asp-for="RoleNames" class="js-example-basic-multiple form-control" name="RoleNames" multiple="multiple" asp-items="@Model.Roles">
+                        <option value="">Seleccione un rol</option>
+                    </select>
+                </div>
+            </div>
+            <div class="card-footer">
+                <div class="row">
+                    <div class="col-6 "> <a class="btn btn-secondary text-white" asp-action="Index">Regresar</a> </div>
+                    <div class="col-6 text-right"> <button type="submit" class="btn btn-primary">Asignar Rol</button> </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+
+}

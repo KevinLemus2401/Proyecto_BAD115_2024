@@ -1,0 +1,48 @@
+﻿@model ProyectoBAD.ViewModels.CambiarPassVM
+
+
+@{
+    ViewData["Title"] = "Contraseña";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="p-4">
+    <div class="card container px-0" style="width: 500px;">
+        <form asp-action="CambiarPass" method="post">
+            <div class="card-header text-center">
+                <h1>Cambiar Contraseña</h1>
+            </div>
+            <div class="card-body">
+                <div asp-validation-summary="ModelOnly"></div>
+                <div class="form-group">
+                    <label asp-for="ContraseñaActual"></label>
+                    <input asp-for="ContraseñaActual" class="form-control" />
+                    <span asp-validation-for="ContraseñaActual" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="NuevaContraseña"></label>
+                    <input asp-for="NuevaContraseña" class="form-control" />
+                    <span asp-validation-for="NuevaContraseña" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ConfirmarNuevaContraseña"></label>
+                    <input asp-for="ConfirmarNuevaContraseña" class="form-control" />
+                    <span asp-validation-for="ConfirmarNuevaContraseña" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="card-footer">
+                <div class="row">
+                    <div class="col-6 "> <a class="btn btn-secondary text-white" asp-action="Index">Regresar</a> </div>
+                    <div class="col-6 text-right"> <button type="submit" class="btn btn-primary">Cambiar</button> </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+
+}

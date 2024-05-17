@@ -1,35 +1,57 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using Newtonsoft.Json.Linq;
 using ProyectoBAD.Models;
-using static System.Net.Mime.MediaTypeNames;
+using ProyectoBAD.ViewModels;
 
 namespace ProyectoBAD.Controllers
 {
+    [Authorize]
     public class UsuariosController : Controller
     {
         private readonly sisencuestasContext _context;
 
-        public UsuariosController(sisencuestasContext context)
+        private readonly UserManager<Usuario> _userManager;
+
+        private readonly RoleManager<Roles> _roleManager;
+
+        public UsuariosController(sisencuestasContext context, UserManager<Usuario> userManager, RoleManager<Roles> roleManager)
         {
             _context = context;
+            _userManager = userManager;
+            _roleManager = roleManager;
         }
 
         // GET: Usuarios
+        [Authorize(Policy = "PermissionReadUser")]
         public async Task<IActionResult> Index()
         {
-            return _context.Usuarios != null ? 
-                       View(await _context.Usuarios.ToListAsync()) :
-                       Problem("Entity set 'sisencuestasContext.Usuarios'  is null."); 
+            var usuariosConRoles = new List<(Usuario Usuario, IList<string> Roles)>();
+
+            // Obtener la lista de usuarios junto con sus roles
+            var usuarios = await _context.Usuarios.ToListAsync();
+            foreach (var usuario in usuarios)
+            {
+                var roles = await _userManager.GetRolesAsync(usuario);
+                usuariosConRoles.Add((usuario, roles));
+            }
+
+            // Eliminar el usuario "Admin" de la lista si existe
+            var adminUser = await _userManager.FindByNameAsync("admin");
+            if (adminUser != null)
+            {
+                var adminRoles = await _userManager.GetRolesAsync(adminUser);
+                usuariosConRoles.RemoveAll(u => u.Usuario.UserName == "admin");
+            }
+
+            return View(usuariosConRoles);
         }
 
         // GET: Usuarios/Details/5
-        public async Task<IActionResult> Details(int? id)
+        [Authorize(Policy = "PermissionReadUser")]
+        public async Task<IActionResult> Details(string? id)
         {
             if (id == null || _context.Usuarios == null)
             {
@@ -37,7 +59,7 @@ namespace ProyectoBAD.Controllers
             }
 
             var usuario = await _context.Usuarios
-                .FirstOrDefaultAsync(m => m.IdUsuario == id);
+                .FirstOrDefaultAsync(m => m.Id == id);
             if (usuario == null)
             {
                 return NotFound();
@@ -47,9 +69,10 @@ namespace ProyectoBAD.Controllers
         }
 
         // GET: Usuarios/Create
+        [Authorize(Policy = "PermissionWriteUser")]
         public IActionResult Create()
         {
-            return View(); 
+            return View();
         }
 
         // POST: Usuarios/Create
@@ -57,20 +80,38 @@ namespace ProyectoBAD.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("EmailUsuario,TelefonoUsuario,PrimerNombreUsuario,SegundoNombreUsuario,PrimerApellidoUsuario,SegundoApellidoUsuario,GenUsuario")] Usuario usuario)
+        [Authorize(Policy = "PermissionWriteUser")]
+        public async Task<IActionResult> Create(RegisterVM model)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(usuario);
-                Usuario u1 = usuario;
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                Usuario usuario = new()
+                {
+                    UserName = model.Name,
+                    Email = model.Email,
+                    EmailUsuario = model.Email!,
+                    PrimerNombreUsuario = model.PrimerNombre!,
+                    PrimerApellidoUsuario = model.PrimerApellido!,
+                    GenUsuario = model.Genero!,
+                };
+
+                var result = await _userManager.CreateAsync(usuario, model.Password);
+
+                if (result.Succeeded)
+                {
+                    return RedirectToAction(nameof(Index));
+                }
+                foreach (var item in result.Errors)
+                {
+                    ModelState.AddModelError("", item.Description);
+                }
             }
-            return View(usuario);
+            return View(model);
         }
-    
+
         // GET: Usuarios/Edit/5
-        public async Task<IActionResult> Edit(int? id)
+        [Authorize(Policy = "PermissionWriteUser")]
+        public async Task<IActionResult> Edit(string? id)
         {
             Dictionary<string, object> modelo = new Dictionary<string, object>();
 
@@ -101,38 +142,44 @@ namespace ProyectoBAD.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("IdUsuario,EmailUsuario,TelefonoUsuario,PrimerNombreUsuario,SegundoNombreUsuario,PrimerApellidoUsuario,SegundoApellidoUsuario,GenUsuario")] Usuario usuario)
+        [Authorize(Policy = "PermissionWriteUser")]
+        public async Task<IActionResult> Edit(string id, string PrimerNombreUsuario, string SegundoNombreUsuario, string PrimerApellidoUsuario, string SegundoApellidoUsuario, string TelefonoUsuario, string GenUsuario)
         {
-            if (id != usuario.IdUsuario)
+            // Buscar el usuario por su ID
+            var usuario = await _userManager.FindByIdAsync(id);
+            if (usuario == null)
             {
                 return NotFound();
             }
 
-            if (ModelState.IsValid)
+            // Actualizar datos
+            usuario.PrimerNombreUsuario = PrimerNombreUsuario;
+            usuario.SegundoNombreUsuario = SegundoNombreUsuario;
+            usuario.PrimerApellidoUsuario = PrimerApellidoUsuario;
+            usuario.SegundoApellidoUsuario = SegundoApellidoUsuario;
+            usuario.TelefonoUsuario = TelefonoUsuario;
+            usuario.GenUsuario = GenUsuario;
+
+            // Guardar los cambios en la base de datos
+            var resultado = await _userManager.UpdateAsync(usuario);
+            if (resultado.Succeeded)
             {
-                try
-                {
-                    _context.Update(usuario);
-                    await _context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!UsuarioExists(usuario.IdUsuario))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
                 return RedirectToAction(nameof(Index));
             }
-            return View(usuario);
+            else
+            {
+                // Si hay errores, mostrar los errores de validación
+                foreach (var error in resultado.Errors)
+                {
+                    ModelState.AddModelError(string.Empty, error.Description);
+                }
+                return View(usuario);
+            }
         }
 
         // GET: Usuarios/Delete/5
-        public async Task<IActionResult> Delete(int? id)
+        [Authorize(Policy = "PermissionDeleteUser")]
+        public async Task<IActionResult> Delete(string? id)
         {
             if (id == null || _context.Usuarios == null)
             {
@@ -140,7 +187,7 @@ namespace ProyectoBAD.Controllers
             }
 
             var usuario = await _context.Usuarios
-                .FirstOrDefaultAsync(m => m.IdUsuario == id);
+                .FirstOrDefaultAsync(m => m.Id == id);
             if (usuario == null)
             {
                 return NotFound();
@@ -152,7 +199,8 @@ namespace ProyectoBAD.Controllers
         // POST: Usuarios/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
+        [Authorize(Policy = "PermissionDeleteUser")]
+        public async Task<IActionResult> DeleteConfirmed(string id)
         {
             if (_context.Usuarios == null)
             {
@@ -163,14 +211,96 @@ namespace ProyectoBAD.Controllers
             {
                 _context.Usuarios.Remove(usuario);
             }
-            
+
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool UsuarioExists(int id)
+        // GET: /User/AssignRole
+        [HttpGet]
+        [Authorize(Policy = "PermissionRoleUser")]
+        public async Task<IActionResult> AsignarRol(string id)
         {
-          return (_context.Usuarios?.Any(e => e.IdUsuario == id)).GetValueOrDefault();
+            var user = await _userManager.FindByIdAsync(id);
+            if (user == null)
+            {
+                return NotFound();
+            }
+
+            // Obtener todos los roles disponibles
+            var allRoles = await _roleManager.Roles.ToListAsync();
+            
+            // Eliminar rol de la lista si existe
+            var rol = await _roleManager.FindByNameAsync("Administrador");
+            if (rol != null)
+            {
+                allRoles.RemoveAll(r => r.Name == "Administrador");
+            }
+
+            // Obtener los roles asignados al usuario
+            var userRoles = await _userManager.GetRolesAsync(user);
+
+            // Crear una lista de SelectListItem
+            var roles = allRoles.Select(r => new SelectListItem
+            {
+                Text = r.Name,
+                Value = r.Name,
+                Selected = userRoles.Contains(r.Name) // Verificar si el rol está asignado al usuario
+            }).ToList();
+
+            var model = new AsignarRolesVM
+            {
+                UserId = id,
+                Roles = roles
+            };
+
+            return View(model);
+        }
+
+        [HttpPost]
+        [Authorize(Policy = "PermissionRoleUser")]
+        public async Task<IActionResult> AsignarRol(AsignarRolesVM model)
+        {
+            var user = await _userManager.FindByIdAsync(model.UserId);
+            if (user == null)
+            {
+                return NotFound();
+            }
+
+            var userRoles = await _userManager.GetRolesAsync(user);
+            var userClaims = await _userManager.GetClaimsAsync(user);
+            await _userManager.RemoveFromRolesAsync(user, userRoles.ToArray());
+            await _userManager.RemoveClaimsAsync(user, userClaims);
+
+            if (model.RoleNames is null)
+            {
+                return RedirectToAction("Index"); // Redirigir a la acción Index del controlador
+            }
+
+            // Asignar los nuevos roles seleccionados al usuario
+            foreach (var roleName in model.RoleNames)
+            {
+                await _userManager.AddToRoleAsync(user, roleName);
+
+                // Obtener el rol
+                var role = await _roleManager.FindByNameAsync(roleName);
+
+                // Obtener las Claims del rol
+                var roleClaims = await _roleManager.GetClaimsAsync(role);
+
+                // Asignar las Claims del rol al usuario
+                foreach (var claim in roleClaims)
+                {
+                    await _userManager.AddClaimAsync(user, claim);
+                }
+            }
+
+            return RedirectToAction("Index"); // Redirigir a la acción Index del controlador
+        }
+
+        private bool UsuarioExists(string id)
+        {
+            return (_context.Usuarios?.Any(e => e.Id == id)).GetValueOrDefault();
         }
     }
 }

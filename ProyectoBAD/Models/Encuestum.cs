@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ProyectoBAD.Models
 {
@@ -13,7 +14,7 @@ namespace ProyectoBAD.Models
         }
 
         public int IdEncuesta { get; set; }
-        public int? IdUsuario { get; set; }
+        public string? IdUsuario { get; set; }
         public string TituloEncuesta { get; set; } = null!;
         public string ObjetivoEncuesta { get; set; } = null!;
         public string GrupometaEncuesta { get; set; } = null!;

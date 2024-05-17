@@ -1,0 +1,53 @@
+﻿@model ProyectoBAD.ViewModels.CrearRolVM
+
+@{
+    ViewData["Title"] = "Modificar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    .select2-selection__choice__display {
+        color: #000;
+    }
+</style>
+
+<div class="p-4">
+    <div class="card container px-0" style="width: 500px;">
+        <form asp-action="ActualizarRol" method="post">
+            <div class="card-header text-center">
+                <h1>Crear rol de usuario</h1>
+            </div>
+            <div class="card-body">
+                <div asp-validation-summary="ModelOnly"></div>
+                <input type="hidden" asp-for="IdRol" class="form-control" />
+                <div class="form-group">
+                    <label asp-for="NombreRol">Nombre del Rol:</label>
+                    <input asp-for="NombreRol" class="form-control" />
+                    <span asp-validation-for="NombreRol" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Descripcion">Descripción:</label>
+                    <textarea rows="5" asp-for="Descripcion" class="form-control"></textarea>
+                    <span asp-validation-for="Descripcion" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Permission">Permiso:</label>
+                    <select id="Permission" name="Permission" asp-for="Permission" asp-items="@Model.ListPermission" multiple class="select2Permission text-dark js-states form-control">
+                    </select>
+                    <span asp-validation-for="Permission" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="card-footer">
+                <div class="row">
+                    <div class="col-6 "> <a class="btn btn-secondary text-white" asp-action="Index">Regresar</a> </div>
+                    <div class="col-6 text-right"> <input type="submit" value="Guardar" class="btn btn-primary" /> </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
