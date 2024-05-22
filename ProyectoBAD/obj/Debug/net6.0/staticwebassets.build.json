@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "hNahJCIGhKF+Q2oEGW89iD/LE+8aIcguGSXyU6ECr4w=",
+  "Hash": "aiuZtVXp/0I20fb5d3XruY6lE/vGFXr9GYakC5Vvcq8=",
   "Source": "ProyectoBAD",
   "BasePath": "_content/ProyectoBAD",
   "Mode": "Default",
@@ -3041,6 +3041,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\dist\\img\\user8-128x128.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\alexi\\Documents\\Proyecto_BAD115_2024\\Proyecto_BAD115_2024\\ProyectoBAD\\wwwroot\\dist\\img\\usuario.png",
+      "SourceId": "ProyectoBAD",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\alexi\\Documents\\Proyecto_BAD115_2024\\Proyecto_BAD115_2024\\ProyectoBAD\\wwwroot\\",
+      "BasePath": "_content/ProyectoBAD",
+      "RelativePath": "dist/img/usuario.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\dist\\img\\usuario.png"
     },
     {
       "Identity": "C:\\Users\\alexi\\Documents\\Proyecto_BAD115_2024\\Proyecto_BAD115_2024\\ProyectoBAD\\wwwroot\\dist\\js\\.eslintrc.json",
@@ -6103,6 +6120,23 @@
       "OriginalItemSpec": "wwwroot\\index3.html"
     },
     {
+      "Identity": "C:\\Users\\alexi\\Documents\\Proyecto_BAD115_2024\\Proyecto_BAD115_2024\\ProyectoBAD\\wwwroot\\js\\Select2.js",
+      "SourceId": "ProyectoBAD",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\alexi\\Documents\\Proyecto_BAD115_2024\\Proyecto_BAD115_2024\\ProyectoBAD\\wwwroot\\",
+      "BasePath": "_content/ProyectoBAD",
+      "RelativePath": "js/Select2.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\Select2.js"
+    },
+    {
       "Identity": "C:\\Users\\alexi\\Documents\\Proyecto_BAD115_2024\\Proyecto_BAD115_2024\\ProyectoBAD\\wwwroot\\js\\site.js",
       "SourceId": "ProyectoBAD",
       "SourceType": "Discovered",
@@ -6118,6 +6152,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\site.js"
+    },
+    {
+      "Identity": "C:\\Users\\alexi\\Documents\\Proyecto_BAD115_2024\\Proyecto_BAD115_2024\\ProyectoBAD\\wwwroot\\js\\tablasProyecto.js",
+      "SourceId": "ProyectoBAD",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\alexi\\Documents\\Proyecto_BAD115_2024\\Proyecto_BAD115_2024\\ProyectoBAD\\wwwroot\\",
+      "BasePath": "_content/ProyectoBAD",
+      "RelativePath": "js/tablasProyecto.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\tablasProyecto.js"
     },
     {
       "Identity": "C:\\Users\\alexi\\Documents\\Proyecto_BAD115_2024\\Proyecto_BAD115_2024\\ProyectoBAD\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",

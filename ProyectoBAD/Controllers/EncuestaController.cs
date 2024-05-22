@@ -1,33 +1,43 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using ProyectoBAD.Models;
+using System.Security.Claims;
 
 namespace ProyectoBAD.Controllers
 {
+    [Authorize]
     public class EncuestaController : Controller
     {
         private readonly sisencuestasContext _context;
+        private readonly UserManager<Usuario> _userManager;
 
-        public EncuestaController(sisencuestasContext context)
+        public EncuestaController(sisencuestasContext context, UserManager<Usuario> userManager)
         {
             _context = context;
+            _userManager = userManager;
         }
 
         // GET: Encuesta
         public async Task<IActionResult> Index()
         {
-              return _context.Encuesta != null ? 
-                          View(await _context.Encuesta.ToListAsync()) :
-                          Problem("Entity set 'sisencuestasContext.Encuesta'  is null.");
+            var user = await _userManager.GetUserAsync(User);
+            if (user == null)
+            {
+                return Unauthorized();
+            }
+
+            var userEncuestas = _context.Encuesta
+                .Include(e => e.IdUsuarioNavigation)
+                .Where(e => e.IdUsuario == user.Id);
+
+            return View(await userEncuestas.ToListAsync());
         }
 
         // GET: Encuesta/Details/5
-        public async Task<IActionResult> Details(decimal? id)
+        public async Task<IActionResult> Details(int? id)
         {
             if (id == null || _context.Encuesta == null)
             {
@@ -35,6 +45,7 @@ namespace ProyectoBAD.Controllers
             }
 
             var encuestum = await _context.Encuesta
+                .Include(e => e.IdUsuarioNavigation)
                 .FirstOrDefaultAsync(m => m.IdEncuesta == id);
             if (encuestum == null)
             {
@@ -51,14 +62,22 @@ namespace ProyectoBAD.Controllers
         }
 
         // POST: Encuesta/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("IdEncuesta,IdUsuario,TituloEncuesta,ObjetivoEncuesta,GrupometaEncuesta,IndicacionesEncuesta,FechaEncuesta,EstadoEncuesta")] Encuestum encuestum)
+        public async Task<IActionResult> Create([Bind("TituloEncuesta,ObjetivoEncuesta,GrupometaEncuesta,IndicacionesEncuesta")] Encuestum encuestum)
         {
             if (ModelState.IsValid)
             {
+                var user = await _userManager.GetUserAsync(User);
+                if (user == null)
+                {
+                    return Unauthorized();
+                }
+
+                encuestum.IdUsuario = user.Id;
+                encuestum.FechaEncuesta = DateTime.Now;
+                encuestum.EstadoEncuesta = true;
+
                 _context.Add(encuestum);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -66,30 +85,30 @@ namespace ProyectoBAD.Controllers
             return View(encuestum);
         }
 
+
         // GET: Encuesta/Edit/5
-        public async Task<IActionResult> Edit(decimal? id)
+        public async Task<IActionResult> Edit(int? id)
         {
-            if (id == null || _context.Encuesta == null)
+            if (id == null)
             {
                 return NotFound();
             }
 
-            var encuestum = await _context.Encuesta.FindAsync(id);
-            if (encuestum == null)
+            var encuesta = await _context.Encuesta.FindAsync(id);
+            if (encuesta == null)
             {
                 return NotFound();
             }
-            return View(encuestum);
+
+            return View(encuesta);
         }
 
         // POST: Encuesta/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(decimal id, [Bind("IdEncuesta,IdUsuario,TituloEncuesta,ObjetivoEncuesta,GrupometaEncuesta,IndicacionesEncuesta,FechaEncuesta,EstadoEncuesta")] Encuestum encuestum)
+        public async Task<IActionResult> Edit(int id, [Bind("IdEncuesta,TituloEncuesta,ObjetivoEncuesta,GrupometaEncuesta,IndicacionesEncuesta")] Encuestum encuesta)
         {
-            if (id != encuestum.IdEncuesta)
+            if (id != encuesta.IdEncuesta)
             {
                 return NotFound();
             }
@@ -98,12 +117,18 @@ namespace ProyectoBAD.Controllers
             {
                 try
                 {
-                    _context.Update(encuestum);
+                    // Mantener los valores no editables
+                    var originalEncuesta = await _context.Encuesta.AsNoTracking().FirstOrDefaultAsync(e => e.IdEncuesta == id);
+                    encuesta.IdUsuario = originalEncuesta.IdUsuario;
+                    encuesta.FechaEncuesta = originalEncuesta.FechaEncuesta;
+                    encuesta.EstadoEncuesta = originalEncuesta.EstadoEncuesta;
+
+                    _context.Update(encuesta);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!EncuestumExists(encuestum.IdEncuesta))
+                    if (!EncuestaExists(encuesta.IdEncuesta))
                     {
                         return NotFound();
                     }
@@ -114,11 +139,16 @@ namespace ProyectoBAD.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(encuestum);
+            return View(encuesta);
+        }
+
+        private bool EncuestaExists(int id)
+        {
+            return _context.Encuesta.Any(e => e.IdEncuesta == id);
         }
 
         // GET: Encuesta/Delete/5
-        public async Task<IActionResult> Delete(decimal? id)
+        public async Task<IActionResult> Delete(int? id)
         {
             if (id == null || _context.Encuesta == null)
             {
@@ -126,6 +156,7 @@ namespace ProyectoBAD.Controllers
             }
 
             var encuestum = await _context.Encuesta
+                .Include(e => e.IdUsuarioNavigation)
                 .FirstOrDefaultAsync(m => m.IdEncuesta == id);
             if (encuestum == null)
             {
@@ -138,7 +169,7 @@ namespace ProyectoBAD.Controllers
         // POST: Encuesta/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(decimal id)
+        public async Task<IActionResult> DeleteConfirmed(int id)
         {
             if (_context.Encuesta == null)
             {
@@ -149,14 +180,38 @@ namespace ProyectoBAD.Controllers
             {
                 _context.Encuesta.Remove(encuestum);
             }
-            
+
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool EncuestumExists(decimal id)
+        private bool EncuestumExists(int id)
         {
-          return (_context.Encuesta?.Any(e => e.IdEncuesta == id)).GetValueOrDefault();
+            return (_context.Encuesta?.Any(e => e.IdEncuesta == id)).GetValueOrDefault();
+        }
+
+        // GET: Encuesta/ShowQuestions/5
+        public async Task<IActionResult> ShowQuestions(int? id)
+        {
+            if (id == null || _context.Encuesta == null)
+            {
+                return NotFound();
+            }
+
+            var encuestum = await _context.Encuesta
+                .Include(e => e.Pregunta)  // Incluir las preguntas
+                    .ThenInclude(p => p.TipoPregunta)  // Incluir el tipo de pregunta
+                .FirstOrDefaultAsync(m => m.IdEncuesta == id);
+
+            if (encuestum == null)
+            {
+                return NotFound();
+            }
+
+            ViewBag.EncuestaTitulo = encuestum.TituloEncuesta;
+
+            // Pasar los datos de las preguntas a la vista de preguntas existente
+            return View("~/Views/Preguntums/Index.cshtml", encuestum.Pregunta);
         }
     }
 }

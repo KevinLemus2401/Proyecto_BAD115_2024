@@ -1,34 +1,10 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "E:\\Estudio\\2024\\Ciclo I\\BAD-115\\Repo_Proyecto\\Proyecto_BAD115_2024\\",
+  "WorkspaceRootPath": "C:\\Users\\jor05\\source\\repos\\Proyecto_BAD115_2024\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B288A2FF-A288-42AE-A24D-0A0A127ECFA8}|ProyectoBAD\\ProyectoBAD.csproj|e:\\estudio\\2024\\ciclo i\\bad-115\\repo_proyecto\\proyecto_bad115_2024\\proyectobad\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{B288A2FF-A288-42AE-A24D-0A0A127ECFA8}|ProyectoBAD\\ProyectoBAD.csproj|solutionrelative:proyectobad\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B288A2FF-A288-42AE-A24D-0A0A127ECFA8}|ProyectoBAD\\ProyectoBAD.csproj|e:\\estudio\\2024\\ciclo i\\bad-115\\repo_proyecto\\proyecto_bad115_2024\\proyectobad\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{B288A2FF-A288-42AE-A24D-0A0A127ECFA8}|ProyectoBAD\\ProyectoBAD.csproj|c:\\users\\jor05\\source\\repos\\proyecto_bad115_2024\\proyectobad\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B288A2FF-A288-42AE-A24D-0A0A127ECFA8}|ProyectoBAD\\ProyectoBAD.csproj|solutionrelative:proyectobad\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B288A2FF-A288-42AE-A24D-0A0A127ECFA8}|ProyectoBAD\\ProyectoBAD.csproj|e:\\estudio\\2024\\ciclo i\\bad-115\\repo_proyecto\\proyecto_bad115_2024\\proyectobad\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B288A2FF-A288-42AE-A24D-0A0A127ECFA8}|ProyectoBAD\\ProyectoBAD.csproj|solutionrelative:proyectobad\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B288A2FF-A288-42AE-A24D-0A0A127ECFA8}|ProyectoBAD\\ProyectoBAD.csproj|e:\\estudio\\2024\\ciclo i\\bad-115\\repo_proyecto\\proyecto_bad115_2024\\proyectobad\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B288A2FF-A288-42AE-A24D-0A0A127ECFA8}|ProyectoBAD\\ProyectoBAD.csproj|solutionrelative:proyectobad\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B288A2FF-A288-42AE-A24D-0A0A127ECFA8}|ProyectoBAD\\ProyectoBAD.csproj|e:\\estudio\\2024\\ciclo i\\bad-115\\repo_proyecto\\proyecto_bad115_2024\\proyectobad\\models\\sisencuestascontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B288A2FF-A288-42AE-A24D-0A0A127ECFA8}|ProyectoBAD\\ProyectoBAD.csproj|solutionrelative:proyectobad\\models\\sisencuestascontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B288A2FF-A288-42AE-A24D-0A0A127ECFA8}|ProyectoBAD\\ProyectoBAD.csproj|e:\\estudio\\2024\\ciclo i\\bad-115\\repo_proyecto\\proyecto_bad115_2024\\proyectobad\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B288A2FF-A288-42AE-A24D-0A0A127ECFA8}|ProyectoBAD\\ProyectoBAD.csproj|solutionrelative:proyectobad\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B288A2FF-A288-42AE-A24D-0A0A127ECFA8}|ProyectoBAD\\ProyectoBAD.csproj|e:\\estudio\\2024\\ciclo i\\bad-115\\repo_proyecto\\proyecto_bad115_2024\\proyectobad\\views\\home\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B288A2FF-A288-42AE-A24D-0A0A127ECFA8}|ProyectoBAD\\ProyectoBAD.csproj|solutionrelative:proyectobad\\views\\home\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,101 +14,27 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "E:\\Estudio\\2024\\Ciclo I\\BAD-115\\Repo_Proyecto\\Proyecto_BAD115_2024\\ProyectoBAD\\appsettings.json",
-              "RelativeDocumentMoniker": "ProyectoBAD\\appsettings.json",
-              "ToolTip": "E:\\Estudio\\2024\\Ciclo I\\BAD-115\\Repo_Proyecto\\Proyecto_BAD115_2024\\ProyectoBAD\\appsettings.json",
-              "RelativeToolTip": "ProyectoBAD\\appsettings.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-04-23T21:12:40.019Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "sisencuestasContext.cs",
-              "DocumentMoniker": "E:\\Estudio\\2024\\Ciclo I\\BAD-115\\Repo_Proyecto\\Proyecto_BAD115_2024\\ProyectoBAD\\Models\\sisencuestasContext.cs",
-              "RelativeDocumentMoniker": "ProyectoBAD\\Models\\sisencuestasContext.cs",
-              "ToolTip": "E:\\Estudio\\2024\\Ciclo I\\BAD-115\\Repo_Proyecto\\Proyecto_BAD115_2024\\ProyectoBAD\\Models\\sisencuestasContext.cs",
-              "RelativeToolTip": "ProyectoBAD\\Models\\sisencuestasContext.cs",
-              "ViewState": "AQIAAFsAAAAAAAAAAAAowGoAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-23T21:07:42.945Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "E:\\Estudio\\2024\\Ciclo I\\BAD-115\\Repo_Proyecto\\Proyecto_BAD115_2024\\ProyectoBAD\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "ProyectoBAD\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "E:\\Estudio\\2024\\Ciclo I\\BAD-115\\Repo_Proyecto\\Proyecto_BAD115_2024\\ProyectoBAD\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "ProyectoBAD\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AQIAAB0AAAAAAAAAAAAAAD4AAABEAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-04-23T19:35:50.865Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Privacy.cshtml",
-              "DocumentMoniker": "E:\\Estudio\\2024\\Ciclo I\\BAD-115\\Repo_Proyecto\\Proyecto_BAD115_2024\\ProyectoBAD\\Views\\Home\\Privacy.cshtml",
-              "RelativeDocumentMoniker": "ProyectoBAD\\Views\\Home\\Privacy.cshtml",
-              "ToolTip": "E:\\Estudio\\2024\\Ciclo I\\BAD-115\\Repo_Proyecto\\Proyecto_BAD115_2024\\ProyectoBAD\\Views\\Home\\Privacy.cshtml",
-              "RelativeToolTip": "ProyectoBAD\\Views\\Home\\Privacy.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-04-23T19:35:50.927Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
               "Title": "Program.cs",
-              "DocumentMoniker": "E:\\Estudio\\2024\\Ciclo I\\BAD-115\\Repo_Proyecto\\Proyecto_BAD115_2024\\ProyectoBAD\\Program.cs",
+              "DocumentMoniker": "C:\\Users\\jor05\\source\\repos\\Proyecto_BAD115_2024\\ProyectoBAD\\Program.cs",
               "RelativeDocumentMoniker": "ProyectoBAD\\Program.cs",
-              "ToolTip": "E:\\Estudio\\2024\\Ciclo I\\BAD-115\\Repo_Proyecto\\Proyecto_BAD115_2024\\ProyectoBAD\\Program.cs",
+              "ToolTip": "C:\\Users\\jor05\\source\\repos\\Proyecto_BAD115_2024\\ProyectoBAD\\Program.cs",
               "RelativeToolTip": "ProyectoBAD\\Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAgAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACIAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-23T19:35:50.93Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "HomeController.cs",
-              "DocumentMoniker": "E:\\Estudio\\2024\\Ciclo I\\BAD-115\\Repo_Proyecto\\Proyecto_BAD115_2024\\ProyectoBAD\\Controllers\\HomeController.cs",
-              "RelativeDocumentMoniker": "ProyectoBAD\\Controllers\\HomeController.cs",
-              "ToolTip": "E:\\Estudio\\2024\\Ciclo I\\BAD-115\\Repo_Proyecto\\Proyecto_BAD115_2024\\ProyectoBAD\\Controllers\\HomeController.cs",
-              "RelativeToolTip": "ProyectoBAD\\Controllers\\HomeController.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAywBoAAAASAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-23T19:35:50.933Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "E:\\Estudio\\2024\\Ciclo I\\BAD-115\\Repo_Proyecto\\Proyecto_BAD115_2024\\ProyectoBAD\\Views\\Home\\Index.cshtml",
-              "RelativeDocumentMoniker": "ProyectoBAD\\Views\\Home\\Index.cshtml",
-              "ToolTip": "E:\\Estudio\\2024\\Ciclo I\\BAD-115\\Repo_Proyecto\\Proyecto_BAD115_2024\\ProyectoBAD\\Views\\Home\\Index.cshtml",
-              "RelativeToolTip": "ProyectoBAD\\Views\\Home\\Index.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAADAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-04-23T19:35:50.936Z",
+              "WhenOpened": "2024-05-17T04:32:54.647Z",
               "EditorCaption": ""
             }
           ]

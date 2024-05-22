@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.AspNetCore.Identity;
 
 namespace ProyectoBAD.Models
 {
-    public partial class sisencuestasContext : DbContext
+    public partial class sisencuestasContext : IdentityDbContext<Usuario, Roles, string>
     {
         public sisencuestasContext()
         {
@@ -23,6 +25,7 @@ namespace ProyectoBAD.Models
         public virtual DbSet<Respuestum> Respuesta { get; set; } = null!;
         public virtual DbSet<Tipopreguntum> Tipopregunta { get; set; } = null!;
         public virtual DbSet<Usuario> Usuarios { get; set; } = null!;
+        public virtual DbSet<Roles> Roles { get; set; } = null!;
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -35,17 +38,15 @@ namespace ProyectoBAD.Models
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            base.OnModelCreating(modelBuilder);
+
             modelBuilder.Entity<Encuestado>(entity =>
             {
-                entity.HasKey(e => e.IdEncuestado)
-                    .IsClustered(false);
+                entity.HasKey(e => e.IdEncuestado);
 
                 entity.ToTable("ENCUESTADO");
 
-                entity.Property(e => e.IdEncuestado)
-                    .HasColumnType("numeric(18, 0)")
-                    .ValueGeneratedOnAdd()
-                    .HasColumnName("ID_ENCUESTADO");
+                entity.Property(e => e.IdEncuestado).HasColumnName("ID_ENCUESTADO");
 
                 entity.Property(e => e.EmailEncuestado)
                     .HasMaxLength(50)
@@ -65,21 +66,18 @@ namespace ProyectoBAD.Models
 
             modelBuilder.Entity<Encuestum>(entity =>
             {
-                entity.HasKey(e => e.IdEncuesta)
-                    .IsClustered(false);
+                entity.HasKey(e => e.IdEncuesta);
 
                 entity.ToTable("ENCUESTA");
 
-                entity.Property(e => e.IdEncuesta)
-                    .HasColumnType("numeric(18, 0)")
-                    .ValueGeneratedOnAdd()
-                    .HasColumnName("ID_ENCUESTA");
+                entity.HasIndex(e => e.IdUsuario, "USUARIO_ENCUESTA_FK");
+
+                entity.Property(e => e.IdEncuesta).HasColumnName("ID_ENCUESTA");
 
                 entity.Property(e => e.EstadoEncuesta).HasColumnName("ESTADO_ENCUESTA");
 
                 entity.Property(e => e.FechaEncuesta)
-                    .IsRowVersion()
-                    .IsConcurrencyToken()
+                    .HasColumnType("datetime")
                     .HasColumnName("FECHA_ENCUESTA");
 
                 entity.Property(e => e.GrupometaEncuesta)
@@ -103,19 +101,22 @@ namespace ProyectoBAD.Models
                     .HasMaxLength(500)
                     .IsUnicode(false)
                     .HasColumnName("TITULO_ENCUESTA");
+
+                entity.HasOne(d => d.IdUsuarioNavigation)
+                    .WithMany(p => p.Encuesta)
+                    .HasForeignKey(d => d.IdUsuario)
+                    .HasConstraintName("FK_ENCUESTA_USUARIO_E_USUARIO");
             });
 
             modelBuilder.Entity<Opcionpreguntum>(entity =>
             {
-                entity.HasKey(e => e.OpcionId)
-                    .IsClustered(false);
+                entity.HasKey(e => e.OpcionId);
 
                 entity.ToTable("OPCIONPREGUNTA");
 
-                entity.Property(e => e.OpcionId)
-                    .HasColumnType("numeric(18, 0)")
-                    .ValueGeneratedOnAdd()
-                    .HasColumnName("OPCION_ID");
+                entity.HasIndex(e => e.IdPregunta, "REL_PREGUNTA_OPCIONPREGUNTA_FK");
+
+                entity.Property(e => e.OpcionId).HasColumnName("OPCION_ID");
 
                 entity.Property(e => e.DescripcionOpcion)
                     .HasMaxLength(1000)
@@ -132,19 +133,24 @@ namespace ProyectoBAD.Models
                     .HasMaxLength(500)
                     .IsUnicode(false)
                     .HasColumnName("VALOR_OPCION");
+
+                entity.HasOne(d => d.IdPreguntaNavigation)
+                    .WithMany(p => p.Opcionpregunta)
+                    .HasForeignKey(d => d.IdPregunta)
+                    .HasConstraintName("FK_OPCIONPR_REL_PREGU_PREGUNTA");
             });
 
             modelBuilder.Entity<Preguntum>(entity =>
             {
-                entity.HasKey(e => e.IdPregunta)
-                    .IsClustered(false);
+                entity.HasKey(e => e.IdPregunta);
 
                 entity.ToTable("PREGUNTA");
 
-                entity.Property(e => e.IdPregunta)
-                    .HasColumnType("numeric(18, 0)")
-                    .ValueGeneratedOnAdd()
-                    .HasColumnName("ID_PREGUNTA");
+                entity.HasIndex(e => e.IdEncuesta, "REL_ENCUESTA_PREGUNTA_FK");
+
+                entity.HasIndex(e => e.TipoPreguntaId, "REL_TIPOPREGUNTA_PREGUNTA_FK");
+
+                entity.Property(e => e.IdPregunta).HasColumnName("ID_PREGUNTA");
 
                 entity.Property(e => e.DescripcionPregunta)
                     .HasMaxLength(1000)
@@ -158,23 +164,36 @@ namespace ProyectoBAD.Models
                 entity.Property(e => e.RequeridaPregunta).HasColumnName("REQUERIDA_PREGUNTA");
 
                 entity.Property(e => e.TipoPreguntaId).HasColumnName("TIPO_PREGUNTA_ID");
+
+                entity.HasOne(d => d.IdEncuestaNavigation)
+                    .WithMany(p => p.Pregunta)
+                    .HasForeignKey(d => d.IdEncuesta)
+                    .HasConstraintName("FK_PREGUNTA_REL_ENCUE_ENCUESTA");
+
+                entity.HasOne(d => d.TipoPregunta)
+                    .WithMany(p => p.Pregunta)
+                    .HasForeignKey(d => d.TipoPreguntaId)
+                    .HasConstraintName("FK_PREGUNTA_REL_TIPOP_TIPOPREG");
             });
 
             modelBuilder.Entity<Respuestum>(entity =>
             {
-                entity.HasKey(e => e.RespuestaId)
-                    .IsClustered(false);
+                entity.HasKey(e => e.RespuestaId);
 
                 entity.ToTable("RESPUESTA");
 
-                entity.Property(e => e.RespuestaId)
-                    .HasColumnType("numeric(18, 0)")
-                    .ValueGeneratedOnAdd()
-                    .HasColumnName("RESPUESTA_ID");
+                entity.HasIndex(e => e.IdEncuesta, "RELATIONSHIP_7_FK");
+
+                entity.HasIndex(e => e.IdEncuestado, "REL_ENCUESTADO_RESPUESTA_FK");
+
+                entity.HasIndex(e => e.OpcionId, "REL_RESPUESTA_OPCIONPREGUNTA_FK");
+
+                entity.HasIndex(e => e.IdPregunta, "REL_RESPUESTA_PREGUNTA_FK");
+
+                entity.Property(e => e.RespuestaId).HasColumnName("RESPUESTA_ID");
 
                 entity.Property(e => e.FechaRespuesta)
-                    .IsRowVersion()
-                    .IsConcurrencyToken()
+                    .HasColumnType("datetime")
                     .HasColumnName("FECHA_RESPUESTA");
 
                 entity.Property(e => e.IdEncuesta).HasColumnName("ID_ENCUESTA");
@@ -189,19 +208,35 @@ namespace ProyectoBAD.Models
                     .HasMaxLength(500)
                     .IsUnicode(false)
                     .HasColumnName("TEXTO_RESPUESTA");
+
+                entity.HasOne(d => d.IdEncuestaNavigation)
+                    .WithMany(p => p.Respuesta)
+                    .HasForeignKey(d => d.IdEncuesta)
+                    .HasConstraintName("FK_RESPUEST_RELATIONS_ENCUESTA");
+
+                entity.HasOne(d => d.IdEncuestadoNavigation)
+                    .WithMany(p => p.Respuesta)
+                    .HasForeignKey(d => d.IdEncuestado)
+                    .HasConstraintName("FK_RESPUEST_REL_ENCUE_ENCUESTA");
+
+                entity.HasOne(d => d.IdPreguntaNavigation)
+                    .WithMany(p => p.Respuesta)
+                    .HasForeignKey(d => d.IdPregunta)
+                    .HasConstraintName("FK_RESPUEST_REL_RESPU_PREGUNTA");
+
+                entity.HasOne(d => d.Opcion)
+                    .WithMany(p => p.Respuesta)
+                    .HasForeignKey(d => d.OpcionId)
+                    .HasConstraintName("FK_RESPUEST_REL_RESPU_OPCIONPR");
             });
 
             modelBuilder.Entity<Tipopreguntum>(entity =>
             {
-                entity.HasKey(e => e.TipoPreguntaId)
-                    .IsClustered(false);
+                entity.HasKey(e => e.TipoPreguntaId);
 
                 entity.ToTable("TIPOPREGUNTA");
 
-                entity.Property(e => e.TipoPreguntaId)
-                    .HasColumnType("numeric(18, 0)")
-                    .ValueGeneratedOnAdd()
-                    .HasColumnName("TIPO_PREGUNTA_ID");
+                entity.Property(e => e.TipoPreguntaId).HasColumnName("TIPO_PREGUNTA_ID");
 
                 entity.Property(e => e.DescripcionTipoPregunta)
                     .HasMaxLength(500)
@@ -216,15 +251,11 @@ namespace ProyectoBAD.Models
 
             modelBuilder.Entity<Usuario>(entity =>
             {
-                entity.HasKey(e => e.IdUsuario)
-                    .IsClustered(false);
+                entity.HasKey(e => e.Id);
 
                 entity.ToTable("USUARIO");
 
-                entity.Property(e => e.IdUsuario)
-                    .HasColumnType("numeric(18, 0)")
-                    .ValueGeneratedOnAdd()
-                    .HasColumnName("ID_USUARIO");
+                entity.Property(e => e.Id).HasColumnName("ID_USUARIO");
 
                 entity.Property(e => e.EmailUsuario)
                     .HasMaxLength(100)
@@ -261,6 +292,15 @@ namespace ProyectoBAD.Models
                     .HasMaxLength(8)
                     .IsUnicode(false)
                     .HasColumnName("TELEFONO_USUARIO");
+            });
+
+            modelBuilder.Entity<Roles>(entity =>
+            {
+                entity.ToTable("ROLES");
+
+                entity.Property(e => e.Descripcion)
+                    .HasColumnType("text")
+                    .HasColumnName("DESCRIPCION");
             });
 
             OnModelCreatingPartial(modelBuilder);

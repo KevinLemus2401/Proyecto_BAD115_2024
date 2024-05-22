@@ -5,59 +5,65 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Edit</h1>
-
-<h4>Usuario</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
+<div class="p-4">
+    <div class="card container px-0" style="width: 500px;">
         <form asp-action="Edit">
+            <div class="card-header text-center">
+                <h1>Modificar Usuario</h1>
+            </div>
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="IdUsuario" />
-            <div class="form-group">
-                <label asp-for="EmailUsuario" class="control-label"></label>
-                <input asp-for="EmailUsuario" class="form-control" />
-                <span asp-validation-for="EmailUsuario" class="text-danger"></span>
+            <div class="card-body">
+                <input type="hidden" asp-for="Id" />
+                <div class="form-group">
+                    <label asp-for="PrimerNombreUsuario" class="control-label">Primer nombre:</label>
+                    <input asp-for="PrimerNombreUsuario" class="form-control" />
+                    <span asp-validation-for="PrimerNombreUsuario" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="SegundoNombreUsuario" class="control-label">Segundo Nombre:</label>
+                    <input asp-for="SegundoNombreUsuario" class="form-control" />
+                    <span asp-validation-for="SegundoNombreUsuario" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="PrimerApellidoUsuario" class="control-label">Primer Apellido:</label>
+                    <input asp-for="PrimerApellidoUsuario" class="form-control" />
+                    <span asp-validation-for="PrimerApellidoUsuario" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="SegundoApellidoUsuario" class="control-label">Segundo Apellido:</label>
+                    <input asp-for="SegundoApellidoUsuario" class="form-control" />
+                    <span asp-validation-for="SegundoApellidoUsuario" class="text-danger"></span>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label asp-for="TelefonoUsuario" class="control-label">Teléfono Movil</label>
+                            <input type="number" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="8" max="99999999" asp-for="TelefonoUsuario" class="form-control" />
+                            <span asp-validation-for="TelefonoUsuario" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label asp-for="GenUsuario" class="control-label">Genero:</label>
+                            <select asp-for="GenUsuario" class="form-control">
+                                @foreach (var opcion in (List<SelectListItem>)ViewData["Opciones"])
+                                {
+                                    <option value="@opcion.Value" selected="@opcion.Selected">@opcion.Text</option>
+                                }
+                            </select>
+                            <span asp-validation-for="GenUsuario" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="TelefonoUsuario" class="control-label"></label>
-                <input asp-for="TelefonoUsuario" class="form-control" />
-                <span asp-validation-for="TelefonoUsuario" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="PrimerNombreUsuario" class="control-label"></label>
-                <input asp-for="PrimerNombreUsuario" class="form-control" />
-                <span asp-validation-for="PrimerNombreUsuario" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="SegundoNombreUsuario" class="control-label"></label>
-                <input asp-for="SegundoNombreUsuario" class="form-control" />
-                <span asp-validation-for="SegundoNombreUsuario" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="PrimerApellidoUsuario" class="control-label"></label>
-                <input asp-for="PrimerApellidoUsuario" class="form-control" />
-                <span asp-validation-for="PrimerApellidoUsuario" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="SegundoApellidoUsuario" class="control-label"></label>
-                <input asp-for="SegundoApellidoUsuario" class="form-control" />
-                <span asp-validation-for="SegundoApellidoUsuario" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="GenUsuario" class="control-label"></label>
-                <input asp-for="GenUsuario" class="form-control" />
-                <span asp-validation-for="GenUsuario" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+            <div class="card-footer">
+                <div class="row">
+                    <div class="col-6 "> <a class="btn btn-secondary text-white" asp-action="Index">Regresar</a> </div>
+                    <div class="col-6 text-right"> <input type="submit" value="Guardar" class="btn btn-primary" /> </div>
+                </div>
             </div>
         </form>
     </div>
-</div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
 </div>
 
 @section Scripts {

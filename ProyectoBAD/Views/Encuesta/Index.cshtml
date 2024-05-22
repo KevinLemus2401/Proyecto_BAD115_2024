@@ -1,72 +1,75 @@
 ﻿@model IEnumerable<ProyectoBAD.Models.Encuestum>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Listado de Encuestas";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Index</h1>
+<h1 class="display-4 text-center my-4">@ViewData["Title"]</h1>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.IdUsuario)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.TituloEncuesta)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ObjetivoEncuesta)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.GrupometaEncuesta)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.IndicacionesEncuesta)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.FechaEncuesta)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.EstadoEncuesta)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.IdUsuario)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TituloEncuesta)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ObjetivoEncuesta)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.GrupometaEncuesta)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IndicacionesEncuesta)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.FechaEncuesta)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.EstadoEncuesta)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.IdEncuesta">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.IdEncuesta">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.IdEncuesta">Delete</a>
-            </td>
-        </tr>
+<div class="container">
+    <div class="row justify-content-end mb-3">
+        <div class="col-md-3">
+            <a class="btn btn-success" asp-action="Create">
+                <i class="fas fa-plus-circle mr-2"></i> Agregar Encuesta
+            </a>
+        </div>
+    </div>
+
+    <div class="table-responsive mt-4">
+        <table class="table table-striped" id="tblEncuestas">
+            <thead>
+                <tr>
+                    <th>Título</th>
+                    <th>Objetivo</th>
+                    <th>Grupo Meta</th>
+                    <th>Indicaciones</th>
+                    <th>Fecha</th>
+                    <th>Estado</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@Html.DisplayFor(modelItem => item.TituloEncuesta)</td>
+                        <td>@Html.DisplayFor(modelItem => item.ObjetivoEncuesta)</td>
+                        <td>@Html.DisplayFor(modelItem => item.GrupometaEncuesta)</td>
+                        <td>@Html.DisplayFor(modelItem => item.IndicacionesEncuesta)</td>
+                        <td>@Html.DisplayFor(modelItem => item.FechaEncuesta)</td>
+                        <td>
+                            @if (item.EstadoEncuesta == true)
+                            {
+                                <span class="badge badge-success">Activo</span>
+                            }
+                            else
+                            {
+                                <span class="badge badge-secondary">Inactivo</span>
+                            }
+                        </td>
+                        <td class="d-flex justify-content-between">
+                            <a asp-action="Edit" asp-route-id="@item.IdEncuesta" class="btn btn-primary btn-sm mr-1">
+                                <i class="fas fa-edit"></i> Editar
+                            </a>
+
+                            <a asp-action="Delete" asp-route-id="@item.IdEncuesta" class="btn btn-danger btn-sm mr-1">
+                                <i class="fas fa-trash-alt"></i> Eliminar
+                            </a>
+
+                            <a asp-action="Details" asp-route-id="@item.IdEncuesta" class="btn btn-info btn-sm">
+                                <i class="fas fa-book"></i> Detalles
+                            </a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }
-    </tbody>
-</table>

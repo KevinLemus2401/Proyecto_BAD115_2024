@@ -1,61 +1,48 @@
 ﻿@model ProyectoBAD.Models.Encuestum
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Detalles de la Encuesta";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Details</h1>
+<h1 class="display-4 text-center">@ViewData["Title"]</h1>
 
-<div>
-    <h4>Encuestum</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.IdUsuario)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.IdUsuario)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.TituloEncuesta)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.TituloEncuesta)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ObjetivoEncuesta)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.ObjetivoEncuesta)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.GrupometaEncuesta)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.GrupometaEncuesta)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.IndicacionesEncuesta)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.IndicacionesEncuesta)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.FechaEncuesta)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.FechaEncuesta)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.EstadoEncuesta)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.EstadoEncuesta)
-        </dd>
-    </dl>
+<div class="container">
+    <div class="card mt-4">
+        <div class="card-body">
+            <h4 class="card-title mb-4">Detalles de la Encuesta</h4>
+            <hr class="mt-4" />
+            <dl class="row">
+                <dt class="col-sm-3">ID de Usuario</dt>
+                <dd class="col-sm-9">@Html.DisplayFor(model => model.IdUsuarioNavigation.Id)</dd>
+                <dt class="col-sm-3">Título de la Encuesta</dt>
+                <dd class="col-sm-9">@Html.DisplayFor(model => model.TituloEncuesta)</dd>
+                <dt class="col-sm-3">Objetivo de la Encuesta</dt>
+                <dd class="col-sm-9">@Html.DisplayFor(model => model.ObjetivoEncuesta)</dd>
+                <dt class="col-sm-3">Grupo Meta de la Encuesta</dt>
+                <dd class="col-sm-9">@Html.DisplayFor(model => model.GrupometaEncuesta)</dd>
+                <dt class="col-sm-3">Indicaciones de la Encuesta</dt>
+                <dd class="col-sm-9">@Html.DisplayFor(model => model.IndicacionesEncuesta)</dd>
+                <dt class="col-sm-3">Fecha de la Encuesta</dt>
+                <dd class="col-sm-9">@Html.DisplayFor(model => model.FechaEncuesta)</dd>
+                <dt class="col-sm-3">Estado de la Encuesta</dt>
+                <dd class="col-sm-9">@Html.DisplayFor(model => model.EstadoEncuesta)</dd>
+            </dl>
+            <!-- "Mostrar Preguntas" -->
+            <div class="text-center mt-4">
+                <a asp-action="ShowQuestions" asp-route-id="@Model.IdEncuesta" class="btn btn-primary">
+                    <i class="fas fa-list mr-1"></i> Mostrar Preguntas
+                </a>
+            </div>
+        </div>
+    </div>
 </div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model.IdEncuesta">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+
+<div class="text-center mt-4">
+    <a asp-action="Edit" asp-route-id="@Model.IdEncuesta" class="btn btn-primary mr-2">
+        <i class="fas fa-edit mr-1"></i> Editar
+    </a>
+    <a asp-action="Index" class="btn btn-secondary">
+        <i class="fas fa-arrow-left mr-1"></i> Volver a la Lista
+    </a>
 </div>

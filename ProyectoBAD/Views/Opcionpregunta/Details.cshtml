@@ -1,49 +1,38 @@
 ﻿@model ProyectoBAD.Models.Opcionpreguntum
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Detalles de la Opción";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Details</h1>
+<h1 class="display-4 text-center">@ViewData["Title"]</h1>
 
-<div>
-    <h4>Opcionpreguntum</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.IdPregunta)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.IdPregunta)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ValorOpcion)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.ValorOpcion)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.DescripcionOpcion)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.DescripcionOpcion)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.EstadoOpcion)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.EstadoOpcion)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.OrdenOpcion)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.OrdenOpcion)
-        </dd>
-    </dl>
+<div class="container">
+    <div class="card mt-4">
+        <div class="card-body">
+            <h4 class="card-title mb-4">Detalles de la Opción</h4>
+            <hr class="mt-4" />
+            <dl class="row">
+                <dt class="col-sm-3">Valor de la Opción</dt>
+                <dd class="col-sm-9">@Html.DisplayFor(model => model.ValorOpcion)</dd>
+                <dt class="col-sm-3">Descripción de la Opción</dt>
+                <dd class="col-sm-9">@Html.DisplayFor(model => model.DescripcionOpcion)</dd>
+                <dt class="col-sm-3">Estado de la Opción</dt>
+                <dd class="col-sm-9">@Html.DisplayFor(model => model.EstadoOpcion)</dd>
+                <dt class="col-sm-3">Orden de la Opción</dt>
+                <dd class="col-sm-9">@Html.DisplayFor(model => model.OrdenOpcion)</dd>
+                <dt class="col-sm-3">ID de la Pregunta</dt>
+                <dd class="col-sm-9">@Html.DisplayFor(model => model.IdPreguntaNavigation.IdPregunta)</dd>
+            </dl>
+        </div>
+    </div>
 </div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model.OpcionId">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+
+<div class="text-center mt-4">
+    <a asp-action="Edit" asp-route-id="@Model.OpcionId" class="btn btn-primary mr-2">
+        <i class="fas fa-edit mr-1"></i> Editar
+    </a>
+    <a asp-action="Index" class="btn btn-secondary">
+        <i class="fas fa-arrow-left mr-1"></i> Volver a la Lista
+    </a>
 </div>

@@ -709,6 +709,10 @@
       "PackagePath": "staticwebassets\\dist\\img\\user8-128x128.jpg"
     },
     {
+      "Id": "C:\\Users\\alexi\\Documents\\Proyecto_BAD115_2024\\Proyecto_BAD115_2024\\ProyectoBAD\\wwwroot\\dist\\img\\usuario.png",
+      "PackagePath": "staticwebassets\\dist\\img\\usuario.png"
+    },
+    {
       "Id": "C:\\Users\\alexi\\Documents\\Proyecto_BAD115_2024\\Proyecto_BAD115_2024\\ProyectoBAD\\wwwroot\\dist\\js\\.eslintrc.json",
       "PackagePath": "staticwebassets\\dist\\js\\.eslintrc.json"
     },
@@ -1429,8 +1433,16 @@
       "PackagePath": "staticwebassets\\index3.html"
     },
     {
+      "Id": "C:\\Users\\alexi\\Documents\\Proyecto_BAD115_2024\\Proyecto_BAD115_2024\\ProyectoBAD\\wwwroot\\js\\Select2.js",
+      "PackagePath": "staticwebassets\\js\\Select2.js"
+    },
+    {
       "Id": "C:\\Users\\alexi\\Documents\\Proyecto_BAD115_2024\\Proyecto_BAD115_2024\\ProyectoBAD\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "C:\\Users\\alexi\\Documents\\Proyecto_BAD115_2024\\Proyecto_BAD115_2024\\ProyectoBAD\\wwwroot\\js\\tablasProyecto.js",
+      "PackagePath": "staticwebassets\\js\\tablasProyecto.js"
     },
     {
       "Id": "C:\\Users\\alexi\\Documents\\Proyecto_BAD115_2024\\Proyecto_BAD115_2024\\ProyectoBAD\\wwwroot\\lib\\bootstrap\\LICENSE",

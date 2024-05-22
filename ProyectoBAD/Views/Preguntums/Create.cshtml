@@ -1,54 +1,60 @@
 ﻿@model ProyectoBAD.Models.Preguntum
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Crear Pregunta";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Create</h1>
+<h1 class="display-4 text-center">@ViewData["Title"]</h1>
 
-<h4>Preguntum</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="IdEncuesta" class="control-label"></label>
-                <input asp-for="IdEncuesta" class="form-control" />
-                <span asp-validation-for="IdEncuesta" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="TipoPreguntaId" class="control-label"></label>
-                <input asp-for="TipoPreguntaId" class="form-control" />
-                <span asp-validation-for="TipoPreguntaId" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="DescripcionPregunta" class="control-label"></label>
-                <input asp-for="DescripcionPregunta" class="form-control" />
-                <span asp-validation-for="DescripcionPregunta" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="RequeridaPregunta" class="control-label"></label>
-                <input asp-for="RequeridaPregunta" class="form-control" />
-                <span asp-validation-for="RequeridaPregunta" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="OrdenPregunta" class="control-label"></label>
-                <input asp-for="OrdenPregunta" class="form-control" />
-                <span asp-validation-for="OrdenPregunta" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
+<div class="container">
+    <div class="row justify-content-center mt-4">
+        <div class="col-md-6">
+            <form asp-action="Create">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="IdEncuesta" class="control-label">ID de la Encuesta</label>
+                    <input asp-for="IdEncuesta" class="form-control" />
+                    <span asp-validation-for="IdEncuesta" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="TipoPreguntaId" class="control-label">Tipo de Pregunta</label>
+                    <input asp-for="TipoPreguntaId" class="form-control" />
+                    <span asp-validation-for="TipoPreguntaId" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="DescripcionPregunta" class="control-label">Descripción de la Pregunta</label>
+                    <input asp-for="DescripcionPregunta" class="form-control" />
+                    <span asp-validation-for="DescripcionPregunta" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="RequeridaPregunta" class="control-label">Requerida</label>
+                    <input asp-for="RequeridaPregunta" class="form-control" />
+                    <span asp-validation-for="RequeridaPregunta" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="OrdenPregunta" class="control-label">Orden de la Pregunta</label>
+                    <input asp-for="OrdenPregunta" class="form-control" />
+                    <span asp-validation-for="OrdenPregunta" class="text-danger"></span>
+                </div>
+                <div class="form-group text-center">
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-plus-circle mr-2"></i> Crear Pregunta
+                    </button>
+                </div>
+            </form>
+        </div>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
+<div class="text-center mt-3">
+    <a asp-action="Index" class="btn btn-secondary">
+        <i class="fas fa-arrow-left mr-2"></i> Volver a la Lista
+    </a>
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }

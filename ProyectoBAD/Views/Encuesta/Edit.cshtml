@@ -1,65 +1,64 @@
 ﻿@model ProyectoBAD.Models.Encuestum
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Editar Encuesta";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Edit</h1>
+<h1 class="display-4 text-center">@ViewData["Title"]</h1>
 
-<h4>Encuestum</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Edit">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="IdEncuesta" />
-            <div class="form-group">
-                <label asp-for="IdUsuario" class="control-label"></label>
-                <input asp-for="IdUsuario" class="form-control" />
-                <span asp-validation-for="IdUsuario" class="text-danger"></span>
+<div class="container">
+    <div class="row justify-content-center mt-4">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title text-center mb-4">Editar Encuesta</h4>
+                    <form asp-action="Edit">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <input type="hidden" asp-for="IdEncuesta" />
+                        <input type="hidden" asp-for="IdUsuario" />  <!-- ID del usuario oculto -->
+                        <input type="hidden" asp-for="FechaEncuesta" /> <!-- Fecha de la encuesta oculta -->
+                        <input type="hidden" asp-for="EstadoEncuesta" /> <!-- Estado de la encuesta oculto -->
+                        <div class="form-group">
+                            <label asp-for="TituloEncuesta" class="control-label">Título de la Encuesta</label>
+                            <input asp-for="TituloEncuesta" class="form-control" />
+                            <span asp-validation-for="TituloEncuesta" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="ObjetivoEncuesta" class="control-label">Objetivo de la Encuesta</label>
+                            <input asp-for="ObjetivoEncuesta" class="form-control" />
+                            <span asp-validation-for="ObjetivoEncuesta" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="GrupometaEncuesta" class="control-label">Grupo Meta de la Encuesta</label>
+                            <input asp-for="GrupometaEncuesta" class="form-control" />
+                            <span asp-validation-for="GrupometaEncuesta" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="IndicacionesEncuesta" class="control-label">Indicaciones de la Encuesta</label>
+                            <input asp-for="IndicacionesEncuesta" class="form-control" />
+                            <span asp-validation-for="IndicacionesEncuesta" class="text-danger"></span>
+                        </div>
+                        <div class="form-group text-center">
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-save mr-2"></i> Guardar
+                            </button>
+                        </div>
+                    </form>
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="TituloEncuesta" class="control-label"></label>
-                <input asp-for="TituloEncuesta" class="form-control" />
-                <span asp-validation-for="TituloEncuesta" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ObjetivoEncuesta" class="control-label"></label>
-                <input asp-for="ObjetivoEncuesta" class="form-control" />
-                <span asp-validation-for="ObjetivoEncuesta" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="GrupometaEncuesta" class="control-label"></label>
-                <input asp-for="GrupometaEncuesta" class="form-control" />
-                <span asp-validation-for="GrupometaEncuesta" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="IndicacionesEncuesta" class="control-label"></label>
-                <input asp-for="IndicacionesEncuesta" class="form-control" />
-                <span asp-validation-for="IndicacionesEncuesta" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="FechaEncuesta" class="control-label"></label>
-                <input asp-for="FechaEncuesta" class="form-control" />
-                <span asp-validation-for="FechaEncuesta" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="EstadoEncuesta" class="control-label"></label>
-                <input asp-for="EstadoEncuesta" class="form-control" />
-                <span asp-validation-for="EstadoEncuesta" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
-            </div>
-        </form>
+        </div>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
+<div class="text-center mt-3">
+    <a asp-action="Index" class="btn btn-secondary">
+        <i class="fas fa-arrow-left mr-2"></i> Volver a la Lista
+    </a>
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }

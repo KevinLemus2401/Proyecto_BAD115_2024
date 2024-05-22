@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -9,6 +10,7 @@ using ProyectoBAD.Models;
 
 namespace ProyectoBAD.Controllers
 {
+    [Authorize]
     public class EncuestadosController : Controller
     {
         private readonly sisencuestasContext _context;
@@ -27,7 +29,7 @@ namespace ProyectoBAD.Controllers
         }
 
         // GET: Encuestados/Details/5
-        public async Task<IActionResult> Details(decimal? id)
+        public async Task<IActionResult> Details(int? id)
         {
             if (id == null || _context.Encuestados == null)
             {
@@ -67,7 +69,7 @@ namespace ProyectoBAD.Controllers
         }
 
         // GET: Encuestados/Edit/5
-        public async Task<IActionResult> Edit(decimal? id)
+        public async Task<IActionResult> Edit(int? id)
         {
             if (id == null || _context.Encuestados == null)
             {
@@ -87,7 +89,7 @@ namespace ProyectoBAD.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(decimal id, [Bind("IdEncuestado,EmailEncuestado,FechaNacEncuesta,GenEncuestado")] Encuestado encuestado)
+        public async Task<IActionResult> Edit(int id, [Bind("IdEncuestado,EmailEncuestado,FechaNacEncuesta,GenEncuestado")] Encuestado encuestado)
         {
             if (id != encuestado.IdEncuestado)
             {
@@ -118,7 +120,7 @@ namespace ProyectoBAD.Controllers
         }
 
         // GET: Encuestados/Delete/5
-        public async Task<IActionResult> Delete(decimal? id)
+        public async Task<IActionResult> Delete(int? id)
         {
             if (id == null || _context.Encuestados == null)
             {
@@ -138,7 +140,7 @@ namespace ProyectoBAD.Controllers
         // POST: Encuestados/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(decimal id)
+        public async Task<IActionResult> DeleteConfirmed(int id)
         {
             if (_context.Encuestados == null)
             {
@@ -154,7 +156,7 @@ namespace ProyectoBAD.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        private bool EncuestadoExists(decimal id)
+        private bool EncuestadoExists(int id)
         {
           return (_context.Encuestados?.Any(e => e.IdEncuestado == id)).GetValueOrDefault();
         }
