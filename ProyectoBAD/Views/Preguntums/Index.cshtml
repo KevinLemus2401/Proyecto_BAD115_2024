@@ -10,10 +10,27 @@
 <div class="container">
     <div class="row justify-content-end mt-4">
         <div class="col-md-3">
-            
-            <a asp-action="Create" asp-controller="Preguntums" class="btn btn-success btn-block">
-                <i class="fas fa-plus-circle mr-2"></i>Añadir Pregunta
-            </a>
+
+            @{
+    var encuestaId = ViewBag.EncuestaId as int?;
+    if (encuestaId.HasValue)
+    {
+        <p>Valor de ViewBag.EncuestaId: @encuestaId</p>
+    }
+    else
+    {
+        <p>ViewBag.EncuestaId no tiene un valor definido.</p>
+    }
+}
+
+
+            <!-- "Crear Pregunta" -->
+            <div class="text-center mt-4">
+                <a asp-controller="Preguntums" asp-action="Create" asp-route-idEncuesta="@ViewBag.EncuestaId" class="btn btn-success">
+                    <i class="fas fa-plus mr-1"></i> Crear Pregunta
+                </a>
+            </div>
+
 
         </div>
     </div>

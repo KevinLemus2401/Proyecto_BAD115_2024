@@ -48,16 +48,22 @@ namespace ProyectoBAD.Controllers
         }
 
         // GET: Preguntums/Create
-        public IActionResult Create()
+        public IActionResult Create(int? idEncuesta)
         {
-            ViewData["IdEncuesta"] = new SelectList(_context.Encuesta, "IdEncuesta", "IdEncuesta");
+            if (idEncuesta == null)
+            {
+                return NotFound();
+            }
+
+            ViewData["IdEncuesta"] = idEncuesta;
             ViewData["TipoPreguntaId"] = new SelectList(_context.Tipopregunta, "TipoPreguntaId", "TipoPreguntaId");
+            ViewBag.TiposPregunta = _context.Tipopregunta.ToList();
             return View();
         }
 
+
+
         // POST: Preguntums/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("IdPregunta,IdEncuesta,TipoPreguntaId,DescripcionPregunta,RequeridaPregunta,OrdenPregunta")] Preguntum preguntum)
@@ -66,12 +72,20 @@ namespace ProyectoBAD.Controllers
             {
                 _context.Add(preguntum);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+
+                // Establecer ViewBag.EncuestaId antes de redirigir a la vista de preguntas
+                ViewBag.EncuestaId = preguntum.IdEncuesta;
+
+                // Redirigir a la acción que muestra las preguntas en el controlador de Encuesta
+                return RedirectToAction("ShowQuestions", "Encuesta", new { id = preguntum.IdEncuesta });
             }
+
             ViewData["IdEncuesta"] = new SelectList(_context.Encuesta, "IdEncuesta", "IdEncuesta", preguntum.IdEncuesta);
             ViewData["TipoPreguntaId"] = new SelectList(_context.Tipopregunta, "TipoPreguntaId", "TipoPreguntaId", preguntum.TipoPreguntaId);
             return View(preguntum);
         }
+
+
 
         // GET: Preguntums/Edit/5
         public async Task<IActionResult> Edit(int? id)

@@ -208,10 +208,14 @@ namespace ProyectoBAD.Controllers
                 return NotFound();
             }
 
+            // Pasar el ID de la encuesta a la vista utilizando ViewBag
+            ViewBag.EncuestaId = id;
+
             ViewBag.EncuestaTitulo = encuestum.TituloEncuesta;
 
             // Pasar los datos de las preguntas a la vista de preguntas existente
             return View("~/Views/Preguntums/Index.cshtml", encuestum.Pregunta);
         }
+
     }
 }

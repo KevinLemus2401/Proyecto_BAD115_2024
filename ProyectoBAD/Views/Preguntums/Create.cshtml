@@ -12,16 +12,19 @@
         <div class="col-md-6">
             <form asp-action="Create">
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                <div class="form-group">
-                    <label asp-for="IdEncuesta" class="control-label">ID de la Encuesta</label>
-                    <input asp-for="IdEncuesta" class="form-control" />
-                    <span asp-validation-for="IdEncuesta" class="text-danger"></span>
-                </div>
+                <input type="hidden" asp-for="IdEncuesta" value="@ViewData["IdEncuesta"]" /> <!-- Campo oculto para establecer el ID de la encuesta -->
                 <div class="form-group">
                     <label asp-for="TipoPreguntaId" class="control-label">Tipo de Pregunta</label>
-                    <input asp-for="TipoPreguntaId" class="form-control" />
+                    <select asp-for="TipoPreguntaId" class="form-control">
+                        <option value="">Seleccionar...</option>
+                                        @foreach (var tipoPregunta in ViewBag.TiposPregunta)
+                                        {
+                                <option value="@tipoPregunta.TipoPreguntaId">@tipoPregunta.NombreTipoPregunta</option>
+                                        }
+                    </select>
                     <span asp-validation-for="TipoPreguntaId" class="text-danger"></span>
                 </div>
+
                 <div class="form-group">
                     <label asp-for="DescripcionPregunta" class="control-label">Descripción de la Pregunta</label>
                     <input asp-for="DescripcionPregunta" class="form-control" />
