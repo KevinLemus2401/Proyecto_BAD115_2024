@@ -51,10 +51,11 @@
 </div>
 
 <div class="text-center mt-3">
-    <a asp-action="Index" class="btn btn-secondary">
+    <a asp-action="ShowQuestions" asp-controller="Encuesta" asp-route-id="@ViewData["IdEncuesta"]" class="btn btn-secondary">
         <i class="fas fa-arrow-left mr-2"></i> Volver a la Lista
     </a>
 </div>
+
 
 @section Scripts {
     @{
