@@ -16,11 +16,9 @@
                     <form asp-action="Edit">
                         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                         <input type="hidden" asp-for="IdEncuesta" />
-                        <div class="form-group">
-                            <label asp-for="IdUsuario" class="control-label">ID de Usuario</label>
-                            <select asp-for="IdUsuario" class="form-control" asp-items="ViewBag.IdUsuario"></select>
-                            <span asp-validation-for="IdUsuario" class="text-danger"></span>
-                        </div>
+                        <input type="hidden" asp-for="IdUsuario" />  <!-- ID del usuario oculto -->
+                        <input type="hidden" asp-for="FechaEncuesta" /> <!-- Fecha de la encuesta oculta -->
+                        <input type="hidden" asp-for="EstadoEncuesta" /> <!-- Estado de la encuesta oculto -->
                         <div class="form-group">
                             <label asp-for="TituloEncuesta" class="control-label">Título de la Encuesta</label>
                             <input asp-for="TituloEncuesta" class="form-control" />
@@ -40,16 +38,6 @@
                             <label asp-for="IndicacionesEncuesta" class="control-label">Indicaciones de la Encuesta</label>
                             <input asp-for="IndicacionesEncuesta" class="form-control" />
                             <span asp-validation-for="IndicacionesEncuesta" class="text-danger"></span>
-                        </div>
-                        <div class="form-group">
-                            <label asp-for="FechaEncuesta" class="control-label">Fecha de la Encuesta</label>
-                            <input asp-for="FechaEncuesta" type="date" class="form-control" />
-                            <span asp-validation-for="FechaEncuesta" class="text-danger"></span>
-                        </div>
-                        <div class="form-group">
-                            <label asp-for="EstadoEncuesta" class="control-label">Estado de la Encuesta</label>
-                            <input asp-for="EstadoEncuesta" class="form-control" />
-                            <span asp-validation-for="EstadoEncuesta" class="text-danger"></span>
                         </div>
                         <div class="form-group text-center">
                             <button type="submit" class="btn btn-primary">

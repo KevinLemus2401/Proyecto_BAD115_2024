@@ -16,6 +16,22 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\alexi\Documents\Proyecto_BAD115_2024\Proyecto_BAD115_2024\ProyectoBAD
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/alexi/Documents/Proyecto_BAD115_2024/Proyecto_BAD115_2024/ProyectoBAD/Views/Account/AccessDenied.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxBY2Nlc3NEZW5pZWQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/alexi/Documents/Proyecto_BAD115_2024/Proyecto_BAD115_2024/ProyectoBAD/Views/Account/CambiarPass.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxDYW1iaWFyUGFzcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/alexi/Documents/Proyecto_BAD115_2024/Proyecto_BAD115_2024/ProyectoBAD/Views/Account/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/alexi/Documents/Proyecto_BAD115_2024/Proyecto_BAD115_2024/ProyectoBAD/Views/Account/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/alexi/Documents/Proyecto_BAD115_2024/Proyecto_BAD115_2024/ProyectoBAD/Views/Encuestados/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW5jdWVzdGFkb3NcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -144,8 +160,28 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVzcHVlc3RhXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/alexi/Documents/Proyecto_BAD115_2024/Proyecto_BAD115_2024/ProyectoBAD/Views/Roles/ActualizarRol.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9sZXNcQWN0dWFsaXphclJvbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/alexi/Documents/Proyecto_BAD115_2024/Proyecto_BAD115_2024/ProyectoBAD/Views/Roles/CrearRol.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9sZXNcQ3JlYXJSb2wuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/alexi/Documents/Proyecto_BAD115_2024/Proyecto_BAD115_2024/ProyectoBAD/Views/Roles/EliminarRol.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9sZXNcRWxpbWluYXJSb2wuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/alexi/Documents/Proyecto_BAD115_2024/Proyecto_BAD115_2024/ProyectoBAD/Views/Roles/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9sZXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/alexi/Documents/Proyecto_BAD115_2024/Proyecto_BAD115_2024/ProyectoBAD/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/alexi/Documents/Proyecto_BAD115_2024/Proyecto_BAD115_2024/ProyectoBAD/Views/Shared/_LoginPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/alexi/Documents/Proyecto_BAD115_2024/Proyecto_BAD115_2024/ProyectoBAD/Views/Shared/_ValidationScriptsPartial.cshtml]
@@ -170,6 +206,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/alexi/Documents/Proyecto_BAD115_2024/Proyecto_BAD115_2024/ProyectoBAD/Views/Tipopregunta/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlwb3ByZWd1bnRhXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/alexi/Documents/Proyecto_BAD115_2024/Proyecto_BAD115_2024/ProyectoBAD/Views/Usuarios/AsignarRol.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb3NcQXNpZ25hclJvbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/alexi/Documents/Proyecto_BAD115_2024/Proyecto_BAD115_2024/ProyectoBAD/Views/Usuarios/Create.cshtml]
