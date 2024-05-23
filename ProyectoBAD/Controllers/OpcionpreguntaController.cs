@@ -20,11 +20,30 @@ namespace ProyectoBAD.Controllers
             _context = context;
         }
 
-        // GET: Opcionpregunta
-        public async Task<IActionResult> Index()
+        // GET: Opcionpregunta/Index
+        public async Task<IActionResult> Index(int? idPregunta)
         {
-            var sisencuestasContext = _context.Opcionpregunta.Include(o => o.IdPreguntaNavigation);
-            return View(await sisencuestasContext.ToListAsync());
+            if (idPregunta == null)
+            {
+                return NotFound();
+            }
+
+            var pregunta = await _context.Pregunta.FirstOrDefaultAsync(p => p.IdPregunta == idPregunta);
+            if (pregunta == null)
+            {
+                return NotFound();
+            }
+
+            ViewBag.PreguntaTitulo = pregunta.DescripcionPregunta;
+
+            var opciones = await _context.Opcionpregunta
+                .Include(o => o.IdPreguntaNavigation)
+                .Where(o => o.IdPregunta == idPregunta)
+                .ToListAsync();
+
+            ViewBag.IdPregunta = idPregunta;
+
+            return View(opciones);
         }
 
         // GET: Opcionpregunta/Details/5
@@ -46,29 +65,33 @@ namespace ProyectoBAD.Controllers
             return View(opcionpreguntum);
         }
 
-        // GET: Opcionpregunta/Create
-        public IActionResult Create()
+        public IActionResult Create(int? idPregunta)
         {
-            ViewData["IdPregunta"] = new SelectList(_context.Pregunta, "IdPregunta", "IdPregunta");
+            if (idPregunta == null)
+            {
+                return NotFound();
+            }
+
+            ViewBag.IdPregunta = idPregunta;
             return View();
         }
 
-        // POST: Opcionpregunta/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("OpcionId,IdPregunta,ValorOpcion,DescripcionOpcion,EstadoOpcion,OrdenOpcion")] Opcionpreguntum opcionpreguntum)
+        public async Task<IActionResult> Create([Bind("OpcionId,ValorOpcion,DescripcionOpcion,EstadoOpcion,OrdenOpcion")] Opcionpreguntum opcionpreguntum, int idPregunta)
         {
             if (ModelState.IsValid)
             {
+                opcionpreguntum.IdPregunta = idPregunta;
                 _context.Add(opcionpreguntum);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("Index", new { idPregunta });
             }
-            ViewData["IdPregunta"] = new SelectList(_context.Pregunta, "IdPregunta", "IdPregunta", opcionpreguntum.IdPregunta);
+
+            ViewBag.IdPregunta = idPregunta;
             return View(opcionpreguntum);
         }
+
 
         // GET: Opcionpregunta/Edit/5
         public async Task<IActionResult> Edit(int? id)
@@ -163,7 +186,8 @@ namespace ProyectoBAD.Controllers
 
         private bool OpcionpreguntumExists(int id)
         {
-          return (_context.Opcionpregunta?.Any(e => e.OpcionId == id)).GetValueOrDefault();
+            return (_context.Opcionpregunta?.Any(e => e.OpcionId == id)).GetValueOrDefault();
         }
+
     }
 }

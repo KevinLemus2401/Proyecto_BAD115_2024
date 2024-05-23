@@ -1,56 +1,88 @@
 ﻿@model IEnumerable<ProyectoBAD.Models.Opcionpreguntum>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Opciones de Pregunta";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1 class="display-4 text-center my-4">@ViewBag.PreguntaTitulo</h1>
-
 <div class="container">
-    <div class="row justify-content-end mt-4">
-        <div class="col-md-3">
-            <a asp-action="Create" asp-controller="Opcionpregunta"  class="btn btn-success btn-block">
-                <i class="fas fa-plus-circle mr-2"></i> Crear Nueva
-            </a>
-        </div>
-    </div>
-    <div class="table-responsive mt-4">
-        <table class="table table-striped" id="tabla1">
-            <thead>
-                <tr>
-                    <th>Valor de Opción</th>
-                    <th>Estado de Opción</th>
-                    <th>Orden de Opción</th>
-                    <th>Pregunta Asociada</th>
-                    <th>Acciones</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var item in Model)
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <h1 class="display-4 text-center my-4">
+                @if (string.IsNullOrEmpty(ViewBag.PreguntaTitulo))
                 {
-                    <tr>
-                        <td>@Html.DisplayFor(modelItem => item.ValorOpcion)</td>
-                        <td>@Html.DisplayFor(modelItem => item.EstadoOpcion)</td>
-                        <td>@Html.DisplayFor(modelItem => item.OrdenOpcion)</td>
-                        <td>@Html.DisplayFor(modelItem => item.IdPreguntaNavigation.DescripcionPregunta)</td>
-                        <td>
-                            <div class="btn-group" role="group">
-                                <a asp-action="Edit" asp-controller="Opcionpregunta" asp-route-id="@item.OpcionId" class="btn btn-primary">
-                                    <i class="fas fa-edit"></i> Editar
-                                </a>
-                                <a asp-action="Details" asp-controller="Opcionpregunta" asp-route-id="@item.OpcionId" class="btn btn-info">
-                                    <i class="fas fa-info-circle"></i> Detalles
-                                </a>
-                                <a asp-action="Delete" asp-controller="Opcionpregunta" asp-route-id="@item.OpcionId" class="btn btn-danger">
-                                    <i class="fas fa-trash-alt"></i> Eliminar
-                                </a>
-
-                            </div>
-                        </td>
-                    </tr>
+                    <span>Pregunta no encontrada</span>
                 }
-            </tbody>
-        </table>
+                else
+                {
+                    <span>@ViewBag.PreguntaTitulo</span>
+                }
+            </h1>
+
+          
+            <!-- Botón para agregar opción de pregunta -->
+            <div class="row justify-content-end mb-3">
+                <div class="col-md-3">
+                    <a asp-action="Create" asp-controller="Opcionpregunta" asp-route-idPregunta="@ViewBag.IdPregunta" class="btn btn-success">
+                        <i class="fas fa-plus-circle mr-2"></i> Crear Nueva
+                    </a>
+                </div>
+            </div>
+
+            <div class="table-responsive mt-4">
+                <table class="table table-striped" id="tblOpcionesPregunta">
+                    <thead>
+                        <tr>
+                            <th>Valor de Opción</th>
+                            <th>Estado de Opción</th>
+                            <th>Orden de Opción</th>
+                            <th>Pregunta Asociada</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@Html.DisplayFor(modelItem => item.ValorOpcion)</td>
+                                <td>
+                                    @if (item.EstadoOpcion.HasValue)
+                                    {
+                                        if (item.EstadoOpcion.Value)
+                                        {
+                                            <span class="badge badge-success"><i class="fas fa-check"></i> Activo</span>
+                                        }
+                                        else
+                                        {
+                                            <span class="badge badge-secondary"><i class="fas fa-times"></i> Inactivo</span>
+                                        }
+                                    }
+                                    else
+                                    {
+                                        <span class="badge badge-secondary"><i class="fas fa-question"></i> Desconocido</span>
+                                    }
+                                </td>
+
+                                <td>@Html.DisplayFor(modelItem => item.OrdenOpcion)</td>
+                                <td>@Html.DisplayFor(modelItem => item.IdPreguntaNavigation.DescripcionPregunta)</td>
+                                <td>
+                                    <div class="btn-group" role="group">
+                                        <a asp-action="Edit" asp-controller="Opcionpregunta" asp-route-id="@item.OpcionId" class="btn btn-primary">
+                                            <i class="fas fa-edit"></i> Editar
+                                        </a>
+                                        <a asp-action="Details" asp-controller="Opcionpregunta" asp-route-id="@item.OpcionId" class="btn btn-info">
+                                            <i class="fas fa-info-circle"></i> Detalles
+                                        </a>
+                                        <a asp-action="Delete" asp-controller="Opcionpregunta" asp-route-id="@item.OpcionId" class="btn btn-danger">
+                                            <i class="fas fa-trash-alt"></i> Eliminar
+                                        </a>
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </div>
 </div>

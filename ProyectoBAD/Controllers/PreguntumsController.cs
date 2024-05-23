@@ -187,7 +187,7 @@ namespace ProyectoBAD.Controllers
           return (_context.Pregunta?.Any(e => e.IdPregunta == id)).GetValueOrDefault();
         }
 
-        // GET: Pregunta/ShowOptions/5
+        // GET: Preguntums/ShowOptions/5
         public async Task<IActionResult> ShowOptions(int? id)
         {
             if (id == null || _context.Pregunta == null)
@@ -205,9 +205,11 @@ namespace ProyectoBAD.Controllers
             }
 
             ViewBag.PreguntaTitulo = preguntum.DescripcionPregunta;
+            ViewBag.preguntaId = id;
 
             // Pasar los datos de las Opciones a la vista de preguntas existente
-            return View("~/Views/Opcionpregunta/Index.cshtml", preguntum.Opcionpregunta);
+            //return View("~/Views/Opcionpregunta/Index.cshtml", preguntum.Opcionpregunta);
+            return RedirectToAction("Index", "Opcionpregunta", new { idPregunta = id });
         }
     }
 }

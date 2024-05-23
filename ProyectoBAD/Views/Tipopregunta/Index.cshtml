@@ -7,6 +7,18 @@
 
 <h1>Index</h1>
 
+@{
+    var preguntaId = ViewBag.preguntaId as int?;
+    if (preguntaId.HasValue)
+    {
+        <p>Valor de ViewBag.preguntaId: @preguntaId</p>
+    }
+    else
+    {
+        <p>ViewBag.preguntaId no tiene un valor definido.</p>
+    }
+}
+
 <p>
     <a asp-action="Create">Create New</a>
 </p>
