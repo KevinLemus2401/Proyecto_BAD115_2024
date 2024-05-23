@@ -1,34 +1,43 @@
 ﻿@model ProyectoBAD.Models.Tipopreguntum
 
 @{
-    ViewData["Title"] = "Delete";
+    ViewData["Title"] = "Eliminar Tipo de Pregunta";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Delete</h1>
+<h1 class="display-4 text-center">@ViewData["Title"]</h1>
 
-<h3>Are you sure you want to delete this?</h3>
-<div>
-    <h4>Tipopreguntum</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.NombreTipoPregunta)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.NombreTipoPregunta)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.DescripcionTipoPregunta)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.DescripcionTipoPregunta)
-        </dd>
-    </dl>
-    
-    <form asp-action="Delete">
-        <input type="hidden" asp-for="TipoPreguntaId" />
-        <input type="submit" value="Delete" class="btn btn-danger" /> |
-        <a asp-action="Index">Back to List</a>
-    </form>
+<div class="container">
+    <div class="card mt-4">
+        <h3 class="card-title text-center mb-4 mt-4">¿Estás seguro de que deseas eliminar este tipo de pregunta?</h3>
+        <div class="card-body">
+
+            <div class="row justify-content-center">
+                <div class="col-md-12">
+                    <h4 class="card-subtitle mb-3">Detalles del Tipo de Pregunta</h4>
+                    <dl class="row">
+                        <dt class="col-sm-3 text-muted">Nombre del Tipo de Pregunta</dt>
+                        <dd class="col-sm-9">@Html.DisplayFor(model => model.NombreTipoPregunta)</dd>
+                        <dt class="col-sm-3 text-muted">Descripción del Tipo de Pregunta</dt>
+                        <dd class="col-sm-9">@Html.DisplayFor(model => model.DescripcionTipoPregunta)</dd>
+                    </dl>
+                </div>
+            </div>
+            <div class="row justify-content-center mt-4">
+                <div class="col-md-6">
+                    <form asp-action="Delete">
+                        <input type="hidden" asp-for="TipoPreguntaId" />
+                        <button type="submit" class="btn btn-danger btn-block">
+                            <i class="fas fa-trash-alt mr-2"></i> Eliminar
+                        </button>
+                    </form>
+                </div>
+                <div class="col-md-6">
+                    <a asp-action="Index" class="btn btn-secondary btn-block">
+                        <i class="fas fa-arrow-left mr-2"></i> Volver a la Lista
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

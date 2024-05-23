@@ -1,31 +1,32 @@
 ﻿@model ProyectoBAD.Models.Tipopreguntum
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Detalles del Tipo de Pregunta";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Details</h1>
+<h1 class="display-4 text-center">@ViewData["Title"]</h1>
 
-<div>
-    <h4>Tipopreguntum</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.NombreTipoPregunta)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.NombreTipoPregunta)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.DescripcionTipoPregunta)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.DescripcionTipoPregunta)
-        </dd>
-    </dl>
+<div class="container">
+    <div class="card mt-4">
+        <div class="card-body">
+            <h4 class="card-title mb-4">Detalles del Tipo de Pregunta</h4>
+            <hr class="mt-4"/>
+            <dl class="row">
+                <dt class="col-sm-3">Nombre del Tipo de Pregunta</dt>
+                <dd class="col-sm-9">@Html.DisplayFor(model => model.NombreTipoPregunta)</dd>
+                <dt class="col-sm-3">Descripción del Tipo de Pregunta</dt>
+                <dd class="col-sm-9">@Html.DisplayFor(model => model.DescripcionTipoPregunta)</dd>
+            </dl>
+        </div>
+    </div>
 </div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model.TipoPreguntaId">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+
+<div class="text-center mt-4">
+    <a asp-action="Edit" asp-route-id="@Model.TipoPreguntaId" class="btn btn-primary mr-2">
+        <i class="fas fa-edit mr-1"></i> Editar
+    </a>
+    <a asp-action="Index" class="btn btn-secondary">
+        <i class="fas fa-arrow-left mr-1"></i> Volver a la Lista
+    </a>
 </div>
