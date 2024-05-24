@@ -1,0 +1,86 @@
+﻿@model ProyectoBAD.ViewModels.EditarUsuarioVM
+
+<div class="container d-flex justify-content-center">
+    <div class="card" style="max-width: 700px">
+        <form asp-action="Settings" method="post">
+            <div class="card-header">
+                <h1 class="card-title"><i class="mr-2 fas fa-user-cog"></i><span>Ajustes de Cuenta</span></h1>
+            </div>
+            <div class="card-body px-4">
+                <div asp-validation-summary="ModelOnly"></div>
+                <div class="row align-items-end">
+                    <div class="col-12 mb-4">
+                        <h1 class="card-title font-weight-bold">Información de la cuenta</h1>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-group">
+                            <span asp-validation-for="UserName" class="text-danger d-block"></span>
+                            <label asp-for="UserName" class="text-secondary">Nombre de usuario</label>
+                            <input asp-for="UserName" class="form-control" />
+                        </div>
+                    </div>
+                    <span class="col-12 border-top my-4"></span>
+                    <div class="col-12 mb-4">
+                        <h1 class="card-title font-weight-bold">Información de contacto</h1>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-group">
+                            <span asp-validation-for="Email" class="text-danger d-block"></span>
+                            <label asp-for="Email" class="text-secondary">Correo electrónico</label>
+                            <input asp-for="Email" class="form-control" />
+                        </div>
+                    </div>
+                    <span class="col-12 border-top my-4"></span>
+                    <div class="col-12 mb-4">
+                        <h1 class="card-title font-weight-bold">Información de la cuenta</h1>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-group">
+                            <span asp-validation-for="PrimerNombre" class="text-danger d-block"></span>
+                            <label asp-for="PrimerNombre" class="text-secondary">Primer Nombre</label>
+                            <input asp-for="PrimerNombre" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-group">
+                            <span asp-validation-for="SegundoNombre" class="text-danger d-block"></span>
+                            <label asp-for="SegundoNombre" class="text-secondary">Segundo Nombre</label>
+                            <input asp-for="SegundoNombre" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-group">
+                            <span asp-validation-for="PrimerApellido" class="text-danger d-block"></span>
+                            <label asp-for="PrimerApellido" class="text-secondary">Primer apellido</label>
+                            <input asp-for="PrimerApellido" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-group">
+                            <span asp-validation-for="SegundoApellido" class="text-danger d-block"></span>
+                            <label asp-for="SegundoApellido" class="text-secondary">Segundo Apellido</label>
+                            <input asp-for="SegundoApellido" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="form-group">
+                            <span asp-validation-for="Telefono" class="text-danger d-block"></span>
+                            <label asp-for="Telefono" class="text-secondary">Télefono movil</label>
+                            <input type="number" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="8" max="99999999" asp-for="Telefono" class="form-control" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="p-4">
+                <div class="row">
+                    <div class="col-6"> <a class="btn btn-secondary text-white" asp-action="Index">Regresar</a> </div>
+                    <div class="col-6 text-right"> <button class="btn btn-primary">Actualizar</button></div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

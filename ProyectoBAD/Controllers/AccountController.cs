@@ -131,6 +131,61 @@ namespace ProyectoBAD.Controllers
 
             return View(model);
         }
+
+        [HttpGet]
+        public async Task<IActionResult> Settings()
+        {
+            var user = await _userManager.GetUserAsync(User);
+            if (user == null)
+            {
+                return Unauthorized();
+            }
+            EditarUsuarioVM model = new EditarUsuarioVM()
+            {
+                UserName = user.UserName,
+                Email = user.Email,
+                PrimerNombre = user.PrimerNombreUsuario,
+                SegundoNombre = user.SegundoNombreUsuario,
+                PrimerApellido = user.PrimerApellidoUsuario,
+                SegundoApellido = user.SegundoApellidoUsuario,
+                Telefono = user.TelefonoUsuario,
+            };
+            return View(model);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Settings(EditarUsuarioVM model)
+        {
+            if (ModelState.IsValid)
+            {
+                var user = await _userManager.GetUserAsync(User);
+                if (user == null)
+                {
+                    return Unauthorized();
+                }
+
+                user.UserName = model.UserName;
+                user.Email = model.Email;
+                user.PrimerNombreUsuario = model.PrimerNombre!;
+                user.SegundoNombreUsuario = model.SegundoNombre;
+                user.PrimerApellidoUsuario = model.PrimerApellido!;
+                user.SegundoApellidoUsuario = model.SegundoApellido;
+                user.EmailUsuario = model.Email!;
+                user.TelefonoUsuario = model.Telefono;
+
+                var result = await _userManager.UpdateAsync(user);
+                if (result.Succeeded)
+                {
+                    return RedirectToAction(nameof(Index));
+                }
+
+                foreach (var error in result.Errors)
+                {
+                    ModelState.AddModelError(string.Empty, error.Description);
+                }
+            }
+            return View(model);
+        }
     }
 
 }

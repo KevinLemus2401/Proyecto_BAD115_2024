@@ -1,6 +1,6 @@
 
 
-let tblUsuarios, tblRoles, tblEncuestas;
+let tblUsuarios, tblRoles, tblEncuestas, tblTipoPregunta;
 document.addEventListener("DOMContentLoaded", function () {
     const language = {
         "decimal": "",
@@ -91,6 +91,19 @@ document.addEventListener("DOMContentLoaded", function () {
         ],
     });
     tblEncuestas = new DataTable('#tblEncuestas', {
+        fixedHeader: true,
+        responsive: true,
+        language,
+        dom: "<'row'<'col-sm-12 py-4 text-right'B>>" +
+            "<'row'<'col-12 col-md-4 col-xl-8 text-left'l><'col-12 col-md-8 col-xl-4 text-right'f>>" +
+            "<'p-2'>" +
+            "<'row'<'col-12'tr>>" +
+            "<'p-2'>" +
+            "<'row'<'col-sm-5'i><'col-sm-7 d-flex justify-content-end'p>>",
+        buttons: [
+        ],
+    });
+    tblTipoPregunta = new DataTable('#tblTipoPregunta', {
         fixedHeader: true,
         responsive: true,
         language,
