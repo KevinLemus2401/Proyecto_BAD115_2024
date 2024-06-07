@@ -5,44 +5,38 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Index</h1>
+<h1 class="display-4 text-center my-4">Lista de Encuestados</h1>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.EmailEncuestado)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.FechaNacEncuesta)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.GenEncuestado)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.EmailEncuestado)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.FechaNacEncuesta)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.GenEncuestado)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.IdEncuestado">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.IdEncuestado">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.IdEncuestado">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-10">
+            <table class="table table-striped" id="tblEncuestas">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">Email</th>
+                        <th scope="col">Fecha de Nacimiento</th>
+                        <th scope="col">Género</th>
+                        <th scope="col">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@Html.DisplayFor(modelItem => item.EmailEncuestado)</td>
+                            <td>@Html.DisplayFor(modelItem => item.FechaNacEncuesta)</td>
+                            <td>@Html.DisplayFor(modelItem => item.GenEncuestado)</td>
+                            <td>
+                                <div class="btn-group" role="group" aria-label="Acciones">
+                                    <a asp-action="Edit" asp-route-id="@item.IdEncuestado" class="btn btn-primary">Editar</a>
+                                    <a asp-action="Details" asp-route-id="@item.IdEncuestado" class="btn btn-info">Detalles</a>
+                                    <a asp-action="Delete" asp-route-id="@item.IdEncuestado" class="btn btn-danger">Eliminar</a>
+                                </div>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

@@ -4,7 +4,9 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using ProyectoBAD.Models;
+using Microsoft.AspNetCore.Http.Extensions;
 using System.Security.Claims;
+
 
 namespace ProyectoBAD.Controllers
 {
@@ -217,5 +219,101 @@ namespace ProyectoBAD.Controllers
             return View("~/Views/Preguntums/Index.cshtml", encuestum.Pregunta);
         }
 
+        public async Task<IActionResult> GenerateLink(int id) 
+        {
+            var encuesta = await _context.Encuesta.FindAsync(id);
+            if (encuesta == null)
+            {
+                return NotFound();
+            }
+
+            var link = Url.Action("StartSurvey", "Encuesta", new { id = id }, protocol: HttpContext.Request.Scheme);
+            ViewBag.Link = link;
+            return View("ShareLink", encuesta);
+        }
+
+        // Acción para mostrar el formulario de datos del encuestado
+        [HttpGet]
+        public IActionResult StartSurvey(int id)
+        {
+            var encuestado = new Encuestado();
+            ViewBag.IdEncuesta = id;
+
+            // Aquí necesitamos cargar las preguntas de la encuesta
+            var preguntas = _context.Pregunta
+                .Include(p => p.Opcionpregunta)
+                .Where(p => p.IdEncuesta == id)
+                .ToList();
+
+            // Pasar las preguntas a la vista
+            ViewBag.Preguntas = preguntas;
+
+            return View("SurveyIntro", encuestado);
+        }
+
+
+        // Acción para procesar el formulario de datos del encuestado y redirigir a la encuesta
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> StartSurvey(int id, [Bind("EmailEncuestado,FechaNacEncuesta,GenEncuestado")] Encuestado encuestado)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.Add(encuestado);
+                await _context.SaveChangesAsync();
+                return RedirectToAction("TakeSurvey", new { idEncuesta = id, idEncuestado = encuestado.IdEncuestado });
+            }
+            ViewBag.IdEncuesta = id;
+            return View("SurveyIntro", encuestado);
+        }
+
+        public async Task<IActionResult> TakeSurvey(int idEncuesta, int idEncuestado)
+        {
+            var preguntas = await _context.Pregunta
+                .Include(p => p.Opcionpregunta)
+                .Where(p => p.IdEncuesta == idEncuesta)
+                .ToListAsync();
+
+            ViewBag.IdEncuesta = idEncuesta;
+            ViewBag.IdEncuestado = idEncuestado;
+
+            return View("TakeSurvey", preguntas);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> TakeSurvey(int idEncuesta, int idEncuestado, List<Respuestum> respuestas)
+        {
+            if (ModelState.IsValid)
+            {
+                foreach (var respuesta in respuestas)
+                {
+                    respuesta.IdEncuesta = idEncuesta;
+                    respuesta.IdEncuestado = idEncuestado;
+                    respuesta.FechaRespuesta = DateTime.Now; // Establecer la fecha actual
+                    _context.Add(respuesta);
+                }
+                await _context.SaveChangesAsync();
+                return RedirectToAction("SurveyCompleted");
+            }
+
+            var preguntas = await _context.Pregunta
+                .Include(p => p.Opcionpregunta)
+                .Where(p => p.IdEncuesta == idEncuesta)
+                .ToListAsync();
+
+            ViewBag.IdEncuesta = idEncuesta;
+            ViewBag.IdEncuestado = idEncuestado;
+
+            return View("TakeSurvey", preguntas);
+        }
+
+
+        public IActionResult SurveyCompleted()
+        {
+            return View();
+        }
+
+       
     }
 }
