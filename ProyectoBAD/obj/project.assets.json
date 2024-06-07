@@ -10860,19 +10860,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\jor05\\.nuget\\packages\\": {}
+    "C:\\Users\\alexi\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\jor05\\source\\repos\\Proyecto_BAD115_2024\\ProyectoBAD\\ProyectoBAD.csproj",
+      "projectUniqueName": "C:\\Users\\alexi\\Documents\\Proyecto_BAD115_2024\\Proyecto_BAD115_2024\\ProyectoBAD\\ProyectoBAD.csproj",
       "projectName": "ProyectoBAD",
-      "projectPath": "C:\\Users\\jor05\\source\\repos\\Proyecto_BAD115_2024\\ProyectoBAD\\ProyectoBAD.csproj",
-      "packagesPath": "C:\\Users\\jor05\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\jor05\\source\\repos\\Proyecto_BAD115_2024\\ProyectoBAD\\obj\\",
+      "projectPath": "C:\\Users\\alexi\\Documents\\Proyecto_BAD115_2024\\Proyecto_BAD115_2024\\ProyectoBAD\\ProyectoBAD.csproj",
+      "packagesPath": "C:\\Users\\alexi\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\alexi\\Documents\\Proyecto_BAD115_2024\\Proyecto_BAD115_2024\\ProyectoBAD\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\jor05\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\alexi\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -10892,11 +10892,6 @@
         "warnAsError": [
           "NU1605"
         ]
-      },
-      "restoreAuditProperties": {
-        "enableAudit": "true",
-        "auditLevel": "low",
-        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -10941,7 +10936,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
       }
     }
   }

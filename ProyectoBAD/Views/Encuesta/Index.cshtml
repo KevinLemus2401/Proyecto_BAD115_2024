@@ -8,64 +8,73 @@
 <h1 class="display-4 text-center my-4">@ViewData["Title"]</h1>
 
 <div class="container">
-@*     <div class="row justify-content-end mb-3">
+    <div class="row justify-content-end mb-3">
         <div class="col-md-3">
             <a class="btn btn-success" asp-action="Create">
                 <i class="fas fa-plus-circle mr-2"></i> Agregar Encuesta
             </a>
         </div>
-    </div> *@
-
-    <div class="table-responsive mt-4">
-        <table class="table table-bordered table-hover table-striped nowrap" style="width: 100%" id="tblEncuestas">
-            <thead>
-                <tr>
-                    <th>Título</th>
-                    <th>Objetivo</th>
-                    <th>Grupo Meta</th>
-                    <th>Indicaciones</th>
-                    <th>Fecha</th>
-                    <th>Estado</th>
-                    <th>Acciones</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var item in Model)
-                {
-                    <tr>
-                        <td>@Html.DisplayFor(modelItem => item.TituloEncuesta)</td>
-                        <td>@Html.DisplayFor(modelItem => item.ObjetivoEncuesta)</td>
-                        <td>@Html.DisplayFor(modelItem => item.GrupometaEncuesta)</td>
-                        <td>@Html.DisplayFor(modelItem => item.IndicacionesEncuesta)</td>
-                        <td>@Html.DisplayFor(modelItem => item.FechaEncuesta)</td>
-                        <td>
-                            @if (item.EstadoEncuesta == true)
-                            {
-                                <span class="badge badge-success">Activo</span>
-                            }
-                            else
-                            {
-                                <span class="badge badge-secondary">Inactivo</span>
-                            }
-                        </td>
-                        <td>
-                            <a asp-action="Edit" asp-route-id="@item.IdEncuesta" class="btn btn-primary btn-sm mr-1">
-                                <i class="fas fa-edit"></i> Editar
-                            </a>
-
-                            <a asp-action="Delete" asp-route-id="@item.IdEncuesta" class="btn btn-danger btn-sm mr-1">
-                                <i class="fas fa-trash-alt"></i> Eliminar
-                            </a>
-
-                            <a asp-action="Details" asp-route-id="@item.IdEncuesta" class="btn btn-info btn-sm">
-                                <i class="fas fa-book"></i> Detalles
-                            </a>
-                        </td>
-                    </tr>
-                }
-            </tbody>
-        </table>
     </div>
+
+    @if (Model != null && Model.Any())
+    {
+        <div class="table-responsive mt-4">
+            <table class="table table-bordered table-hover table-striped nowrap" style="width: 100%" id="tblEncuestas">
+                <thead>
+                    <tr>
+                        <th>Título</th>
+                        <th>Objetivo</th>
+                        <th>Grupo Meta</th>
+                        <th>Indicaciones</th>
+                        <th>Fecha</th>
+                        <th>Estado</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@Html.DisplayFor(modelItem => item.TituloEncuesta)</td>
+                            <td>@Html.DisplayFor(modelItem => item.ObjetivoEncuesta)</td>
+                            <td>@Html.DisplayFor(modelItem => item.GrupometaEncuesta)</td>
+                            <td>@Html.DisplayFor(modelItem => item.IndicacionesEncuesta)</td>
+                            <td>@Html.DisplayFor(modelItem => item.FechaEncuesta)</td>
+                            <td>
+                                @if (item.EstadoEncuesta == true)
+                                {
+                                    <span class="badge badge-success">Activo</span>
+                                }
+                                else
+                                {
+                                    <span class="badge badge-secondary">Inactivo</span>
+                                }
+                            </td>
+                            <td>
+                                <a asp-action="Edit" asp-route-id="@item.IdEncuesta" class="btn btn-primary btn-sm mr-1">
+                                    <i class="fas fa-edit"></i> Editar
+                                </a>
+
+                                <a asp-action="Delete" asp-route-id="@item.IdEncuesta" class="btn btn-danger btn-sm mr-1">
+                                    <i class="fas fa-trash-alt"></i> Eliminar
+                                </a>
+
+                                <a asp-action="Details" asp-route-id="@item.IdEncuesta" class="btn btn-info btn-sm">
+                                    <i class="fas fa-book"></i> Detalles
+                                </a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    }
+    else
+    {
+        <div class="alert alert-info mt-4 text-center" role="alert">
+            No hay encuestas disponibles.
+        </div>
+    }
 </div>
 
 @section Scripts {
