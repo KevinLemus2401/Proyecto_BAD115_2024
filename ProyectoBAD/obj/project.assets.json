@@ -10860,19 +10860,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\jor05\\.nuget\\packages\\": {}
+    "C:\\Users\\PC\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\jor05\\source\\repos\\Proyecto_BAD115_2024\\ProyectoBAD\\ProyectoBAD.csproj",
+      "projectUniqueName": "E:\\Estudio\\2024\\Ciclo I\\BAD-115\\Repo_Proyecto\\Proyecto_BAD115_2024\\ProyectoBAD\\ProyectoBAD.csproj",
       "projectName": "ProyectoBAD",
-      "projectPath": "C:\\Users\\jor05\\source\\repos\\Proyecto_BAD115_2024\\ProyectoBAD\\ProyectoBAD.csproj",
-      "packagesPath": "C:\\Users\\jor05\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\jor05\\source\\repos\\Proyecto_BAD115_2024\\ProyectoBAD\\obj\\",
+      "projectPath": "E:\\Estudio\\2024\\Ciclo I\\BAD-115\\Repo_Proyecto\\Proyecto_BAD115_2024\\ProyectoBAD\\ProyectoBAD.csproj",
+      "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
+      "outputPath": "E:\\Estudio\\2024\\Ciclo I\\BAD-115\\Repo_Proyecto\\Proyecto_BAD115_2024\\ProyectoBAD\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\jor05\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
