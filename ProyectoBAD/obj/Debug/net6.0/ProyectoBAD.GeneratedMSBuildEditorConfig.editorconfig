@@ -9,257 +9,259 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = ProyectoBAD
 build_property.RootNamespace = ProyectoBAD
-build_property.ProjectDir = C:\Users\alexi\Documents\Proyecto_BAD115_2024\Proyecto_BAD115_2024\ProyectoBAD\
+build_property.ProjectDir = E:\Estudio\2024\Ciclo I\BAD-115\Repo_Proyecto\Proyecto_BAD115_2024\ProyectoBAD\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\alexi\Documents\Proyecto_BAD115_2024\Proyecto_BAD115_2024\ProyectoBAD
+build_property.MSBuildProjectDirectory = E:\Estudio\2024\Ciclo I\BAD-115\Repo_Proyecto\Proyecto_BAD115_2024\ProyectoBAD
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/alexi/Documents/Proyecto_BAD115_2024/Proyecto_BAD115_2024/ProyectoBAD/Views/Account/AccessDenied.cshtml]
+[E:/Estudio/2024/Ciclo I/BAD-115/Repo_Proyecto/Proyecto_BAD115_2024/ProyectoBAD/Views/Account/AccessDenied.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxBY2Nlc3NEZW5pZWQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/alexi/Documents/Proyecto_BAD115_2024/Proyecto_BAD115_2024/ProyectoBAD/Views/Account/CambiarPass.cshtml]
+[E:/Estudio/2024/Ciclo I/BAD-115/Repo_Proyecto/Proyecto_BAD115_2024/ProyectoBAD/Views/Account/CambiarPass.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxDYW1iaWFyUGFzcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/alexi/Documents/Proyecto_BAD115_2024/Proyecto_BAD115_2024/ProyectoBAD/Views/Account/Login.cshtml]
+[E:/Estudio/2024/Ciclo I/BAD-115/Repo_Proyecto/Proyecto_BAD115_2024/ProyectoBAD/Views/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/alexi/Documents/Proyecto_BAD115_2024/Proyecto_BAD115_2024/ProyectoBAD/Views/Account/Register.cshtml]
+[E:/Estudio/2024/Ciclo I/BAD-115/Repo_Proyecto/Proyecto_BAD115_2024/ProyectoBAD/Views/Account/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/alexi/Documents/Proyecto_BAD115_2024/Proyecto_BAD115_2024/ProyectoBAD/Views/Account/Settings.cshtml]
+[E:/Estudio/2024/Ciclo I/BAD-115/Repo_Proyecto/Proyecto_BAD115_2024/ProyectoBAD/Views/Account/Settings.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxTZXR0aW5ncy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/alexi/Documents/Proyecto_BAD115_2024/Proyecto_BAD115_2024/ProyectoBAD/Views/Encuestados/Create.cshtml]
+[E:/Estudio/2024/Ciclo I/BAD-115/Repo_Proyecto/Proyecto_BAD115_2024/ProyectoBAD/Views/Encuestados/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW5jdWVzdGFkb3NcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/alexi/Documents/Proyecto_BAD115_2024/Proyecto_BAD115_2024/ProyectoBAD/Views/Encuestados/Delete.cshtml]
+[E:/Estudio/2024/Ciclo I/BAD-115/Repo_Proyecto/Proyecto_BAD115_2024/ProyectoBAD/Views/Encuestados/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW5jdWVzdGFkb3NcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/alexi/Documents/Proyecto_BAD115_2024/Proyecto_BAD115_2024/ProyectoBAD/Views/Encuestados/Details.cshtml]
+[E:/Estudio/2024/Ciclo I/BAD-115/Repo_Proyecto/Proyecto_BAD115_2024/ProyectoBAD/Views/Encuestados/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW5jdWVzdGFkb3NcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/alexi/Documents/Proyecto_BAD115_2024/Proyecto_BAD115_2024/ProyectoBAD/Views/Encuestados/Edit.cshtml]
+[E:/Estudio/2024/Ciclo I/BAD-115/Repo_Proyecto/Proyecto_BAD115_2024/ProyectoBAD/Views/Encuestados/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW5jdWVzdGFkb3NcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/alexi/Documents/Proyecto_BAD115_2024/Proyecto_BAD115_2024/ProyectoBAD/Views/Encuestados/Index.cshtml]
+[E:/Estudio/2024/Ciclo I/BAD-115/Repo_Proyecto/Proyecto_BAD115_2024/ProyectoBAD/Views/Encuestados/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW5jdWVzdGFkb3NcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/alexi/Documents/Proyecto_BAD115_2024/Proyecto_BAD115_2024/ProyectoBAD/Views/Encuestado/Create.cshtml]
+[E:/Estudio/2024/Ciclo I/BAD-115/Repo_Proyecto/Proyecto_BAD115_2024/ProyectoBAD/Views/Encuestado/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW5jdWVzdGFkb1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/alexi/Documents/Proyecto_BAD115_2024/Proyecto_BAD115_2024/ProyectoBAD/Views/Encuestado/Delete.cshtml]
+[E:/Estudio/2024/Ciclo I/BAD-115/Repo_Proyecto/Proyecto_BAD115_2024/ProyectoBAD/Views/Encuestado/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW5jdWVzdGFkb1xEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/alexi/Documents/Proyecto_BAD115_2024/Proyecto_BAD115_2024/ProyectoBAD/Views/Encuestado/Details.cshtml]
+[E:/Estudio/2024/Ciclo I/BAD-115/Repo_Proyecto/Proyecto_BAD115_2024/ProyectoBAD/Views/Encuestado/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW5jdWVzdGFkb1xEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/alexi/Documents/Proyecto_BAD115_2024/Proyecto_BAD115_2024/ProyectoBAD/Views/Encuestado/Edit.cshtml]
+[E:/Estudio/2024/Ciclo I/BAD-115/Repo_Proyecto/Proyecto_BAD115_2024/ProyectoBAD/Views/Encuestado/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW5jdWVzdGFkb1xFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/alexi/Documents/Proyecto_BAD115_2024/Proyecto_BAD115_2024/ProyectoBAD/Views/Encuestado/Index.cshtml]
+[E:/Estudio/2024/Ciclo I/BAD-115/Repo_Proyecto/Proyecto_BAD115_2024/ProyectoBAD/Views/Encuestado/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW5jdWVzdGFkb1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/alexi/Documents/Proyecto_BAD115_2024/Proyecto_BAD115_2024/ProyectoBAD/Views/Encuesta/Create.cshtml]
+[E:/Estudio/2024/Ciclo I/BAD-115/Repo_Proyecto/Proyecto_BAD115_2024/ProyectoBAD/Views/Encuesta/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW5jdWVzdGFcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/alexi/Documents/Proyecto_BAD115_2024/Proyecto_BAD115_2024/ProyectoBAD/Views/Encuesta/Delete.cshtml]
+[E:/Estudio/2024/Ciclo I/BAD-115/Repo_Proyecto/Proyecto_BAD115_2024/ProyectoBAD/Views/Encuesta/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW5jdWVzdGFcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/alexi/Documents/Proyecto_BAD115_2024/Proyecto_BAD115_2024/ProyectoBAD/Views/Encuesta/Details.cshtml]
+[E:/Estudio/2024/Ciclo I/BAD-115/Repo_Proyecto/Proyecto_BAD115_2024/ProyectoBAD/Views/Encuesta/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW5jdWVzdGFcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/alexi/Documents/Proyecto_BAD115_2024/Proyecto_BAD115_2024/ProyectoBAD/Views/Encuesta/Edit.cshtml]
+[E:/Estudio/2024/Ciclo I/BAD-115/Repo_Proyecto/Proyecto_BAD115_2024/ProyectoBAD/Views/Encuesta/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW5jdWVzdGFcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/alexi/Documents/Proyecto_BAD115_2024/Proyecto_BAD115_2024/ProyectoBAD/Views/Encuesta/Index.cshtml]
+[E:/Estudio/2024/Ciclo I/BAD-115/Repo_Proyecto/Proyecto_BAD115_2024/ProyectoBAD/Views/Encuesta/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW5jdWVzdGFcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/alexi/Documents/Proyecto_BAD115_2024/Proyecto_BAD115_2024/ProyectoBAD/Views/Encuesta/ShareLink.cshtml]
+[E:/Estudio/2024/Ciclo I/BAD-115/Repo_Proyecto/Proyecto_BAD115_2024/ProyectoBAD/Views/Encuesta/ShareLink.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW5jdWVzdGFcU2hhcmVMaW5rLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/alexi/Documents/Proyecto_BAD115_2024/Proyecto_BAD115_2024/ProyectoBAD/Views/Encuesta/SurveyCompleted.cshtml]
+[E:/Estudio/2024/Ciclo I/BAD-115/Repo_Proyecto/Proyecto_BAD115_2024/ProyectoBAD/Views/Encuesta/SurveyCompleted.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW5jdWVzdGFcU3VydmV5Q29tcGxldGVkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/alexi/Documents/Proyecto_BAD115_2024/Proyecto_BAD115_2024/ProyectoBAD/Views/Encuesta/SurveyIntro.cshtml]
+[E:/Estudio/2024/Ciclo I/BAD-115/Repo_Proyecto/Proyecto_BAD115_2024/ProyectoBAD/Views/Encuesta/SurveyIntro.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW5jdWVzdGFcU3VydmV5SW50cm8uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/alexi/Documents/Proyecto_BAD115_2024/Proyecto_BAD115_2024/ProyectoBAD/Views/Encuesta/TakeSurvey.cshtml]
+[E:/Estudio/2024/Ciclo I/BAD-115/Repo_Proyecto/Proyecto_BAD115_2024/ProyectoBAD/Views/Encuesta/TakeSurvey.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW5jdWVzdGFcVGFrZVN1cnZleS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/alexi/Documents/Proyecto_BAD115_2024/Proyecto_BAD115_2024/ProyectoBAD/Views/Home/Index.cshtml]
+[E:/Estudio/2024/Ciclo I/BAD-115/Repo_Proyecto/Proyecto_BAD115_2024/ProyectoBAD/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/alexi/Documents/Proyecto_BAD115_2024/Proyecto_BAD115_2024/ProyectoBAD/Views/Home/Privacy.cshtml]
+[E:/Estudio/2024/Ciclo I/BAD-115/Repo_Proyecto/Proyecto_BAD115_2024/ProyectoBAD/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/alexi/Documents/Proyecto_BAD115_2024/Proyecto_BAD115_2024/ProyectoBAD/Views/Opcionpregunta/Create.cshtml]
+[E:/Estudio/2024/Ciclo I/BAD-115/Repo_Proyecto/Proyecto_BAD115_2024/ProyectoBAD/Views/Opcionpregunta/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3BjaW9ucHJlZ3VudGFcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/alexi/Documents/Proyecto_BAD115_2024/Proyecto_BAD115_2024/ProyectoBAD/Views/Opcionpregunta/Delete.cshtml]
+[E:/Estudio/2024/Ciclo I/BAD-115/Repo_Proyecto/Proyecto_BAD115_2024/ProyectoBAD/Views/Opcionpregunta/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3BjaW9ucHJlZ3VudGFcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/alexi/Documents/Proyecto_BAD115_2024/Proyecto_BAD115_2024/ProyectoBAD/Views/Opcionpregunta/Details.cshtml]
+[E:/Estudio/2024/Ciclo I/BAD-115/Repo_Proyecto/Proyecto_BAD115_2024/ProyectoBAD/Views/Opcionpregunta/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3BjaW9ucHJlZ3VudGFcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/alexi/Documents/Proyecto_BAD115_2024/Proyecto_BAD115_2024/ProyectoBAD/Views/Opcionpregunta/Edit.cshtml]
+[E:/Estudio/2024/Ciclo I/BAD-115/Repo_Proyecto/Proyecto_BAD115_2024/ProyectoBAD/Views/Opcionpregunta/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3BjaW9ucHJlZ3VudGFcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/alexi/Documents/Proyecto_BAD115_2024/Proyecto_BAD115_2024/ProyectoBAD/Views/Opcionpregunta/Index.cshtml]
+[E:/Estudio/2024/Ciclo I/BAD-115/Repo_Proyecto/Proyecto_BAD115_2024/ProyectoBAD/Views/Opcionpregunta/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3BjaW9ucHJlZ3VudGFcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/alexi/Documents/Proyecto_BAD115_2024/Proyecto_BAD115_2024/ProyectoBAD/Views/Preguntums/Create.cshtml]
+[E:/Estudio/2024/Ciclo I/BAD-115/Repo_Proyecto/Proyecto_BAD115_2024/ProyectoBAD/Views/Preguntums/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJlZ3VudHVtc1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/alexi/Documents/Proyecto_BAD115_2024/Proyecto_BAD115_2024/ProyectoBAD/Views/Preguntums/Delete.cshtml]
+[E:/Estudio/2024/Ciclo I/BAD-115/Repo_Proyecto/Proyecto_BAD115_2024/ProyectoBAD/Views/Preguntums/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJlZ3VudHVtc1xEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/alexi/Documents/Proyecto_BAD115_2024/Proyecto_BAD115_2024/ProyectoBAD/Views/Preguntums/Details.cshtml]
+[E:/Estudio/2024/Ciclo I/BAD-115/Repo_Proyecto/Proyecto_BAD115_2024/ProyectoBAD/Views/Preguntums/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJlZ3VudHVtc1xEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/alexi/Documents/Proyecto_BAD115_2024/Proyecto_BAD115_2024/ProyectoBAD/Views/Preguntums/Edit.cshtml]
+[E:/Estudio/2024/Ciclo I/BAD-115/Repo_Proyecto/Proyecto_BAD115_2024/ProyectoBAD/Views/Preguntums/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJlZ3VudHVtc1xFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/alexi/Documents/Proyecto_BAD115_2024/Proyecto_BAD115_2024/ProyectoBAD/Views/Preguntums/Index.cshtml]
+[E:/Estudio/2024/Ciclo I/BAD-115/Repo_Proyecto/Proyecto_BAD115_2024/ProyectoBAD/Views/Preguntums/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJlZ3VudHVtc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/alexi/Documents/Proyecto_BAD115_2024/Proyecto_BAD115_2024/ProyectoBAD/Views/Respuesta/Create.cshtml]
+[E:/Estudio/2024/Ciclo I/BAD-115/Repo_Proyecto/Proyecto_BAD115_2024/ProyectoBAD/Views/Respuesta/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVzcHVlc3RhXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/alexi/Documents/Proyecto_BAD115_2024/Proyecto_BAD115_2024/ProyectoBAD/Views/Respuesta/Delete.cshtml]
+[E:/Estudio/2024/Ciclo I/BAD-115/Repo_Proyecto/Proyecto_BAD115_2024/ProyectoBAD/Views/Respuesta/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVzcHVlc3RhXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/alexi/Documents/Proyecto_BAD115_2024/Proyecto_BAD115_2024/ProyectoBAD/Views/Respuesta/Details.cshtml]
+[E:/Estudio/2024/Ciclo I/BAD-115/Repo_Proyecto/Proyecto_BAD115_2024/ProyectoBAD/Views/Respuesta/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVzcHVlc3RhXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/alexi/Documents/Proyecto_BAD115_2024/Proyecto_BAD115_2024/ProyectoBAD/Views/Respuesta/Edit.cshtml]
+[E:/Estudio/2024/Ciclo I/BAD-115/Repo_Proyecto/Proyecto_BAD115_2024/ProyectoBAD/Views/Respuesta/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVzcHVlc3RhXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/alexi/Documents/Proyecto_BAD115_2024/Proyecto_BAD115_2024/ProyectoBAD/Views/Respuesta/Index.cshtml]
+[E:/Estudio/2024/Ciclo I/BAD-115/Repo_Proyecto/Proyecto_BAD115_2024/ProyectoBAD/Views/Respuesta/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVzcHVlc3RhXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/alexi/Documents/Proyecto_BAD115_2024/Proyecto_BAD115_2024/ProyectoBAD/Views/Roles/ActualizarRol.cshtml]
+[E:/Estudio/2024/Ciclo I/BAD-115/Repo_Proyecto/Proyecto_BAD115_2024/ProyectoBAD/Views/Roles/ActualizarRol.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9sZXNcQWN0dWFsaXphclJvbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/alexi/Documents/Proyecto_BAD115_2024/Proyecto_BAD115_2024/ProyectoBAD/Views/Roles/CrearRol.cshtml]
+[E:/Estudio/2024/Ciclo I/BAD-115/Repo_Proyecto/Proyecto_BAD115_2024/ProyectoBAD/Views/Roles/CrearRol.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9sZXNcQ3JlYXJSb2wuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/alexi/Documents/Proyecto_BAD115_2024/Proyecto_BAD115_2024/ProyectoBAD/Views/Roles/EliminarRol.cshtml]
+[E:/Estudio/2024/Ciclo I/BAD-115/Repo_Proyecto/Proyecto_BAD115_2024/ProyectoBAD/Views/Roles/EliminarRol.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9sZXNcRWxpbWluYXJSb2wuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/alexi/Documents/Proyecto_BAD115_2024/Proyecto_BAD115_2024/ProyectoBAD/Views/Roles/Index.cshtml]
+[E:/Estudio/2024/Ciclo I/BAD-115/Repo_Proyecto/Proyecto_BAD115_2024/ProyectoBAD/Views/Roles/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9sZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/alexi/Documents/Proyecto_BAD115_2024/Proyecto_BAD115_2024/ProyectoBAD/Views/Shared/Error.cshtml]
+[E:/Estudio/2024/Ciclo I/BAD-115/Repo_Proyecto/Proyecto_BAD115_2024/ProyectoBAD/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/alexi/Documents/Proyecto_BAD115_2024/Proyecto_BAD115_2024/ProyectoBAD/Views/Shared/_LoginPartial.cshtml]
+[E:/Estudio/2024/Ciclo I/BAD-115/Repo_Proyecto/Proyecto_BAD115_2024/ProyectoBAD/Views/Shared/_LoginPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/alexi/Documents/Proyecto_BAD115_2024/Proyecto_BAD115_2024/ProyectoBAD/Views/Shared/_ValidationScriptsPartial.cshtml]
+[E:/Estudio/2024/Ciclo I/BAD-115/Repo_Proyecto/Proyecto_BAD115_2024/ProyectoBAD/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/alexi/Documents/Proyecto_BAD115_2024/Proyecto_BAD115_2024/ProyectoBAD/Views/Tipopregunta/Create.cshtml]
+[E:/Estudio/2024/Ciclo I/BAD-115/Repo_Proyecto/Proyecto_BAD115_2024/ProyectoBAD/Views/Tipopregunta/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlwb3ByZWd1bnRhXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/alexi/Documents/Proyecto_BAD115_2024/Proyecto_BAD115_2024/ProyectoBAD/Views/Tipopregunta/Delete.cshtml]
+[E:/Estudio/2024/Ciclo I/BAD-115/Repo_Proyecto/Proyecto_BAD115_2024/ProyectoBAD/Views/Tipopregunta/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlwb3ByZWd1bnRhXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/alexi/Documents/Proyecto_BAD115_2024/Proyecto_BAD115_2024/ProyectoBAD/Views/Tipopregunta/Details.cshtml]
+[E:/Estudio/2024/Ciclo I/BAD-115/Repo_Proyecto/Proyecto_BAD115_2024/ProyectoBAD/Views/Tipopregunta/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlwb3ByZWd1bnRhXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/alexi/Documents/Proyecto_BAD115_2024/Proyecto_BAD115_2024/ProyectoBAD/Views/Tipopregunta/Edit.cshtml]
+[E:/Estudio/2024/Ciclo I/BAD-115/Repo_Proyecto/Proyecto_BAD115_2024/ProyectoBAD/Views/Tipopregunta/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlwb3ByZWd1bnRhXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/alexi/Documents/Proyecto_BAD115_2024/Proyecto_BAD115_2024/ProyectoBAD/Views/Tipopregunta/Index.cshtml]
+[E:/Estudio/2024/Ciclo I/BAD-115/Repo_Proyecto/Proyecto_BAD115_2024/ProyectoBAD/Views/Tipopregunta/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlwb3ByZWd1bnRhXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/alexi/Documents/Proyecto_BAD115_2024/Proyecto_BAD115_2024/ProyectoBAD/Views/Usuarios/AsignarRol.cshtml]
+[E:/Estudio/2024/Ciclo I/BAD-115/Repo_Proyecto/Proyecto_BAD115_2024/ProyectoBAD/Views/Usuarios/AsignarRol.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb3NcQXNpZ25hclJvbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/alexi/Documents/Proyecto_BAD115_2024/Proyecto_BAD115_2024/ProyectoBAD/Views/Usuarios/Create.cshtml]
+[E:/Estudio/2024/Ciclo I/BAD-115/Repo_Proyecto/Proyecto_BAD115_2024/ProyectoBAD/Views/Usuarios/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb3NcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/alexi/Documents/Proyecto_BAD115_2024/Proyecto_BAD115_2024/ProyectoBAD/Views/Usuarios/Delete.cshtml]
+[E:/Estudio/2024/Ciclo I/BAD-115/Repo_Proyecto/Proyecto_BAD115_2024/ProyectoBAD/Views/Usuarios/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb3NcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/alexi/Documents/Proyecto_BAD115_2024/Proyecto_BAD115_2024/ProyectoBAD/Views/Usuarios/Details.cshtml]
+[E:/Estudio/2024/Ciclo I/BAD-115/Repo_Proyecto/Proyecto_BAD115_2024/ProyectoBAD/Views/Usuarios/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb3NcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/alexi/Documents/Proyecto_BAD115_2024/Proyecto_BAD115_2024/ProyectoBAD/Views/Usuarios/Edit.cshtml]
+[E:/Estudio/2024/Ciclo I/BAD-115/Repo_Proyecto/Proyecto_BAD115_2024/ProyectoBAD/Views/Usuarios/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb3NcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/alexi/Documents/Proyecto_BAD115_2024/Proyecto_BAD115_2024/ProyectoBAD/Views/Usuarios/Index.cshtml]
+[E:/Estudio/2024/Ciclo I/BAD-115/Repo_Proyecto/Proyecto_BAD115_2024/ProyectoBAD/Views/Usuarios/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb3NcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/alexi/Documents/Proyecto_BAD115_2024/Proyecto_BAD115_2024/ProyectoBAD/Views/_ViewImports.cshtml]
+[E:/Estudio/2024/Ciclo I/BAD-115/Repo_Proyecto/Proyecto_BAD115_2024/ProyectoBAD/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/alexi/Documents/Proyecto_BAD115_2024/Proyecto_BAD115_2024/ProyectoBAD/Views/_ViewStart.cshtml]
+[E:/Estudio/2024/Ciclo I/BAD-115/Repo_Proyecto/Proyecto_BAD115_2024/ProyectoBAD/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/alexi/Documents/Proyecto_BAD115_2024/Proyecto_BAD115_2024/ProyectoBAD/Views/Shared/_Layout.cshtml]
+[E:/Estudio/2024/Ciclo I/BAD-115/Repo_Proyecto/Proyecto_BAD115_2024/ProyectoBAD/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-wt54ctcck8

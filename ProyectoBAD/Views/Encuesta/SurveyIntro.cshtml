@@ -7,23 +7,41 @@
 <h2>Datos del Encuestado</h2>
 
 <form asp-action="StartSurvey" method="post">
-    <div class="form-group">
-        <label asp-for="EmailEncuestado" class="control-label"></label>
-        <input asp-for="EmailEncuestado" class="form-control" />
-        <span asp-validation-for="EmailEncuestado" class="text-danger"></span>
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <form asp-action="Create">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                <div class="form-group">
+                    <label asp-for="EmailEncuestado" class="control-label"></label>
+                    <input asp-for="EmailEncuestado" class="form-control" placeholder="Ingrese su correo electrónico" />
+                    <span asp-validation-for="EmailEncuestado" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="FechaNacEncuesta" class="control-label"></label>
+                    <input asp-for="FechaNacEncuesta" class="form-control" type="date" placeholder="Ingrese su fecha de nacimiento" />
+                    <span asp-validation-for="FechaNacEncuesta" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="GenEncuestado" class="control-label"></label>
+                    <select asp-for="GenEncuestado" class="form-control">
+                        <option value="">Seleccione su género</option>
+                        <option value="M">Masculino</option>
+                        <option value="F">Femenino</option>
+                    </select>
+                    <span asp-validation-for="GenEncuestado" class="text-danger"></span>
+                </div>
+
+                <div class="form-group d-flex justify-content-between">
+                    <input type="submit" value="Registrar" class="btn btn-primary" />
+                    <a asp-action="Index" class="btn btn-secondary">
+                        <i class="bi bi-arrow-left"></i> Regresar
+                    </a>
+                </div>
+            </form>
+        </div>
     </div>
-    <div class="form-group">
-        <label asp-for="FechaNacEncuesta" class="control-label"></label>
-        <input asp-for="FechaNacEncuesta" class="form-control" />
-        <span asp-validation-for="FechaNacEncuesta" class="text-danger"></span>
-    </div>
-    <div class="form-group">
-        <label asp-for="GenEncuestado" class="control-label"></label>
-        <input asp-for="GenEncuestado" class="form-control" />
-        <span asp-validation-for="GenEncuestado" class="text-danger"></span>
-    </div>
-    <input type="hidden" asp-for="IdEncuestado" />
-    <input type="hidden" name="id" value="@ViewBag.IdEncuesta" />
-    <button type="submit" class="btn btn-primary">Comenzar Encuesta</button>
 </form>
 
